@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>夥伴 ｜ 台灣未來的主人們</title>
+  <!-- 思源黑體繁體中文 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#BE5BFF">
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="The Next Generation Taiwanese - TNGT">
+  <meta property="og:description" content="台灣未來的主人們 - 我們與多元學生程式社群共同成長。">
+  <meta property="og:url" content="https://tngot.org/partner.html">
+  <meta property="og:type" content="website">
+  <!-- Twitter Card Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Next Generation Taiwanese - TNGT">
+  <meta name="twitter:description" content="台灣未來的主人們 - 我們與多元學生程式社群共同成長。">
+  <style>
+    :root {
+      --theme-color: #BE5BFF;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* 漸層動態背景 */
+    header {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #fff;
+      background: linear-gradient(-45deg, var(--theme-color), #6B5BFF, var(--theme-color), #6B5BFF);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header h1 {
+      font-size: 2.8rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+    /* 夥伴區塊 */
+    .partners-section h2 {
+      font-size: 1.8rem;
+      color: var(--theme-color);
+      border-left: 5px solid var(--theme-color);
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .partners {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1.5rem;
+    }
+    .partner-item {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .partner-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .partner-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .partner-item p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    /* 回到上一頁按鈕 */
+    .back-button {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .back-button a {
+      text-decoration: none;
+      color: #fff;
+      background: var(--theme-color);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>台灣未來的主人們</h1>
+    <p>The Next Generation Taiwanese (TNGT)</p>
+  </header>
+  <main class="container">
+    <section class="partners-section">
+      <h2>夥伴 Partners</h2>
+      <div class="partners">
+        <div class="partner-item">
+          <a href="https://ouoc.dev" target="_blank" rel="noopener">
+            <img src="https://i.imgur.com/BWi6MGx.jpeg" alt="OuO Community Logo" class="partner-logo">
+            <p>OuO Community<br><span>一個多元的學生程式社群</span></p>
+          </a>
+        </div>
+        <!-- 在此新增更多夥伴 -->
+      </div>
+    </section>
+    <div class="back-button">
+      <a href="/index.html">回到上一頁</a>
+    </div>
+  </main>
+</body>
+</html>
