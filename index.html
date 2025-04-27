@@ -2,125 +2,147 @@
 <html lang="zh-tw">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Next Generation Taiwanese - TNGT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Next Generation Taiwanese - TNGT</title>
 
-    <meta property="og:title" content="The Next Generation Taiwanese - TNGT">
-    <meta property="og:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。">
-    <meta property="og:url" content="https://tngot.org">
-    <meta property="og:type" content="website">
+  <meta name="theme-color" content="#BE5BFF">
+  <meta property="og:title" content="The Next Generation Taiwanese - TNGT">
+  <meta property="og:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。">
+  <meta property="og:url" content="https://tngot.org">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Next Generation Taiwanese - TNGT">
+  <meta name="twitter:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Next Generation Taiwanese - TNGT">
-    <meta name="twitter:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 
-        h1,
-        h2,
-        p {
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
-
-        h2 {
-            animation-delay: 0.5s;
-        }
-
-        p {
-            animation-delay: 1s;
-        }
-
-        h1 {
-            color: #BE5BFF;
-            margin-top: 50px;
-        }
-
-        h2 {
-            color: #666;
-        }
-
-        .buttons {
-            margin-top: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 25px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #BE5BFF;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #a14ae0;
-            transform: scale(1.1);
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #999;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+  <style>
+    :root { --theme-color: #BE5BFF; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    header {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background: linear-gradient(-45deg, var(--theme-color), #6B5BFF, var(--theme-color), #6B5BFF);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* 全局標題樣式 */
+    h1 {
+      color: var(--theme-color);
+      font-size: 2.5rem;
+    }
+    /* Header 特殊標題顏色與陰影，提高可讀性 */
+    header h1 {
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+    main.container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h2 {
+      color: #666;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+    p {
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+    .buttons {
+      margin-top: 2rem;
+    }
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 16px;
+      color: #fff;
+      background-color: var(--theme-color);
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #a14ae0;
+      transform: scale(1.1);
+    }
+    footer {
+      margin-top: auto;
+      padding: 1rem 0;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
 </head>
 
 <body>
+  <header>
     <h1>台灣未來的主人們</h1>
-    <h2>The Next Generation Taiwanese - TNGT<br>IS COMING 官網建置中</h2>
+    <p>The Next Generation Taiwanese - TNGT</p>
+  </header>
+
+  <main class="container">
+    <h2>IS COMING 官網建置中</h2>
     <p>我們期望發展成為一個真正的公民團體；<br>用於代表青少年們參與大大小小的公共事務。</p>
     <div class="buttons">
-        <a href="/dc.html" class="button">加入我們的 Discord</a>
-        <a href="/team.html" class="button">看看我們的志工團隊</a>
-        <a href="/partner.html" class="button">和我們合作的團隊</a>
-        <button class="button" onclick="copyToClipboard()">把我們分享出去</button>
+      <a href="/dc.html" class="button">加入我們的 Discord</a>
+      <a href="/team.html" class="button">看看我們的志工團隊</a>
+      <a href="/partner.html" class="button">和我們合作的團隊</a>
+      <button class="button" onclick="copyToClipboard()">把我們分享出去</button>
     </div>
-    <footer>
-        &copy; 2023 The Next Generation Taiwanese - TNGT. All rights reserved.
-    </footer>
-    <script>
-        function copyToClipboard() {
-            const text = `The Next Generation Taiwanese - TNGT
+  </main>
+
+  <footer>
+    &copy; 2023 The Next Generation Taiwanese - TNGT. All rights reserved.
+  </footer>
+
+  <script>
+    function copyToClipboard() {
+      const text = `The Next Generation Taiwanese - TNGT
 台灣未來的主人們
 是由一群青年創立的公民團體
 用於代表青少年們參與大大小小的公共事務
 https://tngot.org/`;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("分享內容已複製到剪貼簿！");
-            }).catch(err => {
-                alert("無法複製內容，請手動複製。");
-            });
-        }
-    </script>
+      navigator.clipboard.writeText(text).then(() => {
+        alert("分享內容已複製到剪貼簿！");
+      }).catch(err => {
+        alert("無法複製內容，請手動複製。");
+      });
+    }
+  </script>
 </body>
 
 </html>
