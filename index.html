@@ -30,6 +30,28 @@
       align-items: center;
       min-height: 100vh;
       text-align: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .background-slideshow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .background-slideshow .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      transition: transform 1s ease-in-out;
     }
     header {
       width: 100%;
@@ -48,12 +70,10 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    /* 全局標題樣式 */
     h1 {
       color: var(--theme-color);
       font-size: 2.5rem;
     }
-    /* Header 特殊標題顏色與陰影，提高可讀性 */
     header h1 {
       color: #fff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -109,6 +129,8 @@
 </head>
 
 <body>
+  <div class="background-slideshow"></div>
+
   <header>
     <h1>台灣未來的主人們</h1>
     <p>The Next Generation Taiwanese - TNGT</p>
@@ -131,17 +153,53 @@
 
   <script>
     function copyToClipboard() {
-      const text = `The Next Generation Taiwanese - TNGT
-台灣未來的主人們
-是由一群青年創立的公民團體
-用於代表青少年們參與大大小小的公共事務
-https://tngot.org/`;
+      const text = `The Next Generation Taiwanese - TNGT\n台灣未來的主人們\n是由一群青年創立的公民團體\n用於代表青少年們參與大大小小的公共事務\nhttps://tngot.org/`;
       navigator.clipboard.writeText(text).then(() => {
         alert("分享內容已複製到剪貼簿！");
       }).catch(err => {
         alert("無法複製內容，請手動複製。");
       });
     }
+
+    const images = [
+      "https://i.imgur.com/yOLGqbj.jpeg",
+      "https://i.imgur.com/PDCnWEq.jpeg",
+      "https://i.imgur.com/NtmGxST.jpeg",
+      "https://i.imgur.com/81UNE9p.jpeg",
+      "https://i.imgur.com/Q7Tl3Jh.png",
+      "https://i.imgur.com/HccOwrx.png"
+    ];
+
+    const container = document.querySelector('.background-slideshow');
+    let currentSlide = null;
+
+    function changeBackground() {
+      const nextSlide = document.createElement('div');
+      nextSlide.className = 'slide';
+      const imgUrl = images[Math.floor(Math.random() * images.length)];
+      nextSlide.style.backgroundImage = `url(${imgUrl})`;
+      // 初始位置在右側
+      nextSlide.style.transform = 'translateX(100%)';
+      container.appendChild(nextSlide);
+
+      // 強制重繪，觸發 transition
+      requestAnimationFrame(() => {
+        nextSlide.style.transform = 'translateX(0)';
+        if (currentSlide) currentSlide.style.transform = 'translateX(-100%)';
+      });
+
+      nextSlide.addEventListener('transitionend', () => {
+        if (currentSlide) {
+          container.removeChild(currentSlide);
+        }
+        currentSlide = nextSlide;
+      }, { once: true });
+    }
+
+    // 初始化第一張
+    changeBackground();
+    // 定時切換，每5秒
+    setInterval(changeBackground, 5000);
   </script>
 </body>
 
