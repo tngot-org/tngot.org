@@ -40,18 +40,13 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      overflow: hidden;
-    }
-    .background-slideshow .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       background-size: cover;
       background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .background-slideshow.show {
       opacity: 0.3;
-      transition: transform 1s ease-in-out;
     }
     header {
       width: 100%;
@@ -129,7 +124,8 @@
 </head>
 
 <body>
-  <div class="background-slideshow"></div>
+  <div id="bg1" class="background-slideshow"></div>
+  <div id="bg2" class="background-slideshow"></div>
 
   <header>
     <h1>台灣未來的主人們</h1>
@@ -170,35 +166,22 @@
       "https://i.imgur.com/HccOwrx.png"
     ];
 
-    const container = document.querySelector('.background-slideshow');
-    let currentSlide = null;
+    const bg1 = document.getElementById('bg1');
+    const bg2 = document.getElementById('bg2');
+    let current = bg1;
+    let next = bg2;
 
     function changeBackground() {
-      const nextSlide = document.createElement('div');
-      nextSlide.className = 'slide';
-      const imgUrl = images[Math.floor(Math.random() * images.length)];
-      nextSlide.style.backgroundImage = `url(${imgUrl})`;
-      // 初始位置在右側
-      nextSlide.style.transform = 'translateX(100%)';
-      container.appendChild(nextSlide);
-
-      // 強制重繪，觸發 transition
-      requestAnimationFrame(() => {
-        nextSlide.style.transform = 'translateX(0)';
-        if (currentSlide) currentSlide.style.transform = 'translateX(-100%)';
-      });
-
-      nextSlide.addEventListener('transitionend', () => {
-        if (currentSlide) {
-          container.removeChild(currentSlide);
-        }
-        currentSlide = nextSlide;
-      }, { once: true });
+      const randomImage = images[Math.floor(Math.random() * images.length)];
+      next.style.backgroundImage = `url(${randomImage})`;
+      next.classList.add('show');
+      current.classList.remove('show');
+      [current, next] = [next, current];
     }
 
-    // 初始化第一張
-    changeBackground();
-    // 定時切換，每5秒
+    // 初始載入
+    current.style.backgroundImage = `url(${images[Math.floor(Math.random() * images.length)]})`;
+    current.classList.add('show');
     setInterval(changeBackground, 5000);
   </script>
 </body>
