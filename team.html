@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>台灣未來的主人們 TNGT</title>
   <!-- 思源黑體繁體中文 -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    :root { --theme-color: #BE5BFF; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --theme-color: #BE5BFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Noto Sans TC', sans-serif;
       background: #f5f5f5;
@@ -20,26 +29,49 @@
     /* 漸層動態背景 */
     header {
       height: 220px;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #fff;
       background: linear-gradient(-45deg, var(--theme-color), #6B5BFF, var(--theme-color), #6B5BFF);
-      background-size: 400% 400%; animation: gradientBG 15s ease infinite;
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
+
     @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
-    header h1 { font-size: 2.8rem; }
-    header p  { font-size: 1.2rem; margin-top: 0.5rem; }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
 
     .container {
-      width: 90%; max-width: 1200px; margin: 2rem auto;
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
     }
 
     .team-section {
       margin-bottom: 3rem;
     }
+
     .team-section h2 {
       font-size: 1.8rem;
       color: var(--theme-color);
@@ -53,51 +85,70 @@
       grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       gap: 1.5rem;
     }
+
     .member {
-      background: #fff; padding: 1rem; border-radius: 10px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
       text-align: center;
-      opacity: 0; transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
     }
+
     .member img {
-      width: 100px; height: 100px; border-radius: 50%;
-      object-fit: cover; margin-bottom: 0.5rem;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
     }
+
     .member:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     }
+
     .member.show {
-      opacity: 1; transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* RGB 漸變光環 (組長) */
     .member.leader::before {
       content: "";
       position: absolute;
-      top: -6px; left: -6px; right: -6px; bottom: -6px;
-      border-radius: 12px; border: 3px solid transparent;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      border-radius: 12px;
+      border: 3px solid transparent;
       animation: rgbGlow 3s ease infinite;
       pointer-events: none;
       z-index: -1;
     }
+
     @keyframes rgbGlow {
       0% {
-        box-shadow: 0 0 8px rgba(255,0,0,0.8);
-        border-color: rgba(255,0,0,0.8);
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+        border-color: rgba(255, 0, 0, 0.8);
       }
+
       33% {
-        box-shadow: 0 0 8px rgba(0,255,0,0.8);
-        border-color: rgba(0,255,0,0.8);
+        box-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+        border-color: rgba(0, 255, 0, 0.8);
       }
+
       66% {
-        box-shadow: 0 0 8px rgba(0,0,255,0.8);
-        border-color: rgba(0,0,255,0.8);
+        box-shadow: 0 0 8px rgba(0, 0, 255, 0.8);
+        border-color: rgba(0, 0, 255, 0.8);
       }
+
       100% {
-        box-shadow: 0 0 8px rgba(255,0,0,0.8);
-        border-color: rgba(255,0,0,0.8);
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+        border-color: rgba(255, 0, 0, 0.8);
       }
     }
 
@@ -105,19 +156,34 @@
     .member.multi-role::before {
       content: "";
       position: absolute;
-      top: -6px; left: -6px; right: -6px; bottom: -6px;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
       border-radius: 12px;
       background: radial-gradient(circle, var(--theme-color) 50%, transparent 70%);
-      opacity: 0.7; animation: pulse 2s ease-in-out infinite;
+      opacity: 0.7;
+      animation: pulse 2s ease-in-out infinite;
       pointer-events: none;
       z-index: -1;
     }
+
     @keyframes pulse {
-      0%,100% { transform: scale(1); opacity: 0.7; }
-      50%     { transform: scale(1.1); opacity: 0.3; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- 頁首 -->
@@ -138,7 +204,8 @@
           <p>アントウ</p>
         </div>
         <div class="member leader">
-          <a href="https://tw.strikingly.com/s/sites/27865585/edit?uid=62469a66-96fe-4d19-9e9e-f0ccd80bc376#31817" target="_blank" rel="noopener">
+          <a href="https://tw.strikingly.com/s/sites/27865585/edit?uid=62469a66-96fe-4d19-9e9e-f0ccd80bc376#31817"
+            target="_blank" rel="noopener">
             <img src="https://www.gravatar.com/avatar/d240680a8ed430fc85149bdcececb3db?d=identicon&s=150" alt="瑄">
           </a>
           <p>瑄</p>
@@ -172,7 +239,9 @@
           <p>雅欣</p>
         </div>
         <div class="member leader">
-          <img src="https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=150" alt="落景夏時">
+          <img
+            src="https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=150"
+            alt="落景夏時">
           <p>落景夏時</p>
         </div>
       </div>
@@ -191,7 +260,9 @@
           <p>荳荳</p>
         </div>
         <div class="member">
-          <img src="https://1.gravatar.com/avatar/7e8092f92b67bec75a6e6382f0f74e2345f656d045f33168dd00f2b90bd9f91d?size=150" alt="碎骨">
+          <img
+            src="https://1.gravatar.com/avatar/7e8092f92b67bec75a6e6382f0f74e2345f656d045f33168dd00f2b90bd9f91d?size=150"
+            alt="碎骨">
           <p>碎骨</p>
         </div>
       </div>
@@ -202,8 +273,9 @@
       <h2>公關組</h2>
       <div class="members">
         <div class="member">
-          <a href="https://www.threads.com/@robloxjailbreaker" target="_blank" rel="noopener"></a>
-        <img src="https://www.gravatar.com/avatar/27cb0316008e9115a7ae5fcaadda94ae?d=identicon&s=150" alt="Jailbreaker">
+          <a href="https://www.threads.com/@robloxjailbreaker" target="_blank" rel="noopener">
+            <img src="https://www.gravatar.com/avatar/27cb0316008e9115a7ae5fcaadda94ae?d=identicon&s=150"
+              alt="Jailbreaker">
           </a>
           <p>Jailbreaker</p>
         </div>
@@ -233,7 +305,9 @@
           <p>Et</p>
         </div>
         <div class="member">
-          <img src="https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=150" alt="落景夏時">
+          <img
+            src="https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=150"
+            alt="落景夏時">
           <p>落景夏時</p>
         </div>
       </div>
@@ -254,11 +328,14 @@
           <p>雅欣</p>
         </div>
         <div class="member">
-          <img src="https://2.gravatar.com/avatar/52f0cef2b9d7be31c9807193dac2ec9ce7da648d41e56a7dab5e3df2d7b5ecf5?size=150" alt="ryan">
+          <img
+            src="https://2.gravatar.com/avatar/52f0cef2b9d7be31c9807193dac2ec9ce7da648d41e56a7dab5e3df2d7b5ecf5?size=150"
+            alt="ryan">
           <p>ryan</p>
         </div>
         <div class="member leader">
-          <a href="https://www.instagram.com/astera_09.23?igsh=bm1ka29vemx5cXZt&utm_source=qr" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/astera_09.23?igsh=bm1ka29vemx5cXZt&utm_source=qr" target="_blank"
+            rel="noopener">
             <img src="https://www.gravatar.com/avatar/77017ddf599565003882d3c0a004f962?d=identicon&s=150" alt="Astera">
           </a>
           <p>Astera</p>
@@ -303,7 +380,8 @@
       <div class="members">
         <div class="member leader">
           <a href="https://sean.cat/about" target="_blank" rel="noopener">
-            <img src="https://www.gravatar.com/avatar/598f6906350d4774bb4385f4e5121f66?d=identicon&s=150" alt="Sean Wei">
+            <img src="https://www.gravatar.com/avatar/598f6906350d4774bb4385f4e5121f66?d=identicon&s=150"
+              alt="Sean Wei">
           </a>
           <p>Sean Wei</p>
         </div>
@@ -332,4 +410,5 @@
     });
   </script>
 </body>
+
 </html>
