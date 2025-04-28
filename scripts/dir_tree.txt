@@ -1,28 +1,27 @@
 C:\Users\ivant\Documents\GitHub\tngot.org
 ├── assets
-│   ├── css
-│   ├── img
-│   │   ├── backgrounds
-│   │   │   ├──  (1).jpg
-│   │   │   ├──  (2).jpg
-│   │   │   ├──  (3).jpg
-│   │   │   ├──  (4).jpg
-│   │   │   └──  (5).jpg
-│   │   └── event
-│   │       └── 419
-│   │           ├──  (1).jpg
-│   │           └──  (2).jpg
-│   └── js
+│   └── img
+│       ├── backgrounds
+│       │   ├──  (1).jpg
+│       │   ├──  (2).jpg
+│       │   ├──  (3).jpg
+│       │   ├──  (4).jpg
+│       │   └──  (5).jpg
+│       └── event
+│           └── 419
+│               ├──  (1).jpg
+│               └──  (2).jpg
 ├── data
-├── dir_tree.txt
+│   └── team.json
 ├── index.html
 ├── pages
+│   ├── about.html
+│   ├── dc.html
 │   ├── events
-│   │   ├── 419.html
-│   │   ├── about.html
-│   │   └── dc.html
+│   │   └── 419.html
 │   ├── events.html
 │   ├── partner.html
 │   └── team.html
 └── scripts
-    └── dir_tree.py
+    ├── dir_tree.py
+    └── dir_tree.txt
