@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>連結 | 台灣未來的主人們</title>
+  <meta name="theme-color" content="#BE5BFF" />
+  <meta property="og:title" content="台灣未來的主人們 - 連結" />
+  <meta property="og:url" content="https://tngot.org/links.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --theme-color: #BE5BFF; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      width: 100%;
+      padding: 2rem 0;
+      background: var(--theme-color);
+      color: #fff;
+      text-align: center;
+    }
+    header h1 { font-size: 2.5rem; }
+    .intro {
+      width: 90%;
+      max-width: 600px;
+      margin: 1.5rem auto;
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+    }
+    main {
+      width: 90%;
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .link-card {
+      display: block;
+      text-decoration: none;
+      background: #fff;
+      border: 2px solid var(--theme-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--theme-color);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    footer {
+      margin-top: auto;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>連結 Links</h1>
+  </header>
+
+  <section class="intro">
+    <p>歡迎來到「台灣未來的主人們」（TNGT）的連結一覽頁。透過以下連結，您可以快速了解我們的最新動態、加入社群討論，以及關注我們在各大平台的更新。</p>
+  </section>
+
+  <main>
+    <a href="https://tngot.org/" class="link-card">官方網站</a>
+    <a href="/dc.html" class="link-card">加入 Discord</a>
+    <a href="https://www.youtube.com/" class="link-card">Youtube</a>
+    <a href="https://www.threads.com/@tngotorg" class="link-card">Threads</a>
+    <a href="https://www.instagram.com/tngotorg/" class="link-card">Instagram</a>
+    <a href="mailto:tngotorg@gmail.com" class="link-card">Email 聯絡</a>
+  </main>
+
+  <footer>&copy; 2025 台灣未來的主人們 - TNGT</footer>
+</body>
+
+</html>
