@@ -2,26 +2,30 @@
 <html lang="zh-tw">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Next Generation Taiwanese - TNGT</title>
 
-  <meta name="theme-color" content="#BE5BFF">
-  <meta property="og:title" content="The Next Generation Taiwanese - TNGT">
-  <meta property="og:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。">
-  <meta property="og:url" content="https://tngot.org">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Next Generation Taiwanese - TNGT">
-  <meta name="twitter:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。">
+  <meta name="theme-color" content="#BE5BFF" />
+  <meta property="og:title" content="The Next Generation Taiwanese - TNGT" />
+  <meta property="og:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。" />
+  <meta property="og:url" content="https://tngot.org" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Next Generation Taiwanese - TNGT" />
+  <meta name="twitter:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。" />
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root { --theme-color: #BE5BFF; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { width: 100%; height: 100%; }
+
     body {
       font-family: 'Noto Sans TC', sans-serif;
       display: flex;
@@ -30,26 +34,25 @@
       text-align: center;
       position: relative;
       overflow-x: hidden;
-      background: none;
+      background-color: #000;          /* 保留黑色備援底色 */
       color: #333;
       min-height: 100vh;
     }
+
+    /* 輪播背景：調到 z-index:0，讓它在 body 背景之上 */
     .background-slideshow {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
       background-size: cover;
       background-position: center;
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
     .background-slideshow.show { opacity: 1; }
-    /* 隱藏原來的 header */
-    header { display: none; }
 
+    /* 內容容器要高於輪播 */
     main.container {
       width: 90%;
       max-width: 1200px;
@@ -57,59 +60,44 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #fff;
       z-index: 1;
     }
-    /* 主標題容器 */
-    .main-title {
+
+    .main-title, .subtitle-container {
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 1rem 2rem;
       border-radius: 10px;
-      margin-top: 2rem;
+      padding: 1rem 2rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      margin-top: 1.5rem;
+      color: #fff;
     }
-    /* 主標題樣式 */
     .main-title h1 {
       font-size: 3.5rem;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-      color: #fff;
     }
     .main-title p {
       font-size: 1.3rem;
       margin-top: 0.5rem;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
-      color: #fff;
-    }
-    /* 子標題容器 (Coming Soon) */
-    .subtitle-container {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      margin-top: 1.5rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     }
     .subtitle-container h2 {
       font-size: 2rem;
-      margin: 0;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-      color: #fff;
     }
     .subtitle-container p.description {
       margin-top: 0.5rem;
       font-size: 1rem;
       line-height: 1.6;
       text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
-      color: #fff;
     }
+
     .buttons {
       margin-top: 2rem;
-      z-index: 1;
-      display: flex; /* 使用 Flexbox 排列按鈕 */
-      justify-content: center; /* 水平置中 */
-      flex-wrap: wrap; /* 確保按鈕在小螢幕上換行 */
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .button {
-      display: inline-block;
       margin: 10px;
       padding: 15px 30px;
       font-size: 16px;
@@ -119,35 +107,32 @@
       border-radius: 5px;
       text-decoration: none;
       cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
+    }
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.4);
     }
     .button.discord {
       background: linear-gradient(45deg, #7289da, #99aab5);
       color: #fff;
       border: none;
       overflow: hidden;
-      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     }
     .button.discord::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+      top: 0; left: -100%;
+      width: 200%; height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
       transform: skewX(-45deg);
-      transition: left 0.5s ease;
+      transition: left 0.5s;
     }
-    .button.discord:hover::before {
-      left: 100%;
-    }
-    .button.discord:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    }
+    .button.discord:hover::before { left: 100%; }
+    .button.discord:hover { transform: scale(1.1); }
+
     footer {
       margin-top: auto;
       padding: 1rem 0;
@@ -159,7 +144,7 @@
 </head>
 
 <body>
-  <!-- Slideshow background -->
+  <!-- 幻燈片背景 -->
   <div id="bg1" class="background-slideshow"></div>
   <div id="bg2" class="background-slideshow"></div>
 
@@ -170,7 +155,10 @@
     </div>
     <div class="subtitle-container">
       <h2>IS COMING 官網建置中</h2>
-      <p class="description">我們期望發展成為一個真正的公民團體；<br>用於代表青少年們參與大大小小的公共事務。</p>
+      <p class="description">
+        我們期望發展成為一個真正的公民團體；<br />
+        用於代表青少年們參與大大小小的公共事務。
+      </p>
     </div>
     <div class="buttons">
       <a href="/about.html" class="button">關於我們</a>
@@ -181,43 +169,49 @@
     </div>
   </main>
 
-  <footer>
-    &copy; 2025 The Next Generation Taiwanese - TNGT. All rights reserved.
-  </footer>
+  <footer>&copy; 2025 The Next Generation Taiwanese - TNGT. All rights reserved.</footer>
 
   <script>
+    // 複製分享文字
     function copyToClipboard() {
-      const text = `The Next Generation Taiwanese - TNGT\n台灣未來的主人們\n是由一群青年創立的公民團體\n用於代表青少年們參與大大小小的公共事務\nhttps://tngot.org/`;
-      navigator.clipboard.writeText(text).then(() => alert("分享內容已複製到剪貼簿！"))
-        .catch(() => alert("無法複製內容，請手動複製。"));
+      const text = [
+        'The Next Generation Taiwanese - TNGT',
+        '台灣未來的主人們',
+        '由一群青年創立的公民團體，代表青少年參與公共事務',
+        'https://tngot.org/'
+      ].join('\n');
+      navigator.clipboard.writeText(text)
+        .then(() => alert('分享內容已複製到剪貼簿！'))
+        .catch(() => alert('無法複製內容，請手動複製。'));
     }
 
+    // 輪播圖片清單（正確的正斜線路徑，空格與括號會自動轉義）
     const images = [
-      '<img src="https://i.imgur.com/yOLGqbj.jpeg" referrerpolicy="no-referrer">',
-      '<img src="https://i.imgur.com/PDCnWEq.jpeg" referrerpolicy="no-referrer">',
-      '<img src="https://i.imgur.com/NtmGxST.jpeg" referrerpolicy="no-referrer">',
-      '<img src="https://i.imgur.com/81UNE9p.jpeg" referrerpolicy="no-referrer">',
-      '<img src="https://i.imgur.com/Q7Tl3Jh.png" referrerpolicy="no-referrer">',
-      '<img src="https://i.imgur.com/HccOwrx.png" referrerpolicy="no-referrer">'
-    ];
+      'img/backgrounds/ (1).jpg',
+      'img/backgrounds/ (2).jpg',
+      'img/backgrounds/ (3).jpg',
+      'img/backgrounds/ (4).jpg',
+      'img/backgrounds/ (5).jpg'
+    ].map(encodeURI);
+
+    console.log('輪播圖片清單：', images);
 
     const bg1 = document.getElementById('bg1');
     const bg2 = document.getElementById('bg2');
-    let current = bg1;
-    let next = bg2;
+    let current = bg1, next = bg2;
 
     function changeBackground() {
-      const randomImage = images[Math.floor(Math.random() * images.length)];
-      next.style.backgroundImage = `url(${randomImage})`;
+      const img = images[Math.floor(Math.random() * images.length)];
+      console.log('載入背景：', img);
+      next.style.backgroundImage = `url("${img}")`;
       next.classList.add('show');
       current.classList.remove('show');
       [current, next] = [next, current];
     }
 
-    current.style.backgroundImage = `url(${images[Math.floor(Math.random() * images.length)]})`;
-    current.classList.add('show');
+    // 啟動輪播
+    changeBackground();
     setInterval(changeBackground, 5000);
   </script>
-
 </body>
 </html>
