@@ -101,7 +101,13 @@
       text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
       color: #fff;
     }
-    .buttons { margin-top: 2rem; z-index: 1; }
+    .buttons {
+      margin-top: 2rem;
+      z-index: 1;
+      display: flex; /* 使用 Flexbox 排列按鈕 */
+      justify-content: center; /* 水平置中 */
+      flex-wrap: wrap; /* 確保按鈕在小螢幕上換行 */
+    }
     .button {
       display: inline-block;
       margin: 10px;
@@ -117,10 +123,30 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       position: relative;
     }
-    .button:hover {
-      background-color: rgba(255, 255, 255, 0.9);
-      transform: scale(1.08);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    .button.discord {
+      background: linear-gradient(45deg, #7289da, #99aab5);
+      color: #fff;
+      border: none;
+      overflow: hidden;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .button.discord::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+      transform: skewX(-45deg);
+      transition: left 0.5s ease;
+    }
+    .button.discord:hover::before {
+      left: 100%;
+    }
+    .button.discord:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
     footer {
       margin-top: auto;
@@ -147,10 +173,11 @@
       <p class="description">我們期望發展成為一個真正的公民團體；<br>用於代表青少年們參與大大小小的公共事務。</p>
     </div>
     <div class="buttons">
-      <a href="/dc.html" class="button">加入我們的 Discord</a>
-      <a href="/team.html" class="button">看看我們的志工團隊</a>
-      <a href="/partner.html" class="button">和我們合作的團隊</a>
-      <button class="button" onclick="copyToClipboard()">把我們分享出去</button>
+      <a href="/about.html" class="button">關於我們</a>
+      <a href="/dc.html" class="button discord">加入 Discord</a>
+      <a href="/team.html" class="button">工作團隊</a>
+      <a href="/partner.html" class="button">合作夥伴</a>
+      <button class="button" onclick="copyToClipboard()">分享我們</button>
     </div>
   </main>
 

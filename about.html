@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>團隊介紹 ｜ 台灣未來的主人們</title>
+  <meta name="theme-color" content="#BE5BFF">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --theme-color: #BE5BFF; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* 漸層動態背景 Header */
+    header {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(-45deg, var(--theme-color), #6B5BFF, var(--theme-color), #6B5BFF);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      text-align: center;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header h1 { font-size: 2.5rem; }
+    header p { font-size: 1.1rem; margin-top: 0.5rem; }
+
+    .container {
+      width: 90%; max-width: 800px;
+      margin: 2rem auto;
+    }
+    .intro-section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      position: relative;
+    }
+    .intro-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .intro-section h2 {
+      font-size: 1.8rem;
+      color: var(--theme-color);
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+    /* 火焰符號點綴動畫 */
+    .intro-section h2::before {
+      content: '🔥';
+      display: inline-block;
+      margin-right: 0.5rem;
+      animation: flame 1.5s ease-in-out infinite;
+    }
+    @keyframes flame {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .intro-section p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .back-button {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .back-button a {
+      text-decoration: none;
+      background: var(--theme-color);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+    .back-button a:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>團隊介紹</h1>
+    <p>The Next Generation Taiwanese (TNGT)</p>
+  </header>
+
+  <main class="container">
+    <section class="intro-section">
+      <h2>成立社群的初衷</h2>
+      <p>某天在社群媒體發表自己參加公民運動的心得後，「你才十八歲懂什麼啊」、「多讀點書吧」諸如此類的冷嘲熱諷湧入留言，他們試圖用冰冷而銳利的字句澆熄我們關注社會的熱情，用所謂社會歷練束縛著我們思考的自由。無端遭受一群自以為是的大人攻擊和批評後，也看見許多年齡相仿的學生面臨著同樣的惡意，不禁疑惑為何我們僅僅是表達個人看法，就要因年紀受到「大人」先入為主地「教育」？</p>
+    </section>
+
+    <section class="intro-section">
+      <h2>創辦理念</h2>
+      <p>社群媒體上有許多孤單奮鬥的學生，他們默默地關心社會議題，卻缺乏能夠接住這些好奇心和焦慮的友善環境。故成立以學生族群為加入門檻之社群，提供專屬於青年學生溝通及交流的空間，同時藉由傳達學生們的訴求，喚醒社會中冷漠的人們。期望透過這個空間的設立，讓青年學子得以自由暢談，無須懼怕質疑的聲音和惡意的謾罵。</p>
+    </section>
+
+    <section class="intro-section">
+      <h2>社群名稱的由來和意義</h2>
+      <p>台灣近年的最大型的學生運動為「318太陽花學運」（反服貿協議），而2024年5月爆發的「青鳥行動」則是由各年齡層公民發起及響應，年齡主要落在30至40歲的區間，也正是當初太陽花挺身而出的那些人，再次站出來守護台灣。至於學生的身影，則因各種因素在青鳥行動中顯而易見地減少。</p>
+      <p>苦思良久，我得出一個結論：不是因為沒有學生關心，而是這塊島上的學生意志過於分散，尚未被集結起來。當年太陽花以臉書為媒介，號召數十萬人上街，而今為何做不到呢？興許是學生們大多像我一樣，期待有個人或組織能接納自己，懷著相似的意念，一同朝共同目標邁進。這條路或許不那麼順遂，如同母親台灣的坎坷過去，但只要站穩腳步，與彼此溝通、攜手合作，我相信希望的曙光將會照耀在這座島嶼。</p>
+      <p>「The Next Generation Taiwanese」是下個世代的台灣人，是「台灣未來的主人們」，是國家的棟樑——學生。學歷和學識無法定義我們，我們的共通點，也是學生最可貴之處，在於富有理想和冒險的精神，為社會注入新血，成為一股進步的力量。</p>
+    </section>
+
+    <div class="back-button">
+      <a href="/index.html">← 回到首頁</a>
+    </div>
+  </main>
+
+  <script>
+    // Scroll reveal 動畫
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.intro-section').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
