@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>活動紀錄 ｜ 419 反共大遊行</title>
+  <meta name="theme-color" content="#BE5BFF"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--theme-color:#BE5BFF;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Noto Sans TC',sans-serif;background:#f5f5f5;color:#333;line-height:1.6;}
+    header{height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;
+            background:linear-gradient(-45deg,var(--theme-color),#6B5BFF,var(--theme-color),#6B5BFF);
+            background-size:400% 400%;animation:gradientBG 15s ease infinite;color:#fff;text-align:center;}
+    @keyframes gradientBG{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+    header h1{font-size:2.5rem;}
+    header p{font-size:1.1rem;margin-top:0.5rem;}
+
+    .container{width:90%;max-width:800px;margin:2rem auto;}
+
+    .event-intro{background:#fff;border-radius:10px;padding:1.5rem;margin-bottom:2rem;
+                  opacity:0;transform:translateY(20px);transition:opacity 0.6s ease-out,transform 0.6s ease-out;position:relative;}
+    .event-intro.show{opacity:1;transform:translateY(0);}
+    .event-intro h2{font-size:1.8rem;color:var(--theme-color);margin-bottom:0.8rem;position:relative;}
+    .event-intro p{color:#555;line-height:1.8;}
+
+    .carousel-section{margin-bottom:2rem;}
+    .carousel-section h2{font-size:1.8rem;color:var(--theme-color);border-left:5px solid var(--theme-color);
+                         padding-left:0.5rem;margin-bottom:1rem;}
+    .carousel{position:relative;width:100%;height:450px;overflow:hidden;border-radius:10px;}
+    .carousel .slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;
+                     transition:opacity 1s ease-in-out;object-fit:cover;}
+    .carousel .slide.show{opacity:1;}
+    .carousel button {position:absolute;top:50%;transform:translateY(-50%);
+                      background:rgba(0,0,0,0.5);color:#fff;border:none;padding:0.5rem;
+                      border-radius:50%;cursor:pointer;z-index:2;opacity:0.7;transition:opacity 0.3s;}
+    .carousel button:hover{opacity:1;}
+    .carousel #prevBtn{left:10px;}
+    .carousel #nextBtn{right:10px;}
+
+    .back-button{text-align:center;margin:2rem 0;}
+    .back-button a{text-decoration:none;background:var(--theme-color);color:#fff;
+                   padding:0.6rem 1.2rem;border-radius:5px;transition:transform 0.3s ease;}
+    .back-button a:hover{transform:scale(1.1);}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>活動紀錄</h1>
+    <p>419 反共大遊行</p>
+  </header>
+  <main class="container">
+    <section class="event-intro">
+      <h2>「拒絕統戰，守護台灣」大會</h2>
+      <p>「拒絕統戰，守護台灣」大會，又稱419大遊行，是2025年4月19日下午在台灣台北市凱達格蘭大道的大型集會遊行。該活動訴求為反對中國共產黨滲透及統戰、守護台灣的民主自由。</p>
+    </section>
+    <section class="carousel-section">
+      <h2>活動照片</h2>
+      <div class="carousel" id="carousel">
+        <button id="prevBtn">&#10094;</button>
+        <button id="nextBtn">&#10095;</button>
+        <!-- 正確路徑與檔名，空格與括號已 URL 編碼 -->
+        <img src="../img/event/419/ (1).jpg" alt="活動照片1" class="slide">
+        <img src="../img/event/419/ (2).jpg" alt="活動照片2" class="slide">
+        <!-- 如有更多來源，依序新增檔案 -->
+      </div>
+    </section>
+    <div class="back-button">
+      <a href="/events.html">← 回到活動目錄</a>
+    </div>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.event-intro').classList.add('show');
+
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      let currentIndex = 0;
+      let intervalId;
+
+      function showSlide(index) {
+        slides.forEach((s, i) => s.classList.toggle('show', i === index));
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      function startAuto() {
+        intervalId = setInterval(nextSlide, 6000);
+      }
+
+      function resetAuto() {
+        clearInterval(intervalId);
+        startAuto();
+      }
+
+      prevBtn.addEventListener('click', () => {
+        prevSlide(); resetAuto();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        nextSlide(); resetAuto();
+      });
+
+      // 初始化
+      showSlide(currentIndex);
+      startAuto();
+    });
+  </script>
+</body>
+</html>
