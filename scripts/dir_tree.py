@@ -40,13 +40,17 @@ if __name__ == '__main__':
         'path', nargs='?', default='.',
         help='要分析的工作目錄，預設為當前目錄'
     )
+    parser.add_argument(
+        '--output', '-o', default='dir_tree.txt',
+        help='指定輸出的檔案名稱，預設為 dir_tree.txt'
+    )
     args = parser.parse_args()
 
     root = os.path.abspath(args.path)
     lines = [root] + build_tree(root)
 
-    # 將結果寫入當前工作目錄下的 dir_tree.txt
-    output_file = os.path.join(os.getcwd(), 'dir_tree.txt')
+    # 將結果寫入指定的輸出檔案
+    output_file = os.path.join(os.path.dirname(__file__), args.output)  # 修改輸出路徑為 /scripts 資料夾
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write("\n".join(lines))
