@@ -1,5 +1,11 @@
-C:\Users\ivant\Documents\GitHub\tngot.org
+/Users/zyreny/Documents/GitHub/tngot.org
+├── .DS_Store
 ├── assets
+│   ├── .DS_Store
+│   ├── fonts
+│   │   ├── .DS_Store
+│   │   ├── jf-open.woff
+│   │   └── jf-open.woff2
 │   └── img
 │       ├── backgrounds
 │       │   ├──  (1).jpg
@@ -18,8 +24,8 @@ C:\Users\ivant\Documents\GitHub\tngot.org
 │   ├── about.html
 │   ├── dc.html
 │   ├── events
-│   │   └── 419.html
-│   ├── events.html
+│   │   ├── 419.html
+│   │   └── index.html
 │   ├── links.html
 │   ├── partner.html
 │   └── team.html
