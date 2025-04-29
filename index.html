@@ -15,16 +15,41 @@
   <meta name="twitter:title" content="The Next Generation Taiwanese - TNGT" />
   <meta name="twitter:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。" />
 
-  <!-- Google Font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "TNGT",
+      "alternateName" : "TNGT",
+      "url" : "https://tngot.org/",
+    }
+  </script>
 
   <style>
-    :root { --theme-color: #BE5BFF; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { width: 100%; height: 100%; }
+    @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
+
+    @font-face {
+      font-family: "jf open";
+      src: url('/assets/fonts/jf-open.woff2') format('woff2'),
+           url('/assets/fonts/jf-open.woff') format('woff'); 
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root {
+      --theme-color: #BE5BFF; 
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    html, body { 
+      width: 100%; 
+      height: 100%; 
+    }
 
     body {
       font-family: 'Noto Sans TC', sans-serif;
@@ -110,6 +135,7 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
+      font-family: "jf open";
     }
     .button:hover {
       transform: translateY(-2px);
@@ -163,7 +189,7 @@
         <a href="/pages/about.html" class="button">關於我們</a>
         <a href="/pages/dc.html" class="button discord">加入 Discord</a>
         <a href="/pages/team.html" class="button">工作團隊</a>
-        <a href="/pages/events.html" class="button">活動紀錄</a>
+        <a href="/pages/events/" class="button">活動紀錄</a>
         <a href="/pages/partner.html" class="button">合作夥伴</a>
         <a href="/pages/links.html" class="button">相關連結</a>
       </div>
