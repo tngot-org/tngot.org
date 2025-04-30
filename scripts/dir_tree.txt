@@ -1,22 +1,23 @@
 /Users/zyreny/Documents/GitHub/tngot.org
-├── .DS_Store
 ├── assets
 │   ├── .DS_Store
 │   ├── fonts
 │   │   ├── .DS_Store
 │   │   ├── jf-open.woff
 │   │   └── jf-open.woff2
-│   └── img
-│       ├── backgrounds
-│       │   ├──  (1).jpg
-│       │   ├──  (2).jpg
-│       │   ├──  (3).jpg
-│       │   ├──  (4).jpg
-│       │   └──  (5).jpg
-│       └── event
-│           └── 419
-│               ├──  (1).jpg
-│               └──  (2).jpg
+│   ├── img
+│   │   ├── backgrounds
+│   │   │   ├──  (1).jpg
+│   │   │   ├──  (2).jpg
+│   │   │   ├──  (3).jpg
+│   │   │   ├──  (4).jpg
+│   │   │   └──  (5).jpg
+│   │   └── event
+│   │       └── 419
+│   │           ├──  (1).jpg
+│   │           └──  (2).jpg
+│   └── mods
+│       └── footer.js
 ├── data
 │   └── team.json
 ├── index.html
