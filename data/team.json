@@ -161,18 +161,13 @@
             "name": "CHEN",
             "img": "https://2.gravatar.com/avatar/52f0cef2b9d7be31c9807193dac2ec9ce7da648d41e56a7dab5e3df2d7b5ecf5?size=150",
             "alt": "CHEN",
-            "link": "https://www.threads.com/@chen._.07.24"
+            "link": "https://linkgoods.com/chenkaidrin"
           },
           {
             "name": "蔡恩典Cz",
             "img": "https://www.gravatar.com/avatar/3b915dd6eb828bc2d291a39ee6b68d7f?d=identicon&s=150",
             "alt": "蔡恩典Cz",
             "link": "https://www.edian.work"
-          },
-          {
-            "name": "馬修",
-            "img": "https://i.imgur.com/BhfskYV.png",
-            "alt": "馬修"
           }
         ]
       },
@@ -181,17 +176,17 @@
         "name": "程式組",
         "members": [
           {
-            "name": "アントウ",
-            "img": "https://www.gravatar.com/avatar/3edbfa821271f3f0912460ce198b2d7e?d=identicon&s=150",
-            "alt": "アントウ",
-            "link": "https://antou.dev/",
-            "classes": ["leader"]
-          },
-          {
             "name": "Zyreny",
             "img": "https://gravatar.com/avatar/caaf9b2138565a2442548253cf52d06221ec16d98be87a470f591792f70062d4?s=150",
             "alt": "Zyreny",
-            "link": "https://www.zyreny.com/"
+            "link": "https://www.zyreny.com/", 
+            "classes": ["leader"]
+          },
+          {
+            "name": "アントウ",
+            "img": "https://www.gravatar.com/avatar/3edbfa821271f3f0912460ce198b2d7e?d=identicon&s=150",
+            "alt": "アントウ",
+            "link": "https://antou.dev/"
           },
           {
             "name": "檸檬",
