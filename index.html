@@ -89,7 +89,8 @@
     }
 
     .main-title, .subtitle-container {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: transparent;
+      backdrop-filter: blur(5px);
       border-radius: 10px;
       padding: 1rem 2rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -146,6 +147,7 @@
       color: #fff;
       border: none;
       overflow: hidden;
+      margin-top: 5rem;
     }
     .button.discord::before {
       content: '';
@@ -158,15 +160,9 @@
     }
     .button.discord:hover::before { left: 100%; }
     .button.discord:hover { transform: scale(1.1); }
-
-    footer {
-      margin-top: auto;
-      padding: 1rem 0;
-      font-size: 14px;
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    }
   </style>
+
+  <script type="module" src="/assets/mods/footer.js"></script>  
 </head>
 
 <body>
@@ -185,9 +181,10 @@
         我們期望發展成為一個真正的公民團體；<br />
         用於代表青少年們參與大大小小的公共事務。
       </div>
+
+      <a href="/pages/dc.html" class="button discord">加入 Discord</a>
       <div class="buttons">
         <a href="/pages/about.html" class="button">關於我們</a>
-        <a href="/pages/dc.html" class="button discord">加入 Discord</a>
         <a href="/pages/team.html" class="button">工作團隊</a>
         <a href="/pages/events/" class="button">活動紀錄</a>
         <a href="/pages/partner.html" class="button">合作夥伴</a>
@@ -195,7 +192,7 @@
       </div>
   </main>
 
-  <footer style="z-index: 2; position: relative;">&copy; 2025 The Next Generation Taiwanese - TNGT. All rights reserved.</footer>
+
 
   <script>
     // 複製分享文字

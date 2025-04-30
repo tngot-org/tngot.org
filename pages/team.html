@@ -9,191 +9,205 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --theme-color: #BE5BFF;
-    }
+:root {
+  --theme-color: #BE5BFF;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: 'Noto Sans TC', sans-serif;
-      background: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-    }
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
 
-    /* 漸層動態背景 */
-    header {
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: #fff;
-      background: linear-gradient(-45deg, var(--theme-color), #6B5BFF, var(--theme-color), #6B5BFF);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-    }
+/* 漸層動態背景 */
+header {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  background: linear-gradient(-45deg, var(--theme-color), #6B5BFF, var(--theme-color), #6B5BFF);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
 
-    @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
 
-      50% {
-        background-position: 100% 50%;
-      }
+  50% {
+    background-position: 100% 50%;
+  }
 
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-    header h1 {
-      font-size: 2.8rem;
-    }
+header h1 {
+  font-size: 2.8rem;
+}
 
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 2rem auto;
-    }
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
 
-    .team-section {
-      margin-bottom: 3rem;
-    }
+.team-section {
+  margin-bottom: 3rem;
+}
 
-    .team-section h2 {
-      font-size: 1.8rem;
-      color: var(--theme-color);
-      border-left: 5px solid var(--theme-color);
-      padding-left: 0.5rem;
-      margin-bottom: 1rem;
-    }
+.team-section h2 {
+  font-size: 1.8rem;
+  color: var(--theme-color);
+  border-left: 5px solid var(--theme-color);
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
 
-    .members {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1.5rem;
-    }
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
 
-    .member {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
+.member {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  height: 175px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .member img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 0.5rem;
-    }
+.member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.5rem;
+}
 
-    .member:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    }
+.member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
 
-    .member.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.member.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    /* RGB 漸變光環 (組長) */
-    .member.leader::before {
-      content: "";
-      position: absolute;
-      top: -6px;
-      left: -6px;
-      right: -6px;
-      bottom: -6px;
-      border-radius: 12px;
-      border: 3px solid transparent;
-      animation: rgbGlow 3s ease infinite;
-      pointer-events: none;
-      z-index: -1;
-    }
+.member a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  height: 100%; 
+  /* margin: 1rem; */
+}
 
-    @keyframes rgbGlow {
-      0% {
-        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
-        border-color: rgba(255, 0, 0, 0.8);
-      }
+/* RGB 漸變光環 (組長) */
+.member.leader::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 15px;
+  border: 3px solid transparent;
+  animation: rgbGlow 3s ease infinite;
+  pointer-events: none;
+  z-index: -1;
+}
 
-      33% {
-        box-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
-        border-color: rgba(0, 255, 0, 0.8);
-      }
+@keyframes rgbGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+    border-color: rgba(255, 0, 0, 0.8);
+  }
 
-      66% {
-        box-shadow: 0 0 8px rgba(0, 0, 255, 0.8);
-        border-color: rgba(0, 0, 255, 0.8);
-      }
+  33% {
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+    border-color: rgba(0, 255, 0, 0.8);
+  }
 
-      100% {
-        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
-        border-color: rgba(255, 0, 0, 0.8);
-      }
-    }
+  66% {
+    box-shadow: 0 0 8px rgba(0, 0, 255, 0.8);
+    border-color: rgba(0, 0, 255, 0.8);
+  }
 
-    /* 脈衝光暈 (雙重工作) */
-    .member.multi-role::before {
-      content: "";
-      position: absolute;
-      top: -6px;
-      left: -6px;
-      right: -6px;
-      bottom: -6px;
-      border-radius: 12px;
-      background: radial-gradient(circle, var(--theme-color) 50%, transparent 70%);
-      opacity: 0.7;
-      animation: pulse 2s ease-in-out infinite;
-      pointer-events: none;
-      z-index: -1;
-    }
+  100% {
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+    border-color: rgba(255, 0, 0, 0.8);
+  }
+}
 
-    @keyframes pulse {
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 0.7;
-      }
+/* 脈衝光暈 (雙重工作) */
+.member.multi-role::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 12px;
+  background: radial-gradient(circle, var(--theme-color) 50%, transparent 70%);
+  opacity: 0.7;
+  animation: pulse 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
 
-      50% {
-        transform: scale(1.1);
-        opacity: 0.3;
-      }
-    }
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
 
-    .back-button {
-      text-align: center;
-      margin: 2rem 0;
-    }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
 
-    .back-button a {
-      text-decoration: none;
-      color: #fff;
-      background: var(--theme-color);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
+.back-button {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.back-button a {
+  text-decoration: none;
+  color: #fff;
+  background: var(--theme-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
   </style>
 </head>
 
@@ -202,7 +216,7 @@
   <!-- 頁首 -->
   <header>
     <h1>台灣未來的主人們</h1>
-    <p>The Next Generation Taiwanese (TNGT)</p>
+    <p>The Next Generation Taiwanese - TNGT</p>
   </header>
 
   <!-- 這裡由 JS 動態插入所有組別與成員 -->
@@ -218,6 +232,7 @@
       const res = await fetch('/data/team.json');
       const data = await res.json();
       const container = document.getElementById('team-container');
+      let members = 0; 
 
       data.groups.forEach(group => {
         // section
@@ -241,30 +256,36 @@
 
           // 圖片
           const img = document.createElement('img');
+          const a = document.createElement('a');
+          const p = document.createElement('p');
           img.src = m.img;
           img.alt = m.alt;
+          p.textContent = m.name; 
           if (m.link) {
-            const a = document.createElement('a');
             a.href = m.link;
             a.target = '_blank';
             a.rel = 'noopener';
             a.appendChild(img);
             memberDiv.appendChild(a);
+            a.appendChild(p);
           } else {
             memberDiv.appendChild(img);
+            memberDiv.appendChild(p);
           }
 
-          // 名稱
-          const p = document.createElement('p');
-          p.textContent = m.name;
-          memberDiv.appendChild(p);
-
           membersDiv.appendChild(memberDiv);
+          members++; 
         });
 
         section.appendChild(membersDiv);
         container.appendChild(section);
       });
+
+      container.innerHTML += `
+            <section class="team-section" id="總人數">
+              <h2>總人數</h2>
+              <p>目前我們的團隊共有 ${members} 名工作人員，其中部分成員選擇不公開展示。</p>
+            </section>`
 
       // Scroll‐reveal
       const observer = new IntersectionObserver((entries) => {
