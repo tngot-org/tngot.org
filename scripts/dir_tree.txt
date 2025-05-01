@@ -1,8 +1,7 @@
-/Users/zyreny/Documents/GitHub/tngot.org
+D:\user\Documents\GitHub\tngot.org
+├── .gitignore
 ├── assets
-│   ├── .DS_Store
 │   ├── fonts
-│   │   ├── .DS_Store
 │   │   ├── jf-open.woff
 │   │   └── jf-open.woff2
 │   ├── img
@@ -32,4 +31,5 @@
 │   └── team.html
 └── scripts
     ├── dir_tree.py
-    └── dir_tree.txt
+    ├── dir_tree.txt
+    └── mac_shit.py

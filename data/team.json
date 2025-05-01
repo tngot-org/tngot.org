@@ -47,6 +47,13 @@
         "name": "財務組",
         "members": [
           {
+            "name": "莫炎",
+            "img": "https://2.gravatar.com/avatar/6d11afae7739d1275663ad7143015697d0a1c937ea31d7d0454964a3ba16a493?size=150",
+            "alt": "莫炎",
+            "link": "https://lin.ee/krSmiCe",
+            "classes": ["leader"]
+          },
+          {
             "name": "落景夏時",
             "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=150",
             "alt": "落景夏時",
