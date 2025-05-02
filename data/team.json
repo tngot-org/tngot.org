@@ -1,8 +1,8 @@
 {
     "groups": [
       {
-        "id": "總召組",
-        "name": "總召組",
+        "id": "會長組",
+        "name": "會長組",
         "members": [
           {
             "name": "アントウ",
@@ -46,6 +46,13 @@
         "id": "財務組",
         "name": "財務組",
         "members": [
+          {
+            "name": "莫炎",
+            "img": "https://2.gravatar.com/avatar/6d11afae7739d1275663ad7143015697d0a1c937ea31d7d0454964a3ba16a493?size=150",
+            "alt": "莫炎",
+            "link": "https://lin.ee/krSmiCe",
+            "classes": ["leader"]
+          },
           {
             "name": "落景夏時",
             "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=150",
@@ -201,8 +208,8 @@
         ]
       },
       {
-        "id": "助理組",
-        "name": "助理組",
+        "id": "顧問組",
+        "name": "顧問組",
         "members": [
           {
             "name": "Sean Wei",
