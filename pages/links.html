@@ -4,12 +4,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>連結 | 台灣未來的主人們</title>
+  <title>相關連結｜台灣未來的主人們</title>
+
   <meta name="theme-color" content="#BE5BFF" />
-  <meta property="og:title" content="台灣未來的主人們 - 連結" />
-  <meta property="og:url" content="https://tngot.org/links.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="相關連結｜台灣未來的主人們" />
+  <meta property="og:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。" />
+  <meta property="og:url" content="https://tngot.org" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="相關連結｜台灣未來的主人們" />
+  <meta name="twitter:description" content="台灣未來的主人們 - 一個由青年創立的公民團體，代表青少年參與公共事務。" />
+
   <style>
+    @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
+
+    @font-face {
+      font-family: "jf open";
+      src: url('/assets/fonts/jf-open.woff2') format('woff2'),
+           url('/assets/fonts/jf-open.woff') format('woff'); 
+      font-weight: normal;
+      font-style: normal;
+    }
+
     :root { --theme-color: #BE5BFF; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -29,9 +45,12 @@
       text-align: center;
     }
     header h1 { font-size: 2.5rem; }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
     .intro {
       width: 90%;
-      max-width: 600px;
       margin: 1.5rem auto;
       text-align: center;
       font-size: 1rem;
@@ -42,7 +61,6 @@
       max-width: 600px;
       margin: 1rem auto 2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
     }
     .link-card {
@@ -53,10 +71,11 @@
       border-radius: 8px;
       padding: 1.5rem;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-weight: bold;
       color: var(--theme-color);
       transition: transform 0.2s, box-shadow 0.2s;
+      font-family: "jf open";
     }
     .link-card:hover {
       transform: translateY(-3px);
@@ -71,9 +90,11 @@
   </style>
 </head>
 
+<script type="module" src="/assets/mods/footer.js"></script>
 <body>
   <header>
-    <h1>連結 Links</h1>
+    <h1>相關連結</h1>
+    <p>The Next Generation Taiwanese - TNGT</p>
   </header>
 
   <section class="intro">
@@ -86,10 +107,10 @@
     <a href="https://www.youtube.com/@tngot" class="link-card" target="_blank">Youtube</a>
     <a href="https://www.threads.com/@tngotorg" class="link-card" target="_blank">Threads</a>
     <a href="https://www.instagram.com/tngotorg/" class="link-card" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/share/1AmEgzAmgb/" class="link-card" target="_blank">Facebook</a>
     <a href="mailto:tngotorg@gmail.com" class="link-card" target="_blank">Email 聯絡</a>
   </main> 
 
-  <footer>&copy; 2025 台灣未來的主人們 - TNGT</footer>
 </body>
 
 </html>
