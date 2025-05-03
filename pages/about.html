@@ -3,137 +3,239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>團隊介紹 ｜ 台灣未來的主人們</title>
+  <title>關於我們 ｜ 台灣未來的主人們</title>
+  <meta name="description" content="台灣未來的主人們（TNGT）是由青年發起的民主自主管平台，關注民主、教育、性平等議題，凝聚學生聲音。">
+  <meta property="og:title" content="關於我們 ｜ 台灣未來的主人們">
+  <meta property="og:description" content="台灣未來的主人們（TNGT）是由青年發起的民主自主管平台，關注民主、教育、性平等議題，凝聚學生聲音。">
+  <meta property="og:image" content="/assets/og-image.jpg">
   <meta name="theme-color" content="#BE5BFF">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root { --theme-color: #BE5BFF; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --theme-color: #BE5BFF;
+      --bg-light: #FFFFFF;
+      --text-dark: #333333;
+      --text-muted: #555555;
+      --card-radius: 12px;
+      --card-padding: 2rem;
+      --transition-ease: ease-out;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Noto Sans TC', sans-serif;
-      background: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
+      background: #f0f0f5;
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
-    /* 漸層動態背景 Header */
+    a { color: var(--theme-color); text-decoration: none; }
+    a:hover, a:focus-visible { text-decoration: underline; outline: none; }
+
     header {
-      height: 200px;
+      position: relative;
+      height: 260px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      background: linear-gradient(-45deg, var(--theme-color), #6B5BFF, var(--theme-color), #6B5BFF);
+      background: linear-gradient(-45deg, var(--theme-color), #6B5BFF);
       background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      animation: gradientBG 12s var(--transition-ease) infinite;
       color: #fff;
       text-align: center;
+      padding: 1rem;
     }
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    header h1 { font-size: 2.5rem; }
-    header p { font-size: 1.1rem; margin-top: 0.5rem; }
+    header h1, header p {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s var(--transition-ease) forwards;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 0.5rem; animation-delay: 0.3s; }
+    header p  { font-size: 1.2rem; opacity: 0.9; animation-delay: 0.6s; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
     .container {
       width: 90%; max-width: 800px;
-      margin: 2rem auto;
+      margin: -100px auto 3rem;
+      padding-bottom: 2rem;
     }
     .intro-section {
-      background: #fff;
-      border-radius: 10px;
-      padding: 1.5rem;
+      background: var(--bg-light);
+      border-radius: var(--card-radius);
+      padding: var(--card-padding);
       margin-bottom: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      position: relative;
+      transform: translateY(30px) scale(0.98);
+      transition: opacity 0.6s var(--transition-ease), transform 0.6s var(--transition-ease);
     }
     .intro-section.show {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
     .intro-section h2 {
       font-size: 1.8rem;
       color: var(--theme-color);
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       position: relative;
     }
-    /* 火焰符號點綴動畫 */
-    .intro-section h2::before {
-      content: '🔥';
-      display: inline-block;
-      margin-right: 0.5rem;
-      animation: flame 1.5s ease-in-out infinite;
+    .intro-section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 3px;
+      background: var(--theme-color);
+      transition: width 0.5s var(--transition-ease);
     }
-    @keyframes flame {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-    .intro-section p {
-      color: #555;
-      line-height: 1.8;
+    .intro-section.show h2::after { width: 40px; }
+    .intro-section p, .intro-section li {
+      color: var(--text-muted);
       margin-bottom: 1rem;
+      line-height: 1.8;
     }
+    .intro-section ul { list-style: disc inside; margin-bottom: 1rem; padding-left: 1rem; }
+    .intro-section li {
+      position: relative;
+      overflow: hidden;
+    }
+    .intro-section li::before {
+      content: '';
+      position: absolute;
+      left: -100%; top: 0;
+      width: 100%; height: 100%;
+      background: var(--theme-color);
+      transform: skewX(-20deg);
+    }
+    .intro-section li:hover::before { animation: slideHighlight 0.6s var(--transition-ease) forwards; }
+    @keyframes slideHighlight { to { left: 200%; } }
 
-    .back-button {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .back-button a {
-      text-decoration: none;
+    .back-button { text-align: center; margin-top: 3rem; }
+    .btn-primary {
+      display: inline-block;
       background: var(--theme-color);
       color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 5px;
-      transition: transform 0.3s ease;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
+      font-weight: 700;
+      transform: scale(0.9);
+      opacity: 0;
+      animation: popIn 0.5s var(--transition-ease) forwards;
+      animation-delay: 1.2s;
+      text-decoration: none;
     }
-    .back-button a:hover {
-      transform: scale(1.1);
+    @keyframes popIn { to { transform: scale(1); opacity: 1; } }
+
+    footer { text-align: center; padding: 1rem 0; color: var(--text-muted); font-size: 0.9rem; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      header p  { font-size: 1rem; }
+      .intro-section { padding: 1.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+      .intro-section { opacity: 1; transform: none; }
+      .btn-primary { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>團隊介紹</h1>
+    <h1>關於我們</h1>
     <p>The Next Generation Taiwanese (TNGT)</p>
   </header>
 
   <main class="container">
-    <section class="intro-section">
-      <h2>成立社群的初衷</h2>
-      <p>某天在社群媒體發表自己參加公民運動的心得後，「你才十八歲懂什麼啊」、「多讀點書吧」諸如此類的冷嘲熱諷湧入留言，他們試圖用冰冷而銳利的字句澆熄我們關注社會的熱情，用所謂社會歷練束縛著我們思考的自由。無端遭受一群自以為是的大人攻擊和批評後，也看見許多年齡相仿的學生面臨著同樣的惡意，不禁疑惑為何我們僅僅是表達個人看法，就要因年紀受到「大人」先入為主地「教育」？</p>
+    <section class="intro-section" id="group-intro">
+      <h2>團體介紹</h2>
+      <p><strong>成立社群的初衷：</strong></p>
+      <p>在社群媒體上發表參與公民運動的心得後，卻遭遇「你才十八歲懂什麼」、「多讀點書吧」等冷嘲熱諷。我們不願被年齡束縛思考自由，也不滿意見表達被「大人」以經驗優勢打壓。看到許多年輕人同樣被惡意攻擊，我們決心凝聚這群關心國家未來的學生，打造屬於我們的聲音平台。</p>
     </section>
 
-    <section class="intro-section">
-      <h2>創辦理念</h2>
-      <p>社群媒體上有許多孤單奮鬥的學生，他們默默地關心社會議題，卻缺乏能夠接住這些好奇心和焦慮的友善環境。故成立以學生族群為加入門檻之社群，提供專屬於青年學生溝通及交流的空間，同時藉由傳達學生們的訴求，喚醒社會中冷漠的人們。期望透過這個空間的設立，讓青年學子得以自由暢談，無須懼怕質疑的聲音和惡意的謾罵。</p>
+    <section class="intro-section" id="our-philosophy">
+      <h2>我們的理念</h2>
+      <p>我們追求民主與自由，堅信青年力量能驅動社會進步。</p>
     </section>
 
-    <section class="intro-section">
-      <h2>社群名稱的由來和意義</h2>
-      <p>台灣近年的最大型的學生運動為「318太陽花學運」（反服貿協議），而2024年5月爆發的「青鳥行動」則是由各年齡層公民發起及響應，年齡主要落在30至40歲的區間，也正是當初太陽花挺身而出的那些人，再次站出來守護台灣。至於學生的身影，則因各種因素在青鳥行動中顯而易見地減少。</p>
-      <p>苦思良久，我得出一個結論：不是因為沒有學生關心，而是這塊島上的學生意志過於分散，尚未被集結起來。當年太陽花以臉書為媒介，號召數十萬人上街，而今為何做不到呢？興許是學生們大多像我一樣，期待有個人或組織能接納自己，懷著相似的意念，一同朝共同目標邁進。這條路或許不那麼順遂，如同母親台灣的坎坷過去，但只要站穩腳步，與彼此溝通、攜手合作，我相信希望的曙光將會照耀在這座島嶼。</p>
-      <p>「The Next Generation Taiwanese」是下個世代的台灣人，是「台灣未來的主人們」，是國家的棟樑——學生。學歷和學識無法定義我們，我們的共通點，也是學生最可貴之處，在於富有理想和冒險的精神，為社會注入新血，成為一股進步的力量。</p>
+    <section class="intro-section" id="issues">
+      <h2>關注議題</h2>
+      <ul>
+        <li>反對極權專制</li>
+        <li>維護民主價值</li>
+        <li>教育多元與改革</li>
+        <li>推動性別平等</li>
+      </ul>
+    </section>
+
+    <section class="intro-section" id="objectives">
+      <h2>訴求與目標</h2>
+      <ul>
+        <li><strong>反對極權專制</strong><br>
+          捍衛民主，讓人民真正作主，拒絕任何形式的獨裁統治。
+        </li>
+        <li><strong>反侵略</strong><br>
+          反對任何國家以非理性手段侵犯台灣主權，倡議加強國安法與反滲透法，以及全民防衛意識。
+        </li>
+        <li><strong>宣傳民主自由、增進自我認同</strong><br>
+          提升媒體素養，支持本土文化創作者，並推動自主且資安高的社群平台建設。
+        </li>
+        <li><strong>強化校園性平教育</strong><br>
+          加深師生對多元性別與性向的理解與尊重，建構友善校園環境。
+        </li>
+        <li><strong>改革教育制度</strong><br>
+          反對唯學歷論，鼓勵多元發展；加強私校監管與師資考核，並優化課程預算分配。
+        </li>
+      </ul>
+    </section>
+
+    <section class="intro-section" id="events">
+      <h2>活動紀錄</h2>
+      <p><a href="/pages/events/419.html" target="_blank" rel="noopener">2025/05/07 參與「419 反共大遊行」，展現青年聲音。</a></p>
+    </section>
+
+    <section class="intro-section" id="contact">
+      <h2>聯絡我們</h2>
+      <p>如需與我們聯絡，請寄信至：</p>
+      <p><a href="mailto:tngotorg@gmail.com">tngotorg@gmail.com</a></p>
     </section>
 
     <div class="back-button">
-      <a href="/index.html">← 回到首頁</a>
+      <a href="/index.html" class="btn-primary">← 回到首頁</a>
     </div>
   </main>
 
+  <footer>
+    <p>&copy; 2025 The Next Generation Taiwanese. All rights reserved.</p>
+  </footer>
+
   <script>
-    // Scroll reveal 動畫
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const observerOptions = { threshold: 0.2 };
+    const sections = document.querySelectorAll('.intro-section');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry, idx) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          if (prefersReducedMotion.matches) {
+            entry.target.classList.add('show');
+          } else {
+            setTimeout(() => entry.target.classList.add('show'), idx * 150);
+          }
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('.intro-section').forEach(el => observer.observe(el));
+    }, observerOptions);
+    sections.forEach(el => observer.observe(el));
+
+    // Show back button immediately if reduced motion
+    if (prefersReducedMotion.matches) {
+      document.querySelector('.btn-primary').classList.add('show');
+    }
   </script>
 </body>
 </html>

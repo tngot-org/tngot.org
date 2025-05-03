@@ -1,5 +1,4 @@
-D:\user\Documents\GitHub\tngot.org
-├── .gitignore
+C:\Users\antou\Documents\GitHub\tngot.org
 ├── assets
 │   ├── fonts
 │   │   ├── jf-open.woff
@@ -31,5 +30,4 @@ D:\user\Documents\GitHub\tngot.org
 │   └── team.html
 └── scripts
     ├── dir_tree.py
-    ├── dir_tree.txt
-    └── mac_shit.py
+    └── dir_tree.txt
