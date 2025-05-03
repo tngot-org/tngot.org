@@ -18,13 +18,24 @@
 │   │       └── 419
 │   │           ├──  (1).jpg
 │   │           └──  (2).jpg
+│   ├── logo
+│   │   ├── .DS_Store
+│   │   ├── android-chrome-192x192.png
+│   │   ├── android-chrome-512x512.png
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon-16x16.png
+│   │   ├── favicon-32x32.png
+│   │   ├── favicon.ico
+│   │   └── site.webmanifest
 │   └── mods
 │       ├── back.js
-│       └── footer.js
+│       ├── footer.js
+│       └── icon.js
 ├── data
 │   └── team.json
 ├── index.html
 ├── pages
+│   ├── .DS_Store
 │   ├── about.html
 │   ├── dc.html
 │   ├── events
