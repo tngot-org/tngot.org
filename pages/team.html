@@ -256,9 +256,11 @@
           const img = document.createElement('img');
           const a = document.createElement('a');
           const p = document.createElement('p');
-          img.src = m.img;
-          img.alt = m.alt;
-          p.textContent = m.name; 
+          img.src = m.img || 'https://via.placeholder.com/100'; // 預設圖片
+          img.alt = m.alt || '成員圖片';
+          img.onerror = () => img.src = 'https://via.placeholder.com/100'; // 圖片載入失敗時使用預設圖片
+          p.textContent = m.name || '未命名成員'; // 預設名稱
+
           if (m.link) {
             a.href = m.link;
             a.target = '_blank';

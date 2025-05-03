@@ -54,12 +54,6 @@
             "classes": ["leader"]
           },
           {
-            "name": "落景夏時",
-            "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=150",
-            "alt": "落景夏時",
-            "classes": ["leader"]
-          },
-          {
             "name": "雅欣",
             "img": "https://www.gravatar.com/avatar/23d23a3b7c03cff5f5cbf7ae348503ab?d=identicon&s=150",
             "alt": "雅欣",
@@ -134,11 +128,6 @@
             "img": "https://www.gravatar.com/avatar/c0081f425bff3f58b6f0badc95c5583f?d=identicon&s=150",
             "alt": "Et",
             "classes": ["leader"]
-          },
-          {
-            "name": "落景夏時",
-            "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=150",
-            "alt": "落景夏時"
           }
         ]
       },
@@ -169,12 +158,6 @@
             "img": "https://2.gravatar.com/avatar/52f0cef2b9d7be31c9807193dac2ec9ce7da648d41e56a7dab5e3df2d7b5ecf5?size=150",
             "alt": "CHEN",
             "link": "https://linkgoods.com/chenkaidrin"
-          },
-          {
-            "name": "蔡恩典Cz",
-            "img": "https://www.gravatar.com/avatar/3b915dd6eb828bc2d291a39ee6b68d7f?d=identicon&s=150",
-            "alt": "蔡恩典Cz",
-            "link": "https://www.edian.work"
           }
         ]
       },
@@ -228,9 +211,13 @@
             "img": "https://i.imgur.com/ebWDTs6.png",
             "alt": "易碎君",
             "link": "https://youtube.com/@fragileitemschronicle"
+          },
+          {
+            "name": "落景夏時",
+            "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=512",
+            "alt": "落景夏時"
           }
         ]
       }
     ]
   }
-  
