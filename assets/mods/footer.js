@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
+export function footer(color = "#fff", shadow = "rgba(0, 0, 0, 0.6)") {
+  document.addEventListener("DOMContentLoaded", () => {
     const style = document.createElement("style");
     style.textContent = `
       footer {
             margin-top: auto;
             padding: 1rem 0;
             font-size: 14px;
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+            color: ${color};
+            text-shadow: 0 0 5px ${shadow};
             z-index: 2;
             position: relative;
             text-align: center; 
@@ -20,4 +21,5 @@ document.addEventListener("DOMContentLoaded", () => {
   
     document.body.appendChild(footer);
   });
+}
   

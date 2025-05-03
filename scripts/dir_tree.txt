@@ -1,9 +1,13 @@
-C:\Users\antou\Documents\GitHub\tngot.org
+/Users/zyreny/Documents/GitHub/tngot.org
+├── .DS_Store
 ├── assets
+│   ├── .DS_Store
 │   ├── fonts
 │   │   ├── jf-open.woff
 │   │   └── jf-open.woff2
 │   ├── img
+│   │   ├── avatar
+│   │   │   └── TNGT.png
 │   │   ├── backgrounds
 │   │   │   ├──  (1).jpg
 │   │   │   ├──  (2).jpg
@@ -15,6 +19,7 @@ C:\Users\antou\Documents\GitHub\tngot.org
 │   │           ├──  (1).jpg
 │   │           └──  (2).jpg
 │   └── mods
+│       ├── back.js
 │       └── footer.js
 ├── data
 │   └── team.json

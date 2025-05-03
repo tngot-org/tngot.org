@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>夥伴 ｜ 台灣未來的主人們</title>
-  <!-- 思源黑體繁體中文 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-  <meta name="theme-color" content="#BE5BFF">
-  <!-- Open Graph Meta -->
-  <meta property="og:title" content="The Next Generation Taiwanese - TNGT">
-  <meta property="og:description" content="台灣未來的主人們 - 我們與多元學生程式社群共同成長。">
-  <meta property="og:url" content="https://tngot.org/partner.html">
-  <meta property="og:type" content="website">
-  <!-- Twitter Card Meta -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Next Generation Taiwanese - TNGT">
-  <meta name="twitter:description" content="台灣未來的主人們 - 我們與多元學生程式社群共同成長。">
+  <meta name="description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。">
+  <title>合作夥伴｜台灣未來的主人們</title>
+
+  <meta name="theme-color" content="#BE5BFF" />
+  <meta property="og:title" content="相關連結｜台灣未來的主人們" />
+  <meta property="og:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
+  <meta property="og:url" content="https://tngot.org" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="相關連結｜台灣未來的主人們" />
+  <meta name="twitter:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
+
+  <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "台灣未來的主人們",
+      "alternateName" : "台灣未來的主人們",
+      "url" : "https://tngot.org/",
+    }
+  </script>
+  
   <style>
+    @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
+
     :root {
       --theme-color: #BE5BFF;
     }
@@ -51,7 +62,6 @@
     header h1 {
       font-size: 2.8rem;
       color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     }
     header p {
       font-size: 1.2rem;
@@ -113,52 +123,26 @@
       color: var(--theme-color);
       text-decoration: none;
     }
-    /* 回到上一頁按鈕 */
-    .back-button {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .back-button a {
-      text-decoration: none;
-      color: #fff;
-      background: var(--theme-color);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
     /* 全局標題樣式 */
     h1 {
       color: var(--theme-color);
       font-size: 2.5rem;
     }
   </style>
+
+  <script type="module" src="/assets/mods/back.js"></script>
+  <script type="module">
+    import {footer} from "/assets/mods/footer.js"; 
+    footer("#666", "none"); 
+  </script>
 </head>
 <body>
   <header>
-    <h1>台灣未來的主人們</h1>
-    <p>The Next Generation Taiwanese (TNGT)</p>
+    <h1>合作夥伴</h1>
+    <p>The Next Generation Taiwanese - TNGT</p>
   </header>
   <main class="container">
-    <section class="partners-section">
-      <h2>夥伴 Partners</h2>
-      <div class="partners">
-        <div class="partner-item">
-          <img src="https://i.imgur.com/ebWDTs6.png" alt="易碎品編年史 Logo" class="partner-logo" referrerpolicy="no-referrer">
-          <div class="partner-description">
-            <p><strong>易碎品編年史</strong></p>
-            <p>提升國際社會對中國人權狀況的關注，透過多媒體內容與行動倡議，推動更公平與正義的世界。</p>
-            <p>易碎君，本名梁啟駿，因在網路上創作諷刺中國政府的作品，15歲時遭香港警方調查，其後被迫離開香港前往美國尋求政治庇護。</p>
-            <p>流亡美國期間，他持續參與反共活動，並協助其他香港年輕人逃離香港，尋求政治庇護，例如協助阿龍前往加拿大。</p>
-            <p>目前易碎君已開始就讀大學，並計劃繼續透過大翻譯運動等方式，提升國際社會對中國人權狀況的關注。</p>
-            <p><a href="https://www.youtube.com/@FragileItemsChronicle" target="_blank">了解更多 易碎品編年史</a></p>
-          </div>
-        </div>
-        <!-- 在此新增更多夥伴 -->
-      </div>
-    </section>
-    <div class="back-button">
-      <a href="/index.html">← 回到首頁</a>
-    </div>
+      <div class="partners"></div>
   </main>
 
   <script>

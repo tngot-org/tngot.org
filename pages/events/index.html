@@ -3,13 +3,34 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>活動目錄 ｜ 台灣未來的主人們</title>
-  <meta name="theme-color" content="#BE5BFF"/>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet"/>
+  <meta name="description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。">
+  <title>活動目錄｜台灣未來的主人們</title>
+
+  <meta name="theme-color" content="#BE5BFF" />
+  <meta property="og:title" content="台灣未來的主人們 TNGT" />
+  <meta property="og:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
+  <meta property="og:url" content="https://tngot.org" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="台灣未來的主人們 TNGT" />
+  <meta name="twitter:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
+
+  <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "台灣未來的主人們",
+      "alternateName" : "台灣未來的主人們",
+      "url" : "https://tngot.org/",
+    }
+  </script>
+  
   <style>
+    @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
+
     :root { --theme-color: #BE5BFF; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Noto Sans TC', sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+    body { font-family: 'Noto Sans TC', sans-serif; background: #f5f5f5; color: #333; line-height: 1.6;}
     header {
       height: 200px;
       display: flex;
@@ -68,42 +89,22 @@
       color: #555;
       line-height: 1.6;
     }
-
-    .back-button { text-align: center; margin: 2rem 0; }
-    .back-button a {
-      text-decoration: none;
-      background: var(--theme-color);
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 5px;
-      transition: transform 0.3s ease;
-    }
-    .back-button a:hover { transform: scale(1.1); }
   </style>
+
+  <script type="module" src="/assets/mods/back.js"></script>
+  <script type="module">
+    import {footer} from "/assets/mods/footer.js"; 
+    footer("#666", "none")
+  </script>
 </head>
 <body>
   <header>
     <h1>活動目錄</h1>
-    <p>活動記錄總覽</p>
+    <p>The Next Generation Taiwanese - TNGT</p>
   </header>
 
   <main class="container">
-    <section class="events-section">
-      <h2>活動目錄</h2>
-      <div class="events">
-        <a href="./419.html">
-          <div class="event-item">
-            <h3>419 反共大遊行</h3>
-            <p>2025年4月19日下午，台北市凱達格蘭大道，反對中國共產黨滲透及統戰、守護台灣的民主自由。</p>
-          </div>
-        </a>
-        <!-- 在此新增更多活動項目 -->
-      </div>
-    </section>
-
-    <div class="back-button">
-      <a href="/index.html">← 回到首頁</a>
-    </div>
+      <div class="events"></div>
   </main>
 
   <script>

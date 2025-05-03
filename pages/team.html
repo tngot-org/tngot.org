@@ -4,11 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。">
   <title>工作團隊｜台灣未來的主人們</title>
-  <!-- 思源黑體繁體中文 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 
+  <meta name="theme-color" content="#BE5BFF" />
+  <meta property="og:title" content="工作團隊｜台灣未來的主人們" />
+  <meta property="og:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
+  <meta property="og:url" content="https://tngot.org" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="工作團隊｜台灣未來的主人們" />
+  <meta name="twitter:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
+
+  <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "台灣未來的主人們",
+      "alternateName" : "台灣未來的主人們",
+      "url" : "https://tngot.org/",
+    }
+  </script>
+  
   <style>
+    @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
+    
     :root {
       --theme-color: #BE5BFF;
     }
@@ -193,23 +213,14 @@
         opacity: 0.3;
       }
     }
-
-    .back-button {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .back-button a {
-      text-decoration: none;
-      color: #fff;
-      background: var(--theme-color);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
   </style>
-</head>
 
+  <script type="module" src="/assets/mods/back.js"></script>
+  <script type="module">
+    import {footer} from "/assets/mods/footer.js"; 
+    footer("#666", "none"); 
+  </script>
+</head>
 <body>
 
   <!-- 頁首 -->
@@ -221,10 +232,6 @@
   <!-- 這裡由 JS 動態插入所有組別與成員 -->
   <main class="container" id="team-container"></main>
 
-  <div class="back-button">
-    <a href="/index.html">← 回到首頁</a>
-  </div>
-
   <!-- 讀取 JSON 並渲染 -->
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
@@ -232,18 +239,17 @@
       const data = await res.json();
       const container = document.getElementById('team-container');
 
+      const fragment = document.createDocumentFragment();
+
       data.groups.forEach(group => {
-        // section
         const section = document.createElement('section');
         section.className = 'team-section';
         section.id = group.id;
 
-        // 標題
         const h2 = document.createElement('h2');
         h2.textContent = group.name;
         section.appendChild(h2);
 
-        // members wrapper
         const membersDiv = document.createElement('div');
         membersDiv.className = 'members';
 
@@ -252,22 +258,22 @@
           const classes = ['member'].concat(m.classes || []);
           memberDiv.className = classes.join(' ');
 
-            // 圖片
-            const img = document.createElement('img');
-            const a = document.createElement('a');
-            const p = document.createElement('p');
-            img.src = m.img || '/assets/img/avatar/TNGT.png'; // 預設圖片
-            img.alt = m.alt || '成員圖片';
-            img.onerror = () => img.src = '/assets/img/avatar/TNGT.png'; // 圖片載入失敗時使用預設圖片
-            p.textContent = m.name || '未命名成員'; // 預設名稱
+          const img = document.createElement('img');
+          const a = document.createElement('a');
+          const p = document.createElement('p');
+
+          img.src = m.img || '/assets/img/avatar/TNGT.png';
+          img.alt = m.alt || '成員圖片';
+          img.onerror = () => img.src = '/assets/img/avatar/TNGT.png';
+          p.textContent = m.name || '未命名成員';
 
           if (m.link) {
             a.href = m.link;
             a.target = '_blank';
             a.rel = 'noopener';
             a.appendChild(img);
-            memberDiv.appendChild(a);
             a.appendChild(p);
+            memberDiv.appendChild(a);
           } else {
             memberDiv.appendChild(img);
             memberDiv.appendChild(p);
@@ -275,23 +281,34 @@
 
           membersDiv.appendChild(memberDiv);
         });
-        
+
         section.appendChild(membersDiv);
-        container.appendChild(section);
+        fragment.appendChild(section);
       });
 
-      fetch("https://script.google.com/macros/s/AKfycbwEd-yUyp3sBnhiglnbO-FIFFHG-mDu7raKeAz1Mw9w3YV6t4-wRewL72cDxuUj6t6A7w/exec")
-          .then(res => res.json())
-          .then(data => {
-            container.innerHTML += `
-              <section class="team-section" id="總人數">
-                <h2>總人數</h2>
-                <p>目前我們的團隊共有 ${data.rows} 名工作人員，其中部分成員選擇不公開展示。</p>
-              </section>`
-          })
-          .catch(err => console.error(err)); 
+      container.appendChild(fragment); 
 
-      // Scroll‐reveal
+      // 加總人數區塊
+      fetch("https://script.google.com/macros/s/AKfycbwEd-yUyp3sBnhiglnbO-FIFFHG-mDu7raKeAz1Mw9w3YV6t4-wRewL72cDxuUj6t6A7w/exec")
+        .then(res => res.json())
+        .then(data => {
+          const section = document.createElement('section');
+          section.className = 'team-section';
+          section.id = '總人數';
+
+          const h2 = document.createElement('h2');
+          h2.textContent = '總人數';
+
+          const p = document.createElement('p');
+          p.textContent = `目前我們的團隊共有 ${data.rows} 名工作人員，其中部分成員選擇不公開展示。`;
+
+          section.appendChild(h2);
+          section.appendChild(p);
+          container.appendChild(section);
+        })
+        .catch(err => console.error(err));
+
+      // Scroll reveal 動畫效果
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -301,7 +318,9 @@
         });
       }, { threshold: 0.1 });
 
-      document.querySelectorAll('.member').forEach(el => observer.observe(el));
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.member').forEach(el => observer.observe(el));
+      });
     });
   </script>
 </body>
