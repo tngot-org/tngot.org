@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>   
+  <!-- 網站圖標 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32x32.png">
@@ -9,11 +10,13 @@
   <link rel="icon" type="image/png"  href="/assets/logo/favicon.ico">
   <link rel="manifest" href="/assets/logo/site.webmanifest">
 
+  <!-- 網站基本資訊 -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。">
   <title>台灣未來的主人們 TNGT</title>
 
+  <!-- SEO 與社交媒體資訊 -->
   <meta name="theme-color" content="#BE5BFF" />
   <meta property="og:title" content="台灣未來的主人們 TNGT" />
   <meta property="og:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
@@ -23,6 +26,7 @@
   <meta name="twitter:title" content="台灣未來的主人們 TNGT" />
   <meta name="twitter:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
 
+  <!-- 結構化數據 -->
   <script type="application/ld+json">
     {
       "@context" : "https://schema.org",
@@ -33,6 +37,7 @@
     }
   </script>
 
+  <!-- 網站樣式 -->
   <style>
     @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
 
@@ -42,12 +47,14 @@
            url('/assets/fonts/jf-open.woff') format('woff'); 
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
 
     :root {
       --theme-color: #BE5BFF; 
     }
 
+    /* 全局樣式 */
     * { 
       box-sizing: border-box; 
       margin: 0; 
@@ -72,7 +79,7 @@
       min-height: 100vh;
     }
 
-    /* 輪播背景：調到 z-index:0，讓它在 body 背景之上 */
+    /* 輪播背景樣式 */
     .background-slideshow {
       position: fixed;
       top: 0; left: 0;
@@ -85,7 +92,7 @@
     }
     .background-slideshow.show { opacity: 1; }
 
-    /* 內容容器要高於輪播 */
+    /* 內容容器樣式 */
     main.container {
       width: 90%;
       max-width: 1200px;
@@ -96,6 +103,7 @@
       z-index: 1;
     }
 
+    /* 主標題與副標題樣式 */
     .main-title, .subtitle-container {
       background-color: transparent;
       backdrop-filter: blur(5px);
@@ -125,6 +133,7 @@
       text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
     }
 
+    /* 按鈕樣式 */
     .buttons {
       margin-top: 2rem;
       display: flex;
@@ -170,6 +179,7 @@
     .button.discord:hover { transform: scale(1.1); }
   </style>
 
+  <!-- 匯入模組 -->
   <script type="module">
     import {footer} from "/assets/mods/footer.js"; 
     footer(); 
@@ -181,11 +191,14 @@
   <div id="bg1" class="background-slideshow"></div>
   <div id="bg2" class="background-slideshow"></div>
 
+  <!-- 主要內容 -->
   <main class="container">
+    <!-- 主標題 -->
     <div class="main-title">
       <h1>台灣未來的主人們</h1>
       <p>The Next Generation Taiwanese - TNGT</p>
     </div>
+    <!-- 副標題 -->
     <div class="subtitle-container">
       <p class="description">
       我們期望發展成為一個真正的公民團體；<br />
@@ -197,6 +210,7 @@
       </p>
     </div>
 
+    <!-- 按鈕區域 -->
     <a href="/pages/dc.html" class="button discord">加入 Discord</a>
     <div class="buttons">
       <a href="/pages/about.html" class="button">關於我們</a>
@@ -207,8 +221,7 @@
     </div>
   </main>
 
-
-
+  <!-- 輪播背景腳本 -->
   <script>
     // 複製分享文字
     function copyToClipboard() {
@@ -223,7 +236,7 @@
         .catch(() => alert('無法複製內容，請手動複製。'));
     }
 
-    // 輪播圖片清單（正確的正斜線路徑，空格與括號會自動轉義）
+    // 輪播圖片清單
     const images = [
       'assets/img/backgrounds/ (1).jpg',
       'assets/img/backgrounds/ (2).jpg',
@@ -238,6 +251,7 @@
     const bg2 = document.getElementById('bg2');
     let current = bg1, next = bg2;
 
+    // 切換背景圖片
     function changeBackground() {
       const img = images[Math.floor(Math.random() * images.length)];
       console.log('載入背景：', img);
