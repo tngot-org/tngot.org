@@ -2,6 +2,7 @@
 <html lang="zh-Hant-TW">
 
 <head>
+  <!-- 網站圖標 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32x32.png">
@@ -10,11 +11,13 @@
   <link rel="icon" type="image/png" href="/assets/logo/favicon.ico">
   <link rel="manifest" href="/assets/logo/site.webmanifest">
 
+  <!-- 網頁基本資訊 -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。">
   <title>工作團隊｜台灣未來的主人們</title>
 
+  <!-- SEO 與社交媒體資訊 -->
   <meta name="theme-color" content="#BE5BFF" />
   <meta property="og:title" content="工作團隊｜台灣未來的主人們" />
   <meta property="og:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
@@ -24,6 +27,7 @@
   <meta name="twitter:title" content="工作團隊｜台灣未來的主人們" />
   <meta name="twitter:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
 
+  <!-- 結構化數據 -->
   <script type="application/ld+json">
     {
       "@context" : "https://schema.org",
@@ -34,19 +38,24 @@
     }
   </script>
 
+  <!-- 網頁樣式 -->
   <style>
+    /* 引入字體 */
     @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
 
+    /* 定義全局變數 */
     :root {
       --theme-color: #BE5BFF;
     }
 
+    /* 全局樣式重置 */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    /* 頁面基本樣式 */
     body {
       font-family: 'Noto Sans TC', sans-serif;
       background: #f5f5f5;
@@ -54,7 +63,7 @@
       line-height: 1.6;
     }
 
-    /* 漸層動態背景 */
+    /* 頁首樣式與漸層背景動畫 */
     header {
       height: 220px;
       display: flex;
@@ -81,6 +90,7 @@
       }
     }
 
+    /* 頁首文字樣式 */
     header h1 {
       font-size: 2.8rem;
     }
@@ -90,12 +100,14 @@
       margin-top: 0.5rem;
     }
 
+    /* 主內容容器樣式 */
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 2rem auto;
     }
 
+    /* 團隊區塊樣式 */
     .team-section {
       margin-bottom: 3rem;
     }
@@ -108,6 +120,7 @@
       margin-bottom: 1rem;
     }
 
+    /* 成員卡片樣式 */
     .members {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -130,6 +143,7 @@
       justify-content: center;
     }
 
+    /* 成員圖片樣式 */
     .member img {
       width: 100px;
       height: 100px;
@@ -138,16 +152,19 @@
       margin: 0 auto 0.5rem;
     }
 
+    /* 成員卡片懸停效果 */
     .member:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     }
 
+    /* 成員卡片顯示動畫 */
     .member.show {
       opacity: 1;
       transform: translateY(0);
     }
 
+    /* 成員連結樣式 */
     .member a {
       text-decoration: none;
       color: black;
@@ -156,7 +173,7 @@
       /* margin: 1rem; */
     }
 
-    /* RGB 漸變光環 (組長) */
+    /* 組長特效樣式 */
     .member.leader::before {
       content: "";
       position: absolute;
@@ -193,7 +210,7 @@
       }
     }
 
-    /* 脈衝光暈 (雙重工作) */
+    /* 多重角色特效樣式 */
     .member.multi-role::before {
       content: "";
       position: absolute;
@@ -224,6 +241,7 @@
     }
   </style>
 
+  <!-- 引入外部腳本 -->
   <script type="module" src="/assets/mods/back.js"></script>
   <script type="module">
     import { footer } from "/assets/mods/footer.js";
@@ -239,18 +257,20 @@
     <p>The Next Generation Taiwanese - TNGT</p>
   </header>
 
-  <!-- 這裡由 JS 動態插入所有組別與成員 -->
+  <!-- 動態插入組別與成員 -->
   <main class="container" id="team-container"></main>
 
   <!-- 讀取 JSON 並渲染 -->
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
+      // 從 JSON 文件獲取團隊數據
       const res = await fetch('/data/team.json');
       const data = await res.json();
       const container = document.getElementById('team-container');
 
       const fragment = document.createDocumentFragment();
 
+      // 遍歷每個組別並生成對應的 HTML
       data.groups.forEach(group => {
         const section = document.createElement('section');
         section.className = 'team-section';
@@ -318,7 +338,7 @@
         })
         .catch(err => console.error(err));
 
-      // Scroll reveal 動畫效果
+      // 滾動顯示動畫效果
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {

@@ -153,7 +153,10 @@
           "name": "行銷組缺人缺缺",
           "img": "https://i.postimg.cc/Twh9N9s9/Warning.png",
           "alt": "行銷組缺人缺缺",
-          "link": "https://tngot.org/pages/join.html"
+          "link": "https://tngot.org/pages/join.html",
+          "classes": [
+            "leader"
+          ]
         }
       ]
     },
