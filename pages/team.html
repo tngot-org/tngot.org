@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-<head>    
+
+<head>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/logo/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/logo/android-chrome-512x512.png">
-  <link rel="icon" type="image/png"  href="/assets/logo/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/logo/favicon.ico">
   <link rel="manifest" href="/assets/logo/site.webmanifest">
 
   <meta charset="UTF-8" />
@@ -32,10 +33,10 @@
       "url" : "https://tngot.org/",
     }
   </script>
-  
+
   <style>
     @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap);
-    
+
     :root {
       --theme-color: #BE5BFF;
     }
@@ -123,7 +124,7 @@
       transform: translateY(20px);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
-      height: 175px; 
+      height: 175px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -151,7 +152,7 @@
       text-decoration: none;
       color: black;
       display: block;
-      height: 100%; 
+      height: 100%;
       /* margin: 1rem; */
     }
 
@@ -209,6 +210,7 @@
     }
 
     @keyframes pulse {
+
       0%,
       100% {
         transform: scale(1);
@@ -224,10 +226,11 @@
 
   <script type="module" src="/assets/mods/back.js"></script>
   <script type="module">
-    import {footer} from "/assets/mods/footer.js"; 
+    import { footer } from "/assets/mods/footer.js";
     footer("#666", "none"); 
   </script>
 </head>
+
 <body>
 
   <!-- 頁首 -->
@@ -293,7 +296,7 @@
         fragment.appendChild(section);
       });
 
-      container.appendChild(fragment); 
+      container.appendChild(fragment);
 
       // 加總人數區塊
       fetch("https://script.google.com/macros/s/AKfycbwEd-yUyp3sBnhiglnbO-FIFFHG-mDu7raKeAz1Mw9w3YV6t4-wRewL72cDxuUj6t6A7w/exec")
@@ -330,6 +333,17 @@
       });
     });
   </script>
+
+  <!-- 加入長期志工按鈕 -->
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="/pages/join.html"
+      style="display: inline-block; padding: 0.8rem 1.5rem; background: var(--theme-color); color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s, transform 0.2s;"
+      onmouseover="this.style.background='#9A46CC'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.background='var(--theme-color)'; this.style.transform='scale(1)';">
+      加入長期志工
+    </a>
+  </div>
+
 </body>
 
 </html>
