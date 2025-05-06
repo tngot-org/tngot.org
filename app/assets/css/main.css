@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@theme static {
+  --font-sans: 'Noto Sans TC', sans-serif;
+
+  --color-purple-50: oklch(0.975 0.012 309.08);
+  --color-purple-100: oklch(0.94 0.028 309.08);
+  --color-purple-200: oklch(0.89 0.056 309.08);
+  --color-purple-300: oklch(0.81 0.105 309.08);
+  --color-purple-400: oklch(0.725 0.175 309.08);
+  --color-purple-500: oklch(0.66 0.2386 309.08); /* primary */
+  --color-purple-600: oklch(0.58 0.26 309.08);
+  --color-purple-700: oklch(0.51 0.24 309.08);
+  --color-purple-800: oklch(0.45 0.19 309.08);
+  --color-purple-900: oklch(0.39 0.15 309.08);
+  --color-purple-950: oklch(0.3 0.12 309.08);
+}
