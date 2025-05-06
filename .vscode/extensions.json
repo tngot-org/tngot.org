@@ -1,10 +1,24 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "Vue.volar",
     "prisma.prisma",
     "bradlc.vscode-tailwindcss",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "doggy8088.pangu2",
+    "edwinhuish.better-comments-next",
+    "streetsidesoftware.code-spell-checker",
+    "naumovs.color-highlight",
+    "mhutchie.git-graph",
+    "devcharles5277.git-commit-plugin-with-gitmoji",
+    "github.copilot",
+    "github.copilot-chat",
+    "ecmel.vscode-html-css",
+    "oderwat.indent-rainbow",
+    "ms-vscode.vscode-typescript-next",
+    "nuxtr.nuxtr-vscode",
+    "albert.tabout",
+    "stivo.tailwind-fold",
+    "vscode-icons-team.vscode-icons"
   ],
   "unwantedRecommendations": [
     "octref.vetur"
