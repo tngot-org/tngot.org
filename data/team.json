@@ -169,6 +169,13 @@
           "classes": ["leader"]
         },
         {
+          "name": "雅欣",
+          "img": "https://www.gravatar.com/avatar/23d23a3b7c03cff5f5cbf7ae348503ab?d=identicon&s=150",
+          "alt": "雅欣",
+          "link": "https://gravatar.com/vibrantccd81c5c0d",
+          "classes": ["leader"]
+        },
+        {
           "name": "CHEN",
           "img": "https://2.gravatar.com/avatar/52f0cef2b9d7be31c9807193dac2ec9ce7da648d41e56a7dab5e3df2d7b5ecf5?size=150",
           "alt": "CHEN",
@@ -178,12 +185,6 @@
           "name": "祈",
           "img": "https://www.gravatar.com/avatar/0ceec704aadb8da1801f7f9be6d91f28?d=identicon&s=150",
           "alt": "祈"
-        },
-        {
-          "name": "雅欣",
-          "img": "https://www.gravatar.com/avatar/23d23a3b7c03cff5f5cbf7ae348503ab?d=identicon&s=150",
-          "alt": "雅欣",
-          "link": "https://gravatar.com/vibrantccd81c5c0d"
         }
       ]
     },
