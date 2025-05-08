@@ -65,13 +65,13 @@
 
     /* 頁首樣式與漸層背景動畫 */
     header {
-      height: 220px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       color: #fff;
-      background: linear-gradient(-45deg, var(--theme-color), #6B5BFF, var(--theme-color), #6B5BFF);
+      background: var(--theme-color); 
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
     }
@@ -92,11 +92,11 @@
 
     /* 頁首文字樣式 */
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-top: 0.5rem;
     }
 
@@ -319,7 +319,7 @@
       container.appendChild(fragment);
 
       // 加總人數區塊
-      fetch("https://script.google.com/macros/s/AKfycbwEd-yUyp3sBnhiglnbO-FIFFHG-mDu7raKeAz1Mw9w3YV6t4-wRewL72cDxuUj6t6A7w/exec")
+      fetch("https://script.google.com/macros/s/AKfycbx1PCyuA_k2rBD4PxITVGe6atflFEAFRYNmxjgLXkpbQC7WS9aTXpRHPL18gmWZKBlOJQ/exec")
         .then(res => res.json())
         .then(data => {
           const section = document.createElement('section');
@@ -330,7 +330,7 @@
           h2.textContent = '總人數';
 
           const p = document.createElement('p');
-          p.textContent = `目前我們的團隊共有 ${data.rows} 名工作人員，其中部分成員選擇不公開展示。`;
+          p.textContent = `目前我們的團隊共有 ${data.members} 名工作人員，其中部分成員選擇不公開展示。`;
 
           section.appendChild(h2);
           section.appendChild(p);

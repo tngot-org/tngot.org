@@ -17,7 +17,7 @@ export function footer(color = "#fff", shadow = "rgba(0, 0, 0, 0.6)") {
   
     const year = new Date().getFullYear();
     const footer = document.createElement("footer");
-    footer.innerHTML = `<p>&copy; ${year} The Next Generation Taiwanese - TNGT. All rights reserved.</p>`;
+    footer.innerHTML = `<p>版權所有 &copy; ${year} 台灣未來的主人們 The Next Generation Taiwanese</p>`;
   
     document.body.appendChild(footer);
   });
