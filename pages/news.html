@@ -14,21 +14,17 @@
     <meta name="description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。">
     <title>最新消息｜台灣未來的主人們</title>
 
-    <meta name="theme-color" content="#BE5BFF" />
-    <meta property="og:image" content="https://tngot.org/assets/og_img/og_img.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image" content="https://tngot.org/assets/og_img/og_img_sq.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1500">
-    <meta property="og:image:height" content="1500">
-    <meta property="og:title" content="台灣未來的主人們 TNGT" />
-    <meta property="og:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
-    <meta property="og:url" content="https://tngot.org" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="台灣未來的主人們 TNGT" />
+  <meta name="theme-color" content="#BE5BFF" />
+  <meta property="og:image" content="https://tngot.org/assets/og_img/og_img.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:title" content="最新消息｜台灣未來的主人們" />
+  <meta property="og:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
+  <meta property="og:url" content="https://tngot.org" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="最新消息｜台灣未來的主人們" />
 
     <style>
         :root {
@@ -50,7 +46,8 @@
             margin: 0;
         }
         body {
-            background-color: #f5f5f5;
+            background-color: #f5f5f5; 
+            font-family: "Noto Sans TC";
         }
 
         header {
@@ -80,11 +77,13 @@
             flex-direction: column;
             align-items: center;
             gap: 2rem;
-            margin-top: 3rem;
+            margin: 3rem auto;
+            width: 85%;
+            max-width: 1000px;
         }
 
         .new {
-            width: 80%;
+            width: 100%;
             height: auto;
             background-color: #ffffff;
             border-radius: 12px;
@@ -92,17 +91,103 @@
             transition: 0.3s ease;
             display: flex;
             padding: 1rem 2rem;
+            gap: 1.5rem;
+            font-family: "jf open";
+            user-select: none;
         }
         .new:hover {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transform: scale(1.005);
+            transform: scale(1.01);
         }
-        .new h1, .new p {
+        .new h1, .new p, .new hr {
             margin: 0;
             padding: 0;
         }
-        
+        .new hr {
+            width: 2px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            border-radius: 50px;
+        }
+        .info, .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .info {
+            gap: 0.4rem;
+            align-items: center;
+        }
+        .content {
+            gap: 0.5rem;
+        }
+        .new-title {
+            font-size: 1.7rem;
+            color: rgb(33, 33, 33);
+        }
+        .department {
+            color: rgb(33, 33, 33);
+            opacity: 0.5;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .date {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        .category {
+            color: white;
+            padding: 0.4rem 0.6rem;
+            border-radius: 7px;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .web-update { /* 網站更新 */
+            background-color: #BE5BFF;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .pagination button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #BE5BFF;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .pagination button:hover {
+            background-color: #a43dea;
+            transform: scale(1.05);
+        }
+        .pagination button:disabled {
+            background-color: #ddb8ff;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .pagination button.hidden {
+            display: none;
+        }
+        .no-news {
+            text-align: center;
+            font-family: "jf open";
+            font-size: 1.3rem;
+            color: rgba(0, 0, 0, 0.6);
+            margin: 3rem 0;
+        }
+
     </style>
+
+    <script type="module" src="/assets/mods/back.js"></script>
+      <script type="module" src="/assets/mods/footer.js"></script>
 </head>
 <body>
     <header>
@@ -110,17 +195,95 @@
         <p>The Next Generation Taiwanese - TNGT</p>
     </header>
 
-    <div class="news">
-        <div class="new">
-            <div class="info">
-                <p class="date">2025.05.04</p>
-                <p class="category">網站更新</p>
-            </div>
-            <div class="content">
-                <h1>新增「最新消息頁面」</h1>
-                <p class="department">資訊組</p>
-            </div>
-        </div>
+    <div class="news"></div>
+    <div class="pagination">
+        <button id="prev-btn" disabled>上一頁</button>
+        <button id="next-btn">下一頁</button>
     </div>
+
+    <script>
+        const news = document.querySelector(".news"); 
+        const prevBtn = document.getElementById("prev-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const newsData = [
+            {
+                title: "新增「最新消息頁面」", 
+                date: "2025.05.10", 
+                category: "web-update", 
+                department: "資訊組"
+            }, 
+        ]
+
+        const cnCategory = {
+            "web-update": "網站更新", 
+        }
+
+        const newsPerPage = 5; 
+        let currentPage = 1; 
+        let filteredNews = [];
+
+        function filterRecentNews() {
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+            
+            return newsData.filter(item => {
+                const itemDate = new Date(item.date.replace(/\./g, "-"));
+                return itemDate >= thirtyDaysAgo;
+            });
+        }
+
+        function renderNews() {
+            const startIndex = (currentPage - 1) * newsPerPage;
+            const endIndex = startIndex + newsPerPage;
+            const paginatedNews = filteredNews.slice(startIndex, endIndex);
+            
+            news.innerHTML = "";
+            
+            if (paginatedNews.length === 0) {
+                news.innerHTML = '<p class="no-news">沒有最近30天內的新聞</p>';
+                prevBtn.disabled = true;
+                nextBtn.disabled = true;
+                return;
+            }
+            
+            paginatedNews.forEach(item => {
+                news.innerHTML += `
+                <div class="new">
+                    <div class="info">
+                        <p class="date">${item.date}</p>
+                        <p><span class="category ${item.category}">${cnCategory[item.category]}</span></p>
+                    </div>
+                    <hr>
+                    <div class="content">
+                        <h1 class="new-title">${item.title}</h1>
+                        <p class="department">${item.department}</p>
+                    </div>
+                </div>`;
+            });
+            
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = endIndex >= filteredNews.length;
+            
+            prevBtn.classList.toggle('hidden', currentPage === 1);
+            nextBtn.classList.toggle('hidden', endIndex >= filteredNews.length);
+        }
+
+        prevBtn.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderNews();
+            }
+        });
+        
+        nextBtn.addEventListener("click", () => {
+            if ((currentPage * newsPerPage) < filteredNews.length) {
+                currentPage++;
+                renderNews();
+            }
+        });
+
+        filteredNews = filterRecentNews();
+        renderNews();
+    </script>
 </body>
 </html>
