@@ -11,10 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
       color: #fff;
       padding: 0.6rem 1.2rem;
       border-radius: 5px;
-      transition: transform 0.3s ease;
-    }
-    .back-button a:hover {
-      transform: scale(1.1);
     }`; 
 
     document.head.appendChild(style); 

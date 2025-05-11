@@ -18,13 +18,16 @@
 
   <!-- SEO 與社交媒體資訊 -->
   <meta name="theme-color" content="#BE5BFF" />
+  <meta property="og:image" content="https://tngot.org/assets/og_img/og_img.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:title" content="台灣未來的主人們 TNGT" />
   <meta property="og:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
   <meta property="og:url" content="https://tngot.org" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="台灣未來的主人們 TNGT" />
-  <meta name="twitter:description" content="「台灣未來的主人們」是由青年發起的民主自主管平台，關注民主、教育、性平、交通等議題，凝聚學生聲音。" />
 
   <!-- 結構化數據 -->
   <script type="application/ld+json">
@@ -177,13 +180,18 @@
     }
     .button.discord:hover::before { left: 100%; }
     .button.discord:hover { transform: scale(1.1); }
-  </style>
 
-  <!-- 匯入模組 -->
-  <script type="module">
-    import {footer} from "/assets/mods/footer.js"; 
-    footer(); 
-  </script>  
+    footer {
+          margin-top: auto;
+          padding: 1rem 0;
+          font-size: 14px;
+          color: #fff;
+          text-shadow: 0 0 5px rgba(0,0,0,0.6);
+          z-index: 2;
+          position: relative;
+          text-align: center; 
+    }
+  </style>
 </head>
 
 <body>
@@ -220,6 +228,8 @@
       <a href="/pages/links.html" class="button">相關連結</a>
     </div>
   </main>
+
+  <footer></footer>
 
   <!-- 輪播背景腳本 -->
   <script>
@@ -264,6 +274,10 @@
     // 啟動輪播
     changeBackground();
     setInterval(changeBackground, 5000);
+
+    const year = new Date().getFullYear(); 
+    const footer = document.querySelector("footer"); 
+    footer.innerHTML = `<p>版權所有 &copy; ${year} 台灣未來的主人們 The Next Generation Taiwanese</p>`
   </script>
 </body>
 </html>
