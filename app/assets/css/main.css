@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
-
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
+@font-face {
+  font-family: 'JF Open';
+  src: url('/fonts/jf-open.woff2') format('woff2');
+}
+
 @theme static {
   --font-sans: 'Noto Sans TC', sans-serif;
+  --font-jf-open: 'JF Open', sans-serif;
 
   --color-purple-50: oklch(0.975 0.012 309.08);
   --color-purple-100: oklch(0.94 0.028 309.08);

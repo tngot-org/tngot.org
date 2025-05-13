@@ -3,6 +3,11 @@ export default defineAppConfig({
     colors: {
       primary: 'purple',
       neutral: 'gray'
+    },
+    button: {
+      slots: {
+        base: ['font-jf-open']
+      }
     }
   }
 });
