@@ -220,13 +220,24 @@
       "name": "顧問組",
       "members": [
         {
-          "name": "Sean Wei",
-          "img": "https://www.gravatar.com/avatar/598f6906350d4774bb4385f4e5121f66?d=identicon&s=150",
-          "alt": "Sean Wei",
-          "link": "https://sean.cat/about",
+          "name": "落景夏時",
+          "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=512",
+          "alt": "落景夏時",
           "classes": [
             "leader"
           ]
+        },
+        {
+          "name": "Sean Wei",
+          "img": "https://www.gravatar.com/avatar/598f6906350d4774bb4385f4e5121f66?d=identicon&s=150",
+          "alt": "Sean Wei",
+          "link": "https://sean.cat/about"
+        },
+        {
+          "name": "sangege",
+          "img": "https://1.gravatar.com/avatar/6d657a760bad7a9e65c74aed0dbb15186d7b658cadf9cf5776c8ad80670d6777?size=512&d=initials",
+          "alt": "sangege",
+          "link": "https://linktr.ee/san.ge.ge"
         },
         {
           "name": "易碎君",
@@ -238,17 +249,6 @@
           "name": "貓貓",
           "img": "https://www.gravatar.com/avatar/f87e6a432e10721167755968fff0ab53?d=identicon&s=150",
           "alt": "貓貓"
-        },
-        {
-          "name": "落景夏時",
-          "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=512",
-          "alt": "落景夏時"
-        },
-        {
-          "name": "sangege",
-          "img": "https://1.gravatar.com/avatar/6d657a760bad7a9e65c74aed0dbb15186d7b658cadf9cf5776c8ad80670d6777?size=512&d=initials",
-          "alt": "sangege",
-          "link": "https://linktr.ee/san.ge.ge"
         }
       ]
     }
