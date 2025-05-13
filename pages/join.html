@@ -139,9 +139,15 @@
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
+      transition: all 0.3s ease;
       /* transform: scale(0.9);
       opacity: 0;
       transition: transform 0.3s ease-out, opacity 0.3s ease-out; */
+    }
+
+    .btn-primary.expand {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     /* .btn-primary.show {
@@ -221,49 +227,37 @@
         <li>您必須點擊並閱讀 <a href="https://s.ouoc.dev/law" target="_blank" rel="noopener noreferrer" class="rgb-link">外部條款<a></li>
       </ul>
       <p><em>請務必閱讀完上述所有條款，才能進行申請</em></p>
-      <button id="confirm-btn" class="btn-primary">我已閱讀完條款</button>
+      <button id="confirm-btn" class="btn-primary" disabled>我已閱讀完條款</button>
     </section>
   </main>
 
   <script>
-    window.addEventListener('load', () => {
-      document.getElementById('join-terms').classList.add('show');
-    });
+    window.addEventListener('load', setupJoinLinkUnlock);
 
-    const confirmBtn = document.getElementById('confirm-btn');
-    const lastTerm = document.querySelector('#terms-list li:last-child');
-    const externalLink = document.querySelector('#terms-list a');
-    let externalLinkClicked = false;
+    // 僅在點擊「外部條款」後解除鎖定並開啟申請表單
+    function setupJoinLinkUnlock() {
+      const confirmBtn = document.getElementById('confirm-btn');
+      const externalLink = document.querySelector('#terms-list a.rgb-link');
+      let isConfirmed = false;
 
-    externalLink.addEventListener('click', () => {
-      externalLinkClicked = true;
-      confirmBtn.classList.add('show'); // 確保按鈕在點擊外部條款後可見
-    });
+      externalLink.addEventListener('click', () => {
+        confirmBtn.disabled = false;
+        confirmBtn.classList.add('show');
+      });
 
-    // 觀察最後一條條款是否完全可見
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && externalLinkClicked) {
-          confirmBtn.classList.add('show');
-          observer.unobserve(entry.target);
+      confirmBtn.addEventListener('click', () => {
+        if (!isConfirmed) {
+          // 切換按鈕文字與動畫
+          confirmBtn.textContent = '申請加入';
+          confirmBtn.classList.add('expand');
+          setTimeout(() => confirmBtn.classList.remove('expand'), 300);
+          isConfirmed = true;
+        } else {
+          // 跳轉到表單
+          window.open('https://forms.gle/QUzZqjyuJ6eb8e6L6', '_blank');
         }
       });
-    }, { threshold: 1.0 });
-    observer.observe(lastTerm);
-
-    // 點擊按鈕先切換文字，再導向表單
-    confirmBtn.addEventListener('click', () => {
-      if (!externalLinkClicked) {
-        alert('請先點擊並閱讀外部條款！');
-        return;
-      }
-      if (!confirmBtn.dataset.confirmed) {
-        confirmBtn.textContent = '立即申請';
-        confirmBtn.dataset.confirmed = 'true';
-      } else {
-        window.open('https://forms.gle/QUzZqjyuJ6eb8e6L6', '_blank');
-      }
-    });
+    }
   </script>
 </body>
 
