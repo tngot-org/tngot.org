@@ -51,7 +51,8 @@
     <UButton
       icon="ic:baseline-discord"
       size="lg"
-      to="/discord"
+      to="https://discord.com/invite/BCFcxMU6zV"
+      target="_blank"
       class="relative mx-2.5 mt-8 overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-3 font-bold text-white shadow-lg transition-transform duration-300 hover:scale-110 md:mt-20 md:px-8 md:py-4"
     >
       加入 Discord
