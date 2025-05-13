@@ -21,6 +21,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.words": [
+    "gsap",
     "heroicons",
     "iconify",
     "lucide",
@@ -30,6 +31,7 @@
     "openhuninn",
     "palenight",
     "TNGT",
+    "tweened",
     "uuidv",
     "wght"
   ]

@@ -46,19 +46,23 @@
       </p>
     </div>
 
-    <!-- Discord 按鈕 -->
+    <!-- Discord 成員數量 -->
+    <DiscordMembers
+      class="mt-8 mb-2 text-lg font-bold text-white text-shadow-gray-800 text-shadow-lg md:mt-20 md:text-xl"
+    />
 
+    <!-- Discord 按鈕 -->
     <UButton
       icon="ic:baseline-discord"
       size="lg"
       to="https://discord.com/invite/BCFcxMU6zV"
       target="_blank"
-      class="relative mx-2.5 mt-8 overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-3 font-bold text-white shadow-lg transition-transform duration-300 hover:scale-110 md:mt-20 md:px-8 md:py-4"
+      class="relative mx-2.5 overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-3 font-bold text-white shadow-lg transition-transform duration-300 hover:scale-110 md:px-8 md:py-4"
     >
       加入 Discord
       <div
         class="shiny-effect absolute top-0 -left-full h-full w-[200%] -skew-x-[45deg] transform bg-gradient-to-r from-white/20 to-transparent transition-all duration-500 group-hover:left-full"
-      ></div>
+      />
     </UButton>
 
     <!-- 按鈕群組 -->

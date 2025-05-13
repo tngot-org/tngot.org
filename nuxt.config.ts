@@ -14,5 +14,11 @@ export default defineNuxtConfig({
 
   colorMode: {
     preference: 'light'
+  },
+
+  runtimeConfig: {
+    public: {
+      discordInviteCode: 'BCFcxMU6zV'
+    }
   }
 });

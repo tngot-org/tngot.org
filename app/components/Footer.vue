@@ -3,10 +3,7 @@
 </script>
 
 <template>
-  <footer
-    class="relative z-10 mt-auto py-4 text-center text-sm"
-    :style="footerStyle"
-  >
+  <footer class="relative z-10 mt-auto py-4 text-center text-sm">
     <p>
       &copy; {{ year }} The Next Generation Taiwanese - TNGT. All rights
       reserved.
