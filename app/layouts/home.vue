@@ -87,7 +87,7 @@
 </script>
 
 <template>
-  <div class="relative flex h-screen w-screen flex-col overflow-hidden">
+  <div class="relative flex min-h-screen w-screen flex-col overflow-hidden">
     <BackgroundCarousel :images :interval="5000" />
 
     <!-- 內容區塊，相對於背景層 -->
