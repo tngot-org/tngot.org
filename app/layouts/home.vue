@@ -37,13 +37,13 @@
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        href: '/logo/favicon-16x16.png'
+        href: '/favicon-16x16.png'
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        href: '/logo/favicon-32x32.png'
+        href: '/favicon-32x32.png'
       },
       {
         rel: 'icon',
@@ -60,7 +60,7 @@
       {
         rel: 'icon',
         type: 'image/png',
-        href: '/logo/favicon.ico'
+        href: '/favicon.ico'
       }
     ],
     script: [
