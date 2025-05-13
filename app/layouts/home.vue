@@ -96,9 +96,6 @@
     </main>
 
     <!-- Footer 放在內容區外，確保不會被背景覆蓋 -->
-    <Footer
-      class="relative z-20"
-      :background-color="'rgba(240, 240, 240, 0.8)'"
-    />
+    <Footer class="relative z-20 text-white" />
   </div>
 </template>

@@ -23,3 +23,7 @@
   --color-purple-900: oklch(0.39 0.15 309.08);
   --color-purple-950: oklch(0.3 0.12 309.08);
 }
+
+:root {
+  --ui-radius: 0.375rem;
+}

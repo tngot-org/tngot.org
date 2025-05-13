@@ -11,7 +11,8 @@ export default defineNuxtConfig({
   fonts: {
     families: [{ name: 'Noto Sans TC', provider: 'google' }]
   },
-  ui: {
-    colorMode: false
+
+  colorMode: {
+    preference: 'light'
   }
 });

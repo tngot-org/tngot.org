@@ -1,6 +1,6 @@
 <script setup>
   definePageMeta({
-    title: '關於我們'
+    title: '最新消息'
   });
 </script>
 
