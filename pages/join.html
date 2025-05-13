@@ -237,12 +237,13 @@
 
     externalLink.addEventListener('click', () => {
       externalLinkClicked = true;
+      confirmBtn.classList.add('show'); // 確保按鈕在點擊外部條款後可見
     });
 
     // 觀察最後一條條款是否完全可見
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && externalLinkClicked) {
           confirmBtn.classList.add('show');
           observer.unobserve(entry.target);
         }
