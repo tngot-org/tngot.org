@@ -6,12 +6,14 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
   modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/fonts', 'nuxt-mcp'],
-  css: ['~/assets/css/main.css'],
+  build: {
+    transpile: ['gsap']
+  },
 
+  css: ['~/assets/css/main.css'],
   fonts: {
     families: [{ name: 'Noto Sans TC', provider: 'google' }]
   },
-
   colorMode: {
     preference: 'light'
   },
