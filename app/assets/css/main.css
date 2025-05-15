@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
+/* 定義自定義斷點 xs(380px), 在 sm(640px) 之前 */
+@theme {
+  --breakpoint-xs: 23.75rem; /* 380px */
+}
+
 @font-face {
   font-family: 'JF Open';
   src: url('/fonts/jf-open.woff2') format('woff2');
