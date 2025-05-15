@@ -96,6 +96,9 @@
     </main>
 
     <!-- Footer 放在內容區外，確保不會被背景覆蓋 -->
-    <Footer class="relative z-20 text-white" />
+    <Footer
+      class="relative z-20 text-white"
+      style="text-shadow: 0 0 5px rgba(0, 0, 0, 0.6)"
+    />
   </div>
 </template>
