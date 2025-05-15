@@ -5,10 +5,13 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4
   },
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/fonts', 'nuxt-mcp'],
-  build: {
-    transpile: ['gsap']
-  },
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/ui',
+    '@nuxt/fonts',
+    'motion-v/nuxt',
+    'nuxt-mcp'
+  ],
 
   css: ['~/assets/css/main.css'],
   fonts: {
