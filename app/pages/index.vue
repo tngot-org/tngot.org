@@ -20,12 +20,12 @@
       class="mt-6 rounded-[10px] bg-transparent px-4 py-2 text-white shadow-lg backdrop-blur-sm md:px-8 md:py-4"
     >
       <h1
-        class="text-[2.5rem] font-extrabold text-white text-shadow-gray-800 text-shadow-lg md:text-[3.5rem]"
+        class="text-[3.5rem] font-extrabold text-white text-shadow-gray-800 text-shadow-md md:text-[3.5rem]"
       >
         台灣未來的主人們
       </h1>
       <p
-        class="mt-1 text-[1rem] text-white text-shadow-gray-800 text-shadow-lg md:mt-2 md:text-[1.3rem]"
+        class="mt-1 text-[1.5rem] text-white text-shadow-gray-800 text-shadow-md md:mt-2 md:text-[1.3rem]"
       >
         The Next Generation Taiwanese - TNGT
       </p>
@@ -33,14 +33,14 @@
 
     <!-- 副標題區塊 -->
     <div
-      class="mt-2 rounded-[10px] bg-transparent px-4 py-2 text-base leading-relaxed text-white shadow-lg backdrop-blur-md text-shadow-gray-500 text-shadow-md md:px-8 md:py-4"
+      class="text-md mt-2 rounded-[10px] bg-transparent px-4 py-2 leading-relaxed text-white shadow-lg backdrop-blur-md text-shadow-gray-500 text-shadow-md md:px-8 md:py-4"
     >
-      <p class="mt-1 text-sm leading-relaxed md:mt-2 md:text-base">
+      <p class="mt-1 leading-relaxed md:mt-2 md:text-base">
         我們期望發展成為一個真正的公民團體；
         <br />
         用於代表青少年們參與大大小小的公共事務。
       </p>
-      <p class="mt-1 text-sm leading-relaxed md:mt-2 md:text-base">
+      <p class="mt-1 leading-relaxed md:mt-2 md:text-base">
         我們追求民主與自由，堅信青年力量能驅動社會進步；<br />
         關注民主、教育與性平等議題，凝聚學生聲音，打造屬於我們的聲音平台。
       </p>
@@ -48,7 +48,7 @@
 
     <!-- Discord 成員數量 -->
     <DiscordMembers
-      class="mt-8 mb-2 text-lg font-bold text-white text-shadow-gray-800 text-shadow-lg md:mt-20 md:text-xl"
+      class="mt-8 mb-2 text-lg font-bold text-white text-shadow-gray-800 text-shadow-md md:mt-20 md:text-xl"
     />
 
     <!-- Discord 按鈕 -->
