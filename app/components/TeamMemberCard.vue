@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { computed } from 'vue';
-
   /**
    * 團隊成員資訊類型定義
    */
@@ -20,10 +18,23 @@
     groupId: {
       type: String,
       default: ''
-    },
-    isMultiRole: {
-      type: Boolean,
-      default: false
+    }
+  });
+
+  // 追蹤成員圖片是否有效
+  const isMemberImageValid = ref(true);
+
+  // 預先檢查圖片是否存在
+  onMounted(() => {
+    if (props.member.img) {
+      const img = new Image();
+      img.onload = () => {
+        isMemberImageValid.value = true;
+      };
+      img.onerror = () => {
+        isMemberImageValid.value = false;
+      };
+      img.src = props.member.img;
     }
   });
 
@@ -37,8 +48,10 @@
   /**
    * 計算成員頭像URL，提供預設值
    */
-  const avatarUrl = computed(
-    () => props.member.img || '/images/avatar/TNGT.png'
+  const avatarUrl = computed(() =>
+    props.member.img && isMemberImageValid.value
+      ? props.member.img
+      : '/images/avatar/TNGT.png'
   );
 
   /**
@@ -50,10 +63,7 @@
    * 計算卡片樣式類 - 這裡合併陣列並移除空值
    */
   const cardClasses = computed(() =>
-    [
-      props.isMultiRole ? 'multi-role' : '',
-      props.member.link ? 'has-link' : ''
-    ].filter(Boolean)
+    [props.member.link ? 'has-link' : ''].filter(Boolean)
   );
 
   /**
@@ -77,17 +87,14 @@
     <div
       v-if="isLeader"
       class="leader-glow pointer-events-none absolute inset-[-5px] rounded-[13px]"
-    ></div>
-    <div
-      v-if="isMultiRole"
-      class="multi-role-glow pointer-events-none absolute inset-[-5px] rounded-[13px]"
-    ></div>
+    />
     <UCard
       variant="outline"
-      class="relative z-10 overflow-visible transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-lg"
+      class="xs:px-2 relative z-10 overflow-visible px-6 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-lg"
       :class="cardClasses"
       :ui="{
-        body: 'p-4 h-44'
+        root: 'py-0',
+        body: 'p-2 sm:p-4 h-auto flex items-center justify-center'
       }"
       :data-group-id="groupId"
       role="article"
@@ -106,14 +113,14 @@
         <img
           :src="avatarUrl"
           :alt="avatarAlt"
-          class="mb-2 h-24 w-24 shrink-0 rounded-full object-cover"
+          class="mb-2 aspect-square h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           loading="lazy"
           fetchpriority="high"
           @error="handleImageError"
         />
         <p
           :id="`member-name-${member.name}`"
-          class="w-max text-center font-medium"
+          class="w-max text-center text-sm font-medium sm:text-base"
         >
           {{ member.name }}
         </p>
@@ -124,14 +131,14 @@
         <img
           :src="avatarUrl"
           :alt="avatarAlt"
-          class="mb-2 h-24 w-24 shrink-0 rounded-full object-cover"
+          class="mb-2 aspect-square h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           loading="lazy"
           fetchpriority="high"
           @error="handleImageError"
         />
         <p
           :id="`member-name-${member.name}`"
-          class="w-max text-center font-medium"
+          class="w-max text-center text-sm font-medium sm:text-base"
         >
           {{ member.name }}
         </p>
@@ -165,14 +172,6 @@
       box-shadow: 0 0 7px 2px rgba(0, 0, 255, 0.65);
       border-color: rgba(0, 0, 255, 0.65);
     }
-  }
-
-  /* 多重角色特效樣式 - 主色脈衝光暈 */
-  .multi-role-glow {
-    z-index: 1;
-    transform: translateZ(0); /* 促進硬體加速 */
-    animation: primaryPulse 2s ease-in-out infinite;
-    will-change: opacity, box-shadow; /* 提示瀏覽器優化動畫性能 */
   }
 
   @keyframes primaryPulse {

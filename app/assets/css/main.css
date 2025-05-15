@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
-/* 定義自定義斷點 xs(380px), 在 sm(640px) 之前 */
+/* 定義自定義斷點 xs(375px), 在 sm(640px) 之前 */
 @theme {
-  --breakpoint-xs: 23.75rem; /* 380px */
+  --breakpoint-xs: 23.4375rem;
 }
 
 @font-face {

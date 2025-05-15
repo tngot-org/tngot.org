@@ -12,9 +12,9 @@ export default defineAppConfig({
     },
     card: {
       slots: {
-        root: 'rounded-lg px-4',
-        header: 'p-2 pt-8 sm:px-6 border-0 text-3xl',
-        body: 'p-2 pb-8 text-lg',
+        root: 'rounded-lg px-4 py-8',
+        header: 'p-2 sm:px-6 border-0 text-3xl',
+        body: 'p-2 text-lg',
         footer: 'p-2 sm:px-6'
       },
       variants: {

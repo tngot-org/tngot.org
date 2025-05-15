@@ -38,11 +38,7 @@
   <div class="px-4 py-12">
     <!-- 團隊組別區塊 -->
     <template v-if="statusBasicInfo === 'success'">
-      <UCard
-        v-for="group in teamData.groups"
-        :key="group.id"
-        class="mb-12 pb-8"
-      >
+      <UCard v-for="group in teamData.groups" :key="group.id" class="mb-12">
         <template #header>
           <h2
             class="border-primary text-primary mb-4 border-l-4 pl-3 text-2xl font-bold"
