@@ -14,10 +14,10 @@
       class="animate-gradient-x bg-primary relative overflow-hidden py-14 text-center text-white"
     >
       <div class="animate-fade-in-up">
-        <h1 class="mb-8 text-5xl font-bold">
+        <h1 class="mb-8 text-4xl font-bold">
           {{ title }}
         </h1>
-        <p class="text-xl font-bold">
+        <p class="text-lg font-bold">
           {{ subtitle }}
         </p>
       </div>

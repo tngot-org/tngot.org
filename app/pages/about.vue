@@ -119,27 +119,20 @@
       </ul>
     </UCard>
 
-    <div class="flex w-full justify-center gap-8">
-      <UButton
-        to="/"
-        variant="soft"
-        size="xl"
-        icon="ri-home-4-line"
-        class="animate-pop-in p-4"
-      >
-        返回首頁
-      </UButton>
-      <UButton
-        to="/links"
-        color="info"
-        variant="solid"
-        size="xl"
-        icon="ri-link-m"
-        class="animate-pop-in p-4"
-      >
-        聯絡我們
-      </UButton>
-    </div>
+    <ActionButtonsGroup>
+      <template #right>
+        <UButton
+          to="/links"
+          color="info"
+          variant="solid"
+          size="xl"
+          icon="ri-link-m"
+          class="animate-pop-in p-4"
+        >
+          聯絡我們
+        </UButton>
+      </template>
+    </ActionButtonsGroup>
   </div>
 </template>
 
