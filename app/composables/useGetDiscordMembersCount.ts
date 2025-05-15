@@ -12,7 +12,10 @@ export default async function () {
   const inviteCode = useRuntimeConfig().public.discordInviteCode;
   const url = `https://discord.com/api/v9/invites/${inviteCode}?with_counts=true&with_expiration=true&with_permissions=true`;
 
-  const { data, error } = await useFetch<DiscordInviteResponse>(url);
+  const { data, error } = await useFetch<DiscordInviteResponse>(url, {
+    key: 'discord-member-count',
+    cache: 'no-store'
+  });
 
   if (data.value) {
     memberCount.value = data.value.approximate_member_count ?? null;
