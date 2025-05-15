@@ -14,7 +14,7 @@ export default async function () {
 
   const { data, error } = await useFetch<DiscordInviteResponse>(url, {
     key: 'discord-member-count',
-    cache: 'no-store'
+    cache: 'reload'
   });
 
   if (data.value) {
