@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      discordInviteCode: 'BCFcxMU6zV'
+      discordInviteCode: 'vykUZ9wA3Y'
     }
   }
 });
