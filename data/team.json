@@ -40,11 +40,6 @@
           "name": "S",
           "img": "https://www.gravatar.com/avatar/b8b0d8b944e152332a66a292737b8670?d=identicon&s=150",
           "alt": "S"
-        },
-        {
-          "name": "飛龍",
-          "img": "https://i.postimg.cc/Yqwr9tG7/gar.png",
-          "alt": "飛龍"
         }
       ]
     },
@@ -221,6 +216,20 @@
           "img": "https://www.gravatar.com/avatar/3edbfa821271f3f0912460ce198b2d7e?d=identicon&s=150",
           "alt": "アントウ",
           "link": "https://antou.dev/"
+        }
+      ]
+    },
+    {
+      "id": "活動組",
+      "name": "活動組",
+      "members": [
+        {
+          "name": "飛龍",
+          "img": "https://i.postimg.cc/Yqwr9tG7/gar.png",
+          "alt": "飛龍",
+          "classes": [
+            "leader"
+          ]
         }
       ]
     },
