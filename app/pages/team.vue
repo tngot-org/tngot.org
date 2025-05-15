@@ -3,8 +3,12 @@
     title: '工作團隊'
   });
 
-  // 從 JSON 檔案載入團隊資料
-  const { data: teamData } = await useFetch('/api/team');
+  // 從 JSON 檔案載入基本團隊資料（快速顯示）
+  const { data: teamData, status: statusBasicInfo } =
+    await useFetch('/api/team-basic');
+
+  // 非同步載入團隊總人數資料（不阻塞頁面渲染）
+  const { status, data: teamCountData } = useLazyFetch('/api/team-count');
 
   // 計算有多少成員在多個組別中
   const multiRoleMembers = computed(() => {
@@ -26,15 +30,19 @@
 
   // 計算團隊成員總數 (從 API 獲取，包含未公開展示的成員)
   const teamMemberCounts = computed(
-    () => teamData.value?.totalMemberCount || 0
+    () => teamCountData.value?.totalMemberCount || 0
   );
 </script>
 
 <template>
   <div class="px-4 py-12">
     <!-- 團隊組別區塊 -->
-    <template v-if="teamData">
-      <UCard v-for="group in teamData.groups" :key="group.id" class="mb-12">
+    <template v-if="statusBasicInfo === 'success'">
+      <UCard
+        v-for="group in teamData.groups"
+        :key="group.id"
+        class="mb-12 pb-8"
+      >
         <template #header>
           <h2
             class="border-primary text-primary mb-4 border-l-4 pl-3 text-2xl font-bold"
@@ -43,9 +51,7 @@
           </h2>
         </template>
 
-        <div
-          class="xs:grid-cols-2 grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
-        >
+        <div class="flex flex-wrap items-center justify-start gap-8">
           <TeamMemberCard
             v-for="member in group.members"
             :key="`${group.id}-${member.name}`"
@@ -67,10 +73,29 @@
         </template>
 
         <p>
-          目前我們的團隊共有
-          {{ teamData.fetchFailed ? '超過30' : teamMemberCounts }}
-          名工作人員，其中部分成員選擇不公開展示。
+          <span>目前我們的團隊共有</span>
+          <span v-if="status === 'pending'"> ... </span>
+          <span v-else-if="status === 'success'">
+            {{ ` ${teamMemberCounts} ` }}
+          </span>
+          <span v-else>超過 30 </span>
+          <span>名工作人員，其中部分成員選擇不公開展示。</span>
         </p>
+      </UCard>
+    </template>
+    <template v-else>
+      <UCard class="mb-12">
+        <template #header>
+          <h2
+            class="border-primary text-primary border-l-4 pl-3 text-2xl font-bold"
+          >
+            工作團隊
+          </h2>
+        </template>
+        <USkeleton class="mb-4 h-8 w-1/3" />
+        <div class="flex flex-wrap items-center gap-3">
+          <USkeleton v-for="n in 6" :key="n" class="h-48 w-[200px]" />
+        </div>
       </UCard>
     </template>
 
