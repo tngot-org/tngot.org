@@ -9,14 +9,18 @@
           "img": "https://www.gravatar.com/avatar/3edbfa821271f3f0912460ce198b2d7e?d=identicon&s=150",
           "alt": "アントウ",
           "link": "https://antou.dev/",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
         },
         {
           "name": "瑄",
           "img": "https://www.gravatar.com/avatar/d240680a8ed430fc85149bdcececb3db?d=identicon&s=150",
           "alt": "瑄",
           "link": "https://tw.strikingly.com/s/sites/27865585/edit?uid=62469a66-96fe-4d19-9e9e-f0ccd80bc376#31817",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
         }
       ]
     },
@@ -28,7 +32,9 @@
           "name": "優格",
           "img": "https://www.gravatar.com/avatar/e0b0d4db18369331b23c20e1a31d1e7f?d=identicon&s=150",
           "alt": "優格",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
         },
         {
           "name": "S",
@@ -36,9 +42,9 @@
           "alt": "S"
         },
         {
-          "name": "飛龍",
-          "img": "https://i.postimg.cc/Yqwr9tG7/gar.png",
-          "alt": "飛龍"
+          "name": "嘎叡",
+          "img": "https://1.gravatar.com/avatar/75ad0f115c20435032073cf874be00c7a1360d331a4f6a03d83b1b4a4e5c2190?size=150",
+          "alt": "嘎叡"
         }
       ]
     },
@@ -51,7 +57,9 @@
           "img": "https://2.gravatar.com/avatar/6d11afae7739d1275663ad7143015697d0a1c937ea31d7d0454964a3ba16a493?size=150",
           "alt": "莫炎",
           "link": "https://lin.ee/krSmiCe",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
         },
         {
           "name": "アントウ",
@@ -75,14 +83,18 @@
           "name": "Et",
           "img": "https://www.gravatar.com/avatar/c0081f425bff3f58b6f0badc95c5583f?d=identicon&s=150",
           "alt": "Et",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
         },
         {
           "name": "Jailbreaker",
           "img": "https://www.gravatar.com/avatar/27cb0316008e9115a7ae5fcaadda94ae?d=identicon&s=150",
           "alt": "Jailbreaker",
           "link": "https://www.threads.com/@robloxjailbreaker",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
         },
         {
           "name": "Astera",
@@ -125,13 +137,26 @@
           "img": "https://www.gravatar.com/avatar/77017ddf599565003882d3c0a004f962?d=identicon&s=150",
           "alt": "Astera",
           "link": "https://www.instagram.com/astera_09.23?igsh=bm1ka29vemx5cXZt&utm_source=qr",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
+        },
+        {
+          "name": "雅欣",
+          "img": "https://www.gravatar.com/avatar/23d23a3b7c03cff5f5cbf7ae348503ab?d=identicon&s=150",
+          "alt": "雅欣",
+          "link": "https://gravatar.com/vibrantccd81c5c0d",
+          "classes": [
+            "leader"
+          ]
         },
         {
           "name": "荳荳",
           "img": "https://www.gravatar.com/avatar/e0dff760440b448d10e791738fa11d7b?d=identicon&s=150",
           "alt": "荳荳",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
         },
         {
           "name": "CHEN",
@@ -176,7 +201,9 @@
           "img": "https://gravatar.com/avatar/caaf9b2138565a2442548253cf52d06221ec16d98be87a470f591792f70062d4?s=150",
           "alt": "Zyreny",
           "link": "https://www.zyreny.com/",
-          "classes": ["leader"]
+          "classes": [
+            "leader"
+          ]
         },
         {
           "name": "Charles",
@@ -198,15 +225,48 @@
       ]
     },
     {
+      "id": "活動組",
+      "name": "活動組",
+      "members": [
+        {
+          "name": "飛龍",
+          "img": "https://i.postimg.cc/Yqwr9tG7/gar.png",
+          "alt": "飛龍",
+          "classes": [
+            "leader"
+          ]
+        }
+      ]
+    },
+    {
       "id": "顧問組",
       "name": "顧問組",
       "members": [
         {
+          "name": "落景夏時",
+          "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=512",
+          "alt": "落景夏時",
+          "classes": [
+            "leader"
+          ]
+        },
+        {
           "name": "Sean Wei",
           "img": "https://www.gravatar.com/avatar/598f6906350d4774bb4385f4e5121f66?d=identicon&s=150",
           "alt": "Sean Wei",
-          "link": "https://sean.cat/about",
-          "classes": ["leader"]
+          "link": "https://sean.cat/about"
+        },
+        {
+          "name": "nil",
+          "img": "https://0.gravatar.com/avatar/56b70765bafb30cf2df6f4653b201ee2e6868f3056477a43f293a3f2ba713245?size=150",
+          "alt": "nil",
+          "link": "https://wang900115.github.io/personal/"
+        },
+        {
+          "name": "sangege",
+          "img": "https://1.gravatar.com/avatar/6d657a760bad7a9e65c74aed0dbb15186d7b658cadf9cf5776c8ad80670d6777?size=512&d=initials",
+          "alt": "sangege",
+          "link": "https://linktr.ee/san.ge.ge"
         },
         {
           "name": "易碎君",
@@ -218,17 +278,6 @@
           "name": "貓貓",
           "img": "https://www.gravatar.com/avatar/f87e6a432e10721167755968fff0ab53?d=identicon&s=150",
           "alt": "貓貓"
-        },
-        {
-          "name": "落景夏時",
-          "img": "https://2.gravatar.com/avatar/ca9e5a6ecba0e9480bec6691442a58ca6fc441875af7f031703afb50c6a7738c?size=512",
-          "alt": "落景夏時"
-        },
-        {
-          "name": "sangege",
-          "img": "https://1.gravatar.com/avatar/6d657a760bad7a9e65c74aed0dbb15186d7b658cadf9cf5776c8ad80670d6777?size=512&d=initials",
-          "alt": "sangege",
-          "link": "https://linktr.ee/san.ge.ge"
         }
       ]
     }
