@@ -1,8 +1,12 @@
 <script setup>
   import { onMounted } from 'vue';
 
+  const title = '關於我們';
   definePageMeta({
-    title: '關於我們'
+    title
+  });
+  useHead({
+    title
   });
 
   onMounted(() => {

@@ -1,6 +1,10 @@
 <script setup>
+  const title = '工作團隊';
   definePageMeta({
-    title: '工作團隊'
+    title
+  });
+  useHead({
+    title
   });
 
   // 從 JSON 檔案載入基本團隊資料（快速顯示）

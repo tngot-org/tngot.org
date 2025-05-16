@@ -1,6 +1,10 @@
 <script setup>
+  const title = '合作夥伴';
   definePageMeta({
-    title: '合作夥伴'
+    title
+  });
+  useHead({
+    title
   });
 </script>
 

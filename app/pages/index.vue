@@ -3,6 +3,10 @@
     layout: 'home'
   });
 
+  useHead({
+    title: ''
+  });
+
   const buttons = [
     { to: '/about', icon: 'heroicons:information-circle', text: '關於我們' },
     { to: '/team', icon: 'heroicons:user-group', text: '工作團隊' },

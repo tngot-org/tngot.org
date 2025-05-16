@@ -1,6 +1,10 @@
 <script setup>
+  const title = '活動目錄';
   definePageMeta({
-    title: '關於我們'
+    title
+  });
+  useHead({
+    title
   });
 </script>
 

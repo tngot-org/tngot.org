@@ -1,6 +1,10 @@
 <script setup>
+  const title = '最新消息';
   definePageMeta({
-    title: '最新消息'
+    title
+  });
+  useHead({
+    title
   });
 </script>
 

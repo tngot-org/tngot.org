@@ -1,6 +1,10 @@
 <script setup>
+  const title = '相關連結';
   definePageMeta({
-    title: '相關連結'
+    title
+  });
+  useHead({
+    title
   });
 </script>
 
