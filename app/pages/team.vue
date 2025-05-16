@@ -102,7 +102,7 @@
     <ActionButtonsGroup>
       <template #right>
         <UButton
-          to="/links"
+          to="/join"
           color="info"
           variant="solid"
           size="xl"
