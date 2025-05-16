@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "build": "nuxt build",
+    "preview": "nuxt preview --port 4000",
+    "rePreview": "nuxt build && nuxt preview --port 4000",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
