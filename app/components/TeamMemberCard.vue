@@ -115,7 +115,6 @@
           :alt="avatarAlt"
           class="mb-2 aspect-square h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           loading="lazy"
-          fetchpriority="high"
           @error="handleImageError"
         />
         <p
@@ -133,7 +132,6 @@
           :alt="avatarAlt"
           class="mb-2 aspect-square h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           loading="lazy"
-          fetchpriority="high"
           @error="handleImageError"
         />
         <p
@@ -190,9 +188,5 @@
   img {
     transition: opacity 0.3s ease-in-out;
     backface-visibility: hidden; /* 減少閃爍 */
-  }
-
-  img[loading] {
-    opacity: 0.7;
   }
 </style>
