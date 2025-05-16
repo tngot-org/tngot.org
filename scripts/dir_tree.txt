@@ -1,8 +1,9 @@
-C:\Users\antou\Documents\GitHub\tngot.org
+/Users/zai/Documents/GitHub/tngot.org
 ├── assets
 │   ├── fonts
-│   │   ├── jf-open.woff
-│   │   └── jf-open.woff2
+│   │   └── jf_open
+│   │       ├── jf-open.woff
+│   │       └── jf-open.woff2
 │   ├── img
 │   │   ├── avatar
 │   │   │   └── TNGT.png
@@ -24,10 +25,12 @@ C:\Users\antou\Documents\GitHub\tngot.org
 │   │   ├── favicon-32x32.png
 │   │   ├── favicon.ico
 │   │   └── site.webmanifest
-│   └── mods
-│       ├── back.js
-│       ├── footer.js
-│       └── icon.js
+│   ├── mods
+│   │   ├── back.js
+│   │   └── footer.js
+│   └── og_img
+│       ├── og_img.png
+│       └── og_img_sq.png
 ├── data
 │   └── team.json
 ├── index.html
@@ -39,8 +42,10 @@ C:\Users\antou\Documents\GitHub\tngot.org
 │   │   └── index.html
 │   ├── join.html
 │   ├── links.html
+│   ├── news.html
 │   ├── partner.html
 │   └── team.html
 └── scripts
     ├── dir_tree.py
-    └── dir_tree.txt
+    ├── dir_tree.txt
+    └── icon.js
