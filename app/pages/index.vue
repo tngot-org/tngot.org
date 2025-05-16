@@ -58,13 +58,13 @@
     <!-- Discord 按鈕 -->
     <UButton
       icon="ic:baseline-discord"
-      size="xl"
+      size="lg"
       to="https://discord.com/invite/BCFcxMU6zV"
       target="_blank"
-      class="relative overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-7 py-5 text-xl font-bold"
+      class="relative overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-4 text-lg font-bold"
       :ui="{
-        base: 'lg:px-8 lg:py-6 lg:text-2xl',
-        leadingIcon: 'lg:p-4'
+        base: 'lg:px-7 lg:py-5 lg:text-xl',
+        leadingIcon: 'lg:p-3'
       }"
     >
       加入 Discord
@@ -82,11 +82,11 @@
         :key="button.to"
         :to="button.to"
         :icon="button.icon"
-        size="xl"
-        class="px-4 py-3 text-xl font-bold"
+        size="lg"
+        class="px-3 py-2.5 text-lg font-bold"
         :ui="{
-          base: 'lg:px-6 lg:py-4.5 lg:text-xl',
-          leadingIcon: 'lg:p-4'
+          base: 'lg:px-5 lg:py-4 lg:text-lg',
+          leadingIcon: 'lg:p-3'
         }"
       >
         {{ button.text }}
