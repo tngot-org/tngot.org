@@ -29,9 +29,10 @@
       "name": "行政組",
       "members": [
         {
-          "name": "優格",
-          "img": "https://www.gravatar.com/avatar/e0b0d4db18369331b23c20e1a31d1e7f?d=identicon&s=150",
-          "alt": "優格",
+          "name": "アントウ",
+          "img": "https://www.gravatar.com/avatar/3edbfa821271f3f0912460ce198b2d7e?d=identicon&s=150",
+          "alt": "アントウ",
+          "link": "https://antou.dev/",
           "classes": [
             "leader"
           ]
