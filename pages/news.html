@@ -72,6 +72,10 @@
             margin-top: 0.5rem;
         }
 
+        a {
+            color: var(--theme-color);
+        }
+
         .news {
             display: flex;
             flex-direction: column;
@@ -144,6 +148,9 @@
         }
 
         .web-update { /* 網站更新 */
+            background-color: #1ea1ff;
+        }
+        .evt-Promo { /* 活動宣傳 */
             background-color: #BE5BFF;
         }
 
@@ -207,6 +214,12 @@
         const nextBtn = document.getElementById("next-btn");
         const newsData = [
             {
+                title: "「解鎖學權大集會」將舉行在5/24教育部前 <a target=\"_blank\" href=\"https://524.tngot.org\">活動網站</a>", 
+                date: "2025.05.18", 
+                category: "evt-Promo", 
+                department: "公關組"
+            }, 
+            {
                 title: "新增「最新消息頁面」", 
                 date: "2025.05.10", 
                 category: "web-update", 
@@ -216,6 +229,7 @@
 
         const cnCategory = {
             "web-update": "網站更新", 
+            "evt-Promo": "活動宣傳", 
         }
 
         const newsPerPage = 5; 
