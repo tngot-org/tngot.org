@@ -5,9 +5,11 @@
   const rounded = useTransform(() => Math.round(count.get()));
   let controls: ReturnType<typeof animate> | undefined;
 
-  const { status, data } = await useGetDiscordMembersCount();
-  if (status) {
-    controls = animate(count, data.value as number, { duration: 1.5 });
+  const { memberCount, isLoading, isError, isSuccess } =
+    await useGetDiscordMembersCount();
+
+  if (isSuccess.value) {
+    controls = animate(count, memberCount.value as number, { duration: 1.5 });
   }
 
   onUnmounted(() => {
@@ -16,17 +18,22 @@
 </script>
 
 <template>
-  <div v-if="status">
-    <p>
-      目前社群成員:
-      <span v-if="status">
-        <RowValue :value="rounded" />
-      </span>
-      <!-- 避免 hydration -->
-      <span v-else>0</span>
-      人
-    </p>
+  <div>
+    <template v-if="isLoading">
+      <span>載入中...</span>
+    </template>
+    <template v-else-if="isError">
+      <span>取得 Discord 成員數失敗</span>
+    </template>
+    <template v-else-if="isSuccess">
+      <p>
+        目前社群成員:
+        <ClientOnly>
+          <RowValue :value="rounded" />
+          <template #fallback> 0 </template>
+        </ClientOnly>
+        人
+      </p>
+    </template>
   </div>
-
-  <div v-else />
 </template>
