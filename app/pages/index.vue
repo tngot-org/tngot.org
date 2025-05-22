@@ -61,7 +61,7 @@
       size="lg"
       :to="`https://discord.com/invite/${useRuntimeConfig().public.discordInviteCode}`"
       target="_blank"
-      class="relative overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-4 text-lg font-bold"
+      class="relative overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-4 text-lg font-bold transition-transform duration-300 hover:scale-105"
       :ui="{
         base: 'lg:px-7 lg:py-5 lg:text-xl',
         leadingIcon: 'lg:p-3'
