@@ -6,10 +6,10 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
   modules: [
-    '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/fonts',
     'motion-v/nuxt',
+    '@nuxt/eslint',
     '@nuxt/test-utils/module',
     'nuxt-mcp'
   ],
