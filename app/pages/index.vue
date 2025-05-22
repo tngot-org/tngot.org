@@ -59,7 +59,7 @@
     <UButton
       icon="ic:baseline-discord"
       size="lg"
-      to="https://discord.com/invite/BCFcxMU6zV"
+      :to="`https://discord.com/invite/${useRuntimeConfig().public.discordInviteCode}`"
       target="_blank"
       class="relative overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-4 text-lg font-bold"
       :ui="{
