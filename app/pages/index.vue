@@ -11,7 +11,7 @@
     { to: '/about', icon: 'heroicons:information-circle', text: '關於我們' },
     { to: '/team', icon: 'heroicons:user-group', text: '工作團隊' },
     { to: '/news', icon: 'heroicons:newspaper', text: '最新消息' },
-    { to: '/events/', icon: 'heroicons:calendar', text: '活動目錄' },
+    { to: '/event/', icon: 'heroicons:calendar', text: '活動目錄' },
     { to: '/partner', icon: 'heroicons:building-storefront', text: '合作夥伴' },
     { to: '/links', icon: 'heroicons:link', text: '相關連結' }
   ];
