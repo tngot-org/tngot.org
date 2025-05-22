@@ -1,111 +1,55 @@
-// 文章分類枚舉
-export enum CategoryType {
-  WEBSITE_UPDATE = 'website-update',
-  EVENT_PROMOTION = 'event-promotion'
-}
-
-// 分類顏色類型
-export type CategoryColor =
-  | 'primary'
-  | 'secondary'
-  | 'info'
-  | 'warning'
-  | 'success';
-
-// 相關連結介面
-export interface LinkInfo {
-  label?: string; // 連結文字，如果沒有提供則預設為「相關連結」
-  url: string; // 連結網址
-}
-
-// 定義新聞項目介面
-export interface NewsItem {
-  title: string;
-  date: string;
-  category: CategoryType;
-  department: string;
-  link?: LinkInfo; // 選填的相關連結欄位
-}
-
-// API 回傳的新聞資料介面
-interface ApiNewsItem {
-  title: string;
-  date: string;
-  category: string;
-  department: string;
-  link?: LinkInfo; // 選填的相關連結欄位
-}
-
-interface ApiNewsResponse {
-  items: ApiNewsItem[];
-}
-
-// 定義分類對照表介面
-export interface CategoryDictionary {
-  [key: string]: string;
-}
-
-// 定義分類顏色對照表介面
-export interface CategoryColorMap {
-  [key: string]: CategoryColor;
-}
+import {
+  type CategoryType,
+  getCategoryLabel,
+  getCategoryColor
+} from '../types/category';
+import type { NewsItem, RawNewsItem } from '../types/news';
 
 // 新聞資料 Composable
-export async function useNewsData() {
-  // 分類中文名稱對照表
-  const categoryLabels: CategoryDictionary = {
-    [CategoryType.WEBSITE_UPDATE]: '網站更新',
-    [CategoryType.EVENT_PROMOTION]: '活動宣傳'
-  };
-
-  // 分類顏色對照表
-  const categoryColors: CategoryColorMap = {
-    [CategoryType.WEBSITE_UPDATE]: 'info',
-    [CategoryType.EVENT_PROMOTION]: 'primary'
-  };
-
-  /**
-   * 取得分類對應的顏色
-   */
-  const getCategoryColor = (category: CategoryType): CategoryColor => {
-    return categoryColors[category] || 'primary';
-  };
-
+export function useNewsData() {
   // 建立 useAsyncData 實例但不立即執行
   const {
-    data: newsData,
+    data: rawNewsData,
     pending: isLoading,
     error,
+    status,
     refresh,
     execute
-  } = useFetch<ApiNewsResponse>(() => '/api/news', {
+  } = useFetch<RawNewsItem[]>('/api/news', {
     key: 'news-data',
-    immediate: false
+    immediate: false,
+    default: () => []
   });
 
-  const newsItems = computed(() => {
-    if (!newsData.value?.items) return [];
+  // 轉換原始資料，將 category 字串轉為 CategoryType 枚舉
+  const newsData = computed<NewsItem[]>(() => {
+    if (!rawNewsData.value || rawNewsData.value.length === 0) {
+      return [];
+    }
 
-    return newsData.value.items.map((item) => ({
+    return rawNewsData.value.map((item) => ({
       ...item,
       category: item.category as CategoryType
     }));
   });
 
+  async function fetchNewsData() {
+    if (status.value !== 'idle') return;
+    await execute();
+  }
+
   /**
    * 返回排序後的新聞，依日期由新到舊排序
    */
-  const getRecentNews = computed(() => {
-    // 確保只排序一次
-    const items = newsItems.value;
-    if (!items.length) return [];
+  const getRecentNews = computed<NewsItem[]>(() => {
+    if (!newsData.value || newsData.value.length === 0) {
+      return [];
+    }
 
-    // 不建立新陣列，減少不必要的記憶體使用
-    return [...items].sort((a, b) => {
-      // 將日期字符串轉換為統一格式
+    // 直接排序轉換後的資料
+    return newsData.value.sort((a, b) => {
       const dateA = new Date(a.date.replace(/\//g, '-'));
       const dateB = new Date(b.date.replace(/\//g, '-'));
-      // 排序：由新到舊
       return dateB.getTime() - dateA.getTime();
     });
   });
@@ -118,6 +62,7 @@ export async function useNewsData() {
   const paginatedNews = computed(() => {
     const startIndex = (currentPage.value - 1) * newsPerPage;
     const endIndex = startIndex + newsPerPage;
+    // 直接使用排序後的資料，不再進行正規化處理
     return getRecentNews.value.slice(startIndex, endIndex);
   });
 
@@ -143,17 +88,17 @@ export async function useNewsData() {
 
   // 按照功能分組返回，增加 fetchNewsData 方法
   return {
+    fetchNewsData,
     // 核心資料與狀態
     core: {
-      newsItems,
+      newsData,
       isLoading,
       error,
-      refreshNewsData: refresh,
-      fetchNewsData: execute // 導出 execute 函數用於手動獲取數據
+      refreshNewsData: refresh
     },
     // 分類相關
     category: {
-      categoryLabels,
+      getCategoryLabel,
       getCategoryColor
     },
     // 排序相關

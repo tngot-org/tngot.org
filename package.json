@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "build": "nuxt build",
     "preview": "nuxt preview --port 4000",
-    "rePreview": "nuxt build && nuxt preview --port 4000 --open",
+    "rePreview": "vitest --watch false  && nuxt build && nuxt preview --port 4000 --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "nuxt prepare && vitest",

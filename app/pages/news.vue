@@ -7,11 +7,14 @@
     title: pageTitle
   });
 
+  const { fetchNewsData } = useNewsData();
+  await fetchNewsData();
+
   // 從各個分組中獲取需要的資訊
-  const newsData = await useNewsData();
+  const newsData = useNewsData();
 
   // 從核心分組獲取載入狀態和錯誤資訊
-  const { isLoading, error, fetchNewsData } = newsData.core;
+  const { isLoading, error } = newsData.core;
 
   // 從分頁分組獲取分頁相關資訊和功能
   const {
@@ -21,15 +24,6 @@
     goToPrevPage,
     goToNextPage
   } = newsData.pagination;
-
-  // 在頁面掛載時獲取新聞數據
-  onMounted(async () => {
-    try {
-      await fetchNewsData();
-    } catch (err) {
-      console.error('獲取新聞數據失敗:', err);
-    }
-  });
 </script>
 
 <template>

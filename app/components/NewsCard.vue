@@ -1,16 +1,15 @@
 <script setup lang="ts">
+  import { getCategoryLabel, getCategoryColor } from '~/types/category';
+  import type { NewsItem } from '~/types/news';
+
   defineProps<{
     newsItem: NewsItem;
   }>();
-
-  // 從分類分組中獲取需要的資訊
-  const { category } = await useNewsData();
-  const { categoryLabels, getCategoryColor } = category;
 </script>
 
 <template>
   <UCard
-    class="font-jf-open mb-6 rounded-xl shadow-lg transition-transform duration-300 select-none hover:scale-105 hover:shadow-xl"
+    class="font-jf-open mb-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
     :ui="{
       root: 'p-0',
       body: 'px-6 py-4 sm:py-4'
@@ -27,7 +26,7 @@
           size="lg"
           class="rounded-lg text-lg"
         >
-          {{ categoryLabels[newsItem.category] || '未分類' }}
+          {{ getCategoryLabel(newsItem.category) || '未分類' }}
         </UBadge>
       </div>
 
