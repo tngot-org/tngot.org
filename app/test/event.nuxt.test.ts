@@ -6,9 +6,23 @@ describe('event.json 非重複 ID 檢查', () => {
     const raw = fs.readFileSync('public/data/event.json', 'utf8');
     const data = JSON.parse(raw);
     const seen = new Set<string>();
-    data.forEach((item: { id: string }) => {
-      expect(seen.has(item.id)).toBe(false);
+    const duplicates: { id: string; index: number }[] = [];
+
+    data.forEach((item: { id: string }, index: number) => {
+      if (seen.has(item.id)) {
+        duplicates.push({ id: item.id, index });
+      }
       seen.add(item.id);
     });
+
+    if (duplicates.length > 0) {
+      const errorMsg =
+        `發現 ${duplicates.length} 個重複的 ID:\n` +
+        duplicates
+          .map((d) => `ID: "${d.id}" 在索引 ${d.index} 處重複出現`)
+          .join('\n');
+      // 使用 fail 替代 expect 來輸出更明確的錯誤信息
+      expect(duplicates.length, errorMsg).toBe(0);
+    }
   });
 });
