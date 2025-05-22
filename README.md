@@ -64,7 +64,7 @@ pnpm preview
 
 #### 注意事項
 
-- 包含 category, department，以及頁面渲染代表色的可使用項，請於 /app/composables/useNewsData.ts 內進行維護
+- 包含 category, department，以及頁面渲染代表色的可使用項，請於 /app/types/category.ts 內進行維護
 - 請確保日期格式為 `yyyy/MM/dd`
 - 於提交 commit 前會自動以 vitest 與 nuxi build 檢查錯誤
 
