@@ -9,6 +9,10 @@
     title: pageTitle
   });
 
+  // 讓重新回到目錄時重置 title
+  const sharedPageTitle = useState('page-title');
+  sharedPageTitle.value = pageTitle;
+
   // 從 event.json 檔案中取得所有事件資料
   const { data: eventsData } = await useFetch<EventItem[]>('/data/event.json');
 
