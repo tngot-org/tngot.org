@@ -66,7 +66,45 @@ pnpm preview
 
 - 包含 category, department，以及頁面渲染代表色的可使用項，請於 /app/types/category.ts 內進行維護
 - 請確保日期格式為 `yyyy/MM/dd`
-- 於提交 commit 前會自動以 vitest 與 nuxi build 檢查錯誤
+
+> 以上皆會自動以 vitest 與 nuxi build 檢查錯誤
+
+### "活動記錄" (/event) 的文章清單維護
+
+文章資料位於 `public/data/event.json` 檔案中，以 JSON 格式儲存。
+
+#### 新增活動
+
+要新增新的活動項目，請在 `event.json` 檔案的陣列中新增物件，包含以下欄位：
+
+```json
+[
+  {
+    "id": "419",
+    "detail": {
+      "title": "419 反共大遊行",
+      "info": "2025年4月19日下午，台北市凱達格蘭大道...",
+      "link": "/events/419",
+      "date": "2025/04/19",
+      "type": "遊行集會",
+      "card": {
+        "title": "「拒絕統戰，守護台灣」大會",
+        "description": "「拒絕統戰，守護台灣」大會，又稱419大遊行，是2025年4月19日下午在台灣台北市凱達格蘭大道的大型集會遊行。該活動訴求為反對中國共產黨滲透及統戰、守護台灣的民主自由。",
+        "image": ["/images/events/419/1.jpg", "/images/events/419/2.jpg"]
+      }
+    }
+  }
+  // ...
+]
+```
+
+#### 注意事項
+
+- `id`: 活動的唯一識別碼，請確保不重複
+- `date`: 請確保日期格式為 `yyyy/MM/dd`
+- `image`: 圖片路徑，請確保圖片已存在於 `public/images/events/{id}` 資料夾中
+
+> 以上皆會自動以 vitest 與 nuxi build 檢查錯誤
 
 ## 貢獻指南
 
