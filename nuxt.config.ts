@@ -21,6 +21,14 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'light'
   },
+  icon: {
+    customCollections: [
+      {
+        prefix: 'my-icon',
+        dir: './app/assets/my-icons'
+      }
+    ]
+  },
 
   runtimeConfig: {
     public: {
