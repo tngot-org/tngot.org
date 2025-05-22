@@ -96,7 +96,7 @@
     <ActionButtonsGroup>
       <template #right>
         <UButton to="/event" icon="heroicons:arrow-left" size="xl" color="info">
-          回到活動目錄
+          回到目錄
         </UButton>
       </template>
     </ActionButtonsGroup>
