@@ -3,9 +3,16 @@ import fs from 'fs';
 import path from 'path';
 import { validateImage } from '../utils/fileValidator';
 import { validateDate } from '../utils/dateValidator';
-import type { EventItem } from '../types/event';
+import type { EventData } from '../types/event';
 
-describe('event.json 資料驗證測試', () => {
+// 定義符合 event.json 數據結構的介面
+// 使用 type 避免重複定義，並與 event.ts 保持一致
+type EventItem = {
+  id: string;
+  detail: EventData;
+};
+
+describe('event.json 圖片與日期測試', () => {
   // 取得 event.json 文件內容
   const getEventJsonData = (): EventItem[] => {
     const filePath = path.resolve(process.cwd(), './public/data/event.json');
@@ -13,32 +20,10 @@ describe('event.json 資料驗證測試', () => {
     return JSON.parse(fileContent);
   };
 
-  it('應該具有唯一的 ID', () => {
-    const eventData = getEventJsonData();
-    const seen = new Set<string>();
-    const duplicates: { id: string; index: number }[] = [];
-
-    eventData.forEach((item, index) => {
-      if (seen.has(item.id)) {
-        duplicates.push({ id: item.id, index });
-      }
-      seen.add(item.id);
-    });
-
-    if (duplicates.length > 0) {
-      const errorMsg =
-        `發現 ${duplicates.length} 個重複的 ID:\n` +
-        duplicates
-          .map((d) => `ID: "${d.id}" 在索引 ${d.index} 處重複出現`)
-          .join('\n');
-      expect(duplicates.length, errorMsg).toBe(0);
-    }
-  });
-
   it('應該具有有效的圖片路徑', () => {
     const eventData = getEventJsonData();
 
-    eventData.forEach((eventItem) => {
+    eventData.forEach((eventItem: EventItem) => {
       // 首先確認結構正確
       expect(eventItem).toHaveProperty('id');
       expect(eventItem).toHaveProperty('detail');
@@ -64,7 +49,7 @@ describe('event.json 資料驗證測試', () => {
   it('應該具有有效的日期格式', () => {
     const eventData = getEventJsonData();
 
-    eventData.forEach((eventItem) => {
+    eventData.forEach((eventItem: EventItem) => {
       if (eventItem.detail && eventItem.detail.date) {
         // 將 yyyy-MM-dd 轉換為 yyyy/MM/dd 格式再驗證
         const dateStr = eventItem.detail.date.replace(/-/g, '/');

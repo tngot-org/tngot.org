@@ -1,15 +1,12 @@
 <script setup lang="ts">
-  import type { EventData } from '~/types/event';
+  import type { EventItem } from '~/types/event';
 
   // 取得路由參數
   const route = useRoute();
   const eventId = route.params.title as string;
 
   // 從 event.json 檔案中取得所有事件資料
-  const { data: eventsData } =
-    await useFetch<Array<{ id: string; detail: EventData }>>(
-      '/data/event.json'
-    );
+  const { data: eventsData } = await useFetch<EventItem[]>('/data/event.json');
 
   // 根據路由參數找到對應的事件資料
   const eventDetail = computed(() => {

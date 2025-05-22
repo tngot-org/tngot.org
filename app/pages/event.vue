@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type { EventData } from '~/types/event';
+  import type { EventItem } from '~/types/event';
 
   const pageTitle = '活動目錄';
   definePageMeta({
@@ -10,10 +10,7 @@
   });
 
   // 從 event.json 檔案中取得所有事件資料
-  const { data: eventsData } =
-    await useFetch<Array<{ id: string; detail: EventData }>>(
-      '/data/event.json'
-    );
+  const { data: eventsData } = await useFetch<EventItem[]>('/data/event.json');
 
   // 取得事件資料列表
   const eventItems = computed(() => {

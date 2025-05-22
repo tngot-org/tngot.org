@@ -10,13 +10,16 @@ export interface EventData {
   link: string;
   date: string;
   type: string;
-  icon: string;
-  color: string;
+  icon?: string; // 修改為可選屬性
+  color?: string; // 修改為可選屬性
   card: EventCard;
 }
 
-export type EventsMap = {
-  [eventId: string]: EventData;
-};
+// 定義單個事件項目類型
+export interface EventItem {
+  id: string;
+  detail: EventData;
+}
 
-export type EventsList = EventsMap[];
+// 定義整個 event.json 的數據類型
+export type EventsList = EventItem[];
