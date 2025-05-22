@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/fonts',
     'motion-v/nuxt',
+    '@nuxt/test-utils/module',
     'nuxt-mcp'
   ],
 
