@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   const title = '工作團隊';
   definePageMeta({
     title
@@ -7,18 +7,20 @@
     title
   });
 
-  // 從 JSON 檔案載入基本團隊資料（快速顯示）
+  // 從 JSON 檔案載入基本團隊資料
   const { data: teamData, status: statusBasicInfo } =
-    await useFetch('/api/team-basic');
+    await useFetch<TeamData>('/api/team-basic');
 
-  // 非同步載入團隊總人數資料（不阻塞頁面渲染）
-  const { status, data: teamCountData } = useLazyFetch('/api/team-count');
+  // 調用 Google Apps Script API 獲取團隊總人數
+  const { status, data: teamCountData } = useLazyFetch<TeamCountResponse>(
+    'https://script.google.com/macros/s/AKfycbx1PCyuA_k2rBD4PxITVGe6atflFEAFRYNmxjgLXkpbQC7WS9aTXpRHPL18gmWZKBlOJQ/exec'
+  );
 
   // 計算有多少成員在多個組別中
   const multiRoleMembers = computed(() => {
     if (!teamData.value) return {};
 
-    const memberCounts = {};
+    const memberCounts: Record<string, number> = {};
     teamData.value.groups.forEach((group) => {
       group.members.forEach((member) => {
         memberCounts[member.name] = (memberCounts[member.name] || 0) + 1;
@@ -33,16 +35,14 @@
   });
 
   // 計算團隊成員總數 (從 API 獲取，包含未公開展示的成員)
-  const teamMemberCounts = computed(
-    () => teamCountData.value?.totalMemberCount || 0
-  );
+  const teamMemberCounts = computed(() => teamCountData.value?.members || 0);
 </script>
 
 <template>
   <div class="px-4 py-12">
     <!-- 團隊組別區塊 -->
     <template v-if="statusBasicInfo === 'success'">
-      <UCard v-for="group in teamData.groups" :key="group.id" class="mb-12">
+      <UCard v-for="group in teamData?.groups" :key="group.id" class="mb-12">
         <template #header>
           <h2
             class="border-primary text-primary mb-4 border-l-4 pl-3 text-2xl font-bold"
