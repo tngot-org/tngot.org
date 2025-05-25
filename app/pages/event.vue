@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
   const pageTitle = '活動目錄';
   definePageMeta({
     title: pageTitle
@@ -12,8 +11,8 @@
   const sharedPageTitle = useState('page-title');
   sharedPageTitle.value = pageTitle;
 
-  // 從 event.json 檔案中取得所有事件資料
-  const { data: eventsData } = await useFetch<EventItem[]>('/data/event.json');
+  // 從 API 端點取得所有事件資料
+  const { data: eventsData } = await useFetch<EventItem[]>('/api/event');
 
   // 取得事件資料列表
   const eventItems = computed(() => {

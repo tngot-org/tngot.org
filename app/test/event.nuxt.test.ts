@@ -7,7 +7,7 @@ import { validateDate } from '../utils/dateValidator';
 describe('event.json 資料驗證測試', () => {
   // 取得 event.json 文件內容
   const getEventJsonData = (): EventItem[] => {
-    const filePath = path.resolve(process.cwd(), './public/data/event.json');
+    const filePath = path.resolve(process.cwd(), './server/assets/event.json');
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(fileContent);
   };

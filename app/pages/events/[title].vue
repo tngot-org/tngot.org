@@ -3,8 +3,8 @@
   const route = useRoute();
   const eventId = route.params.title as string;
 
-  // 從 event.json 檔案中取得所有事件資料
-  const { data: eventsData } = await useFetch<EventItem[]>('/data/event.json');
+  // 從 API 端點取得所有事件資料
+  const { data: eventsData } = await useFetch<EventItem[]>('/api/event');
 
   // 根據路由參數找到對應的事件資料
   const eventDetail = computed(() => {

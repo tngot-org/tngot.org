@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  
-
   // 定義一個單個事件對象作為 props
   defineProps<{
     event: EventData;

@@ -7,7 +7,7 @@ import { validateDate } from '../utils/dateValidator';
 describe('news.json 日期格式', () => {
   // 取得 news.json 文件內容
   const getNewsJsonData = () => {
-    const filePath = path.resolve(process.cwd(), './public/data/news.json');
+    const filePath = path.resolve(process.cwd(), './server/assets/news.json');
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(fileContent);
   };
