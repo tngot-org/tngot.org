@@ -43,7 +43,7 @@ pnpm preview
 
 ### "最新消息" (/news) 的文章清單維護
 
-文章資料位於 `public/data/news.json` 檔案中，以 JSON 格式儲存。
+文章資料位於 `server/data/news.json` 檔案中，以 JSON 格式儲存。
 
 #### 新增文章
 
@@ -71,7 +71,7 @@ pnpm preview
 
 ### "活動記錄" (/event) 的文章清單維護
 
-文章資料位於 `public/data/event.json` 檔案中，以 JSON 格式儲存。
+文章資料位於 `server/data/event.json` 檔案中，以 JSON 格式儲存。
 
 #### 新增活動
 

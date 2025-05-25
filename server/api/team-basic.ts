@@ -4,7 +4,7 @@ import { resolve } from 'path';
 export default defineEventHandler(async () => {
   try {
     // 讀取 team.json 檔案
-    const filePath = resolve(process.cwd(), 'public/data/team.json');
+    const filePath = resolve(process.cwd(), './server/data/team.json');
     const fileContent = readFileSync(filePath, 'utf-8');
     const teamData = JSON.parse(fileContent);
 
