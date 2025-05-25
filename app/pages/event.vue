@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import type { EventItem } from '~/types/event';
 
   const pageTitle = '活動目錄';
   definePageMeta({

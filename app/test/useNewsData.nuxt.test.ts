@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
-import { CategoryType } from '../types/category';
 import { validateDate } from '../utils/dateValidator';
 
 // 用於測試日期格式

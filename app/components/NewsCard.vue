@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { getCategoryLabel, getCategoryColor } from '~/types/category';
-  import type { NewsItem } from '~/types/news';
 
   defineProps<{
     newsItem: NewsItem;

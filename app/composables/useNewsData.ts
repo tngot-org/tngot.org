@@ -1,10 +1,3 @@
-import {
-  type CategoryType,
-  getCategoryLabel,
-  getCategoryColor
-} from '../types/category';
-import type { NewsItem, RawNewsItem } from '../types/news';
-
 // 新聞資料 Composable
 export function useNewsData() {
   // 建立 useAsyncData 實例但不立即執行

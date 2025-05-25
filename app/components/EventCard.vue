@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type { EventData } from '~/types/event';
+  
 
   // 定義一個單個事件對象作為 props
   defineProps<{

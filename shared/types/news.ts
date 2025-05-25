@@ -1,5 +1,3 @@
-import type { CategoryType } from './category';
-
 // 連結資訊介面
 export interface LinkInfo {
   label: string;

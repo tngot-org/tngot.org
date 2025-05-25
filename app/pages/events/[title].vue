@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import type { EventItem } from '~/types/event';
-
   // 取得路由參數
   const route = useRoute();
   const eventId = route.params.title as string;
