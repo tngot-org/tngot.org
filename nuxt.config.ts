@@ -29,7 +29,9 @@ export default defineNuxtConfig({
       }
     ]
   },
-
+  typescript: {
+    typeCheck: true
+  },
   runtimeConfig: {
     public: {
       discordInviteCode: 'vykUZ9wA3Y'
