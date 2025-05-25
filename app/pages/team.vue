@@ -1,68 +1,58 @@
 <script setup lang="ts">
   const title = '工作團隊';
-  definePageMeta({
-    title
-  });
-  useHead({
-    title
-  });
 
-  // 從 JSON 檔案載入基本團隊資料
-  const { data: teamData, status: statusBasicInfo } =
+  definePageMeta({ title });
+  useHead({ title });
+
+  // 直接載入基本團隊資料
+  const { data: teamData, status: teamDataStatus } =
     await useFetch<TeamData>('/api/team-basic');
 
-  // 調用 Google Apps Script API 獲取團隊總人數
-  const { status, data: teamCountData } = useLazyFetch<TeamCountResponse>(
-    'https://script.google.com/macros/s/AKfycbx1PCyuA_k2rBD4PxITVGe6atflFEAFRYNmxjgLXkpbQC7WS9aTXpRHPL18gmWZKBlOJQ/exec'
-  );
+  // 獲取團隊總人數
+  const { status: countStatus, data: teamCountData } =
+    useLazyFetch<TeamCountResponse>(
+      'https://script.google.com/macros/s/AKfycbx1PCyuA_k2rBD4PxITVGe6atflFEAFRYNmxjgLXkpbQC7WS9aTXpRHPL18gmWZKBlOJQ/exec'
+    );
 
-  // 計算有多少成員在多個組別中
+  // 計算多重角色成員
   const multiRoleMembers = computed(() => {
-    if (!teamData.value) return {};
+    if (!teamData.value?.groups) return {};
 
-    const memberCounts: Record<string, number> = {};
+    const memberCounts = new Map<string, number>();
+
     teamData.value.groups.forEach((group) => {
       group.members.forEach((member) => {
-        memberCounts[member.name] = (memberCounts[member.name] || 0) + 1;
+        memberCounts.set(member.name, (memberCounts.get(member.name) || 0) + 1);
       });
     });
 
     return Object.fromEntries(
-      Object.entries(memberCounts)
+      Array.from(memberCounts.entries())
         .filter(([_, count]) => count > 1)
         .map(([name]) => [name, true])
     );
   });
 
-  // 計算團隊成員總數 (從 API 獲取，包含未公開展示的成員)
-  const teamMemberCounts = computed(() => teamCountData.value?.members || 0);
+  // 團隊成員總數
+  const totalMemberCount = computed(() => teamCountData.value?.members || 0);
+
+  // 加載狀態
+  const isTeamDataLoaded = computed(() => teamDataStatus.value === 'success');
 </script>
 
 <template>
   <div class="px-4 py-12">
-    <!-- 團隊組別區塊 -->
-    <template v-if="statusBasicInfo === 'success'">
-      <UCard v-for="group in teamData?.groups" :key="group.id" class="mb-12">
-        <template #header>
-          <h2
-            class="border-primary text-primary mb-4 border-l-4 pl-3 text-2xl font-bold"
-          >
-            {{ group.name }}
-          </h2>
-        </template>
+    <!-- 主要內容 -->
+    <template v-if="isTeamDataLoaded">
+      <!-- 團隊組別 -->
+      <TeamGroupCard
+        v-for="group in teamData?.groups"
+        :key="group.id"
+        :group="group"
+        :multi-role-members="multiRoleMembers"
+      />
 
-        <div class="flex flex-wrap items-center justify-start gap-8">
-          <TeamMemberCard
-            v-for="member in group.members"
-            :key="`${group.id}-${member.name}`"
-            :member="member"
-            :group-id="group.id"
-            :is-multi-role="multiRoleMembers[member.name]"
-          />
-        </div>
-      </UCard>
-
-      <!-- 總人數區塊 -->
+      <!-- 總人數統計 -->
       <UCard class="mb-12">
         <template #header>
           <h2
@@ -74,31 +64,20 @@
 
         <p>
           <span>目前我們的團隊共有</span>
-          <span v-if="status === 'pending'"> ... </span>
-          <span v-else-if="status === 'success'">
-            {{ ` ${teamMemberCounts} ` }}
+          <span v-if="countStatus === 'pending'"> ... </span>
+          <span v-else-if="countStatus === 'success'">
+            {{ ` ${totalMemberCount} ` }}
           </span>
           <span v-else>超過 30 </span>
           <span>名工作人員，其中部分成員選擇不公開展示。</span>
         </p>
       </UCard>
     </template>
-    <template v-else>
-      <UCard class="mb-12">
-        <template #header>
-          <h2
-            class="border-primary text-primary border-l-4 pl-3 text-2xl font-bold"
-          >
-            工作團隊
-          </h2>
-        </template>
-        <USkeleton class="mb-4 h-8 w-1/3" />
-        <div class="flex flex-wrap items-center gap-3">
-          <USkeleton v-for="n in 6" :key="n" class="h-48 w-[200px]" />
-        </div>
-      </UCard>
-    </template>
 
+    <!-- 載入中骨架屏 -->
+    <TeamLoadingSkeleton v-else />
+
+    <!-- 操作按鈕 -->
     <ActionButtonsGroup>
       <template #right>
         <UButton

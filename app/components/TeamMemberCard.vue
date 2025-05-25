@@ -1,15 +1,4 @@
 <script setup lang="ts">
-  /**
-   * 團隊成員資訊類型定義
-   */
-  interface TeamMember {
-    name: string;
-    img?: string;
-    alt?: string;
-    link?: string;
-    classes?: string[];
-  }
-
   const props = defineProps({
     member: {
       type: Object as () => TeamMember,
