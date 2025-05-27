@@ -7,46 +7,33 @@
     groupId: {
       type: String,
       default: ''
-    }
-  });
-
-  // 追蹤成員圖片是否有效
-  const isMemberImageValid = ref(true);
-
-  // 預先檢查圖片是否存在
-  onMounted(() => {
-    if (props.member.img) {
-      const img = new Image();
-      img.onload = () => {
-        isMemberImageValid.value = true;
-      };
-      img.onerror = () => {
-        isMemberImageValid.value = false;
-      };
-      img.src = props.member.img;
+    },
+    isPrimaryLeader: {
+      type: Boolean,
+      default: false
+    },
+    isDeputyLeader: {
+      type: Boolean,
+      default: false
     }
   });
 
   /**
-   * 計算成員是否為組長
+   * 計算成員是否為組長或副組長
    */
   const isLeader = computed(
-    () => props.member.classes?.includes('leader') || false
+    () => props.isPrimaryLeader || props.isDeputyLeader
   );
 
   /**
    * 計算成員頭像URL，提供預設值
    */
-  const avatarUrl = computed(() =>
-    props.member.img && isMemberImageValid.value
-      ? props.member.img
-      : '/images/avatar/TNGT.png'
-  );
+  const avatarUrl = props.member.avatar;
 
   /**
    * 計算成員替代文字
    */
-  const avatarAlt = computed(() => props.member.alt || props.member.name);
+  const avatarAlt = computed(() => props.member.name);
 
   /**
    * 計算卡片樣式類 - 這裡合併陣列並移除空值
@@ -61,14 +48,6 @@
    */
   const contentWrapperClass =
     'flex h-full w-full flex-col items-center justify-center';
-
-  /**
-   * 圖片加載錯誤處理函數 - 使用預設圖片
-   */
-  const handleImageError = (e: Event) => {
-    const target = e.target as HTMLImageElement;
-    target.src = '/images/avatar/TNGT.png';
-  };
 </script>
 
 <template>
@@ -79,7 +58,7 @@
     />
     <UCard
       variant="outline"
-      class="xs:px-2 relative z-10 overflow-visible px-6 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-lg"
+      class="xs:px-2 relative z-10 w-32 overflow-visible px-6 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-lg sm:w-36"
       :class="cardClasses"
       :ui="{
         root: 'py-0',
@@ -99,36 +78,40 @@
         :aria-label="`連結至 ${member.name} 的個人頁面`"
         role="article"
       >
-        <img
+        <NuxtImg
           :src="avatarUrl"
           :alt="avatarAlt"
           class="mb-2 aspect-square h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           loading="lazy"
-          @error="handleImageError"
+          placeholder="/images/avatar/TNGT.png"
         />
-        <p
-          :id="`member-name-${member.name}`"
-          class="w-max text-center text-sm font-medium sm:text-base"
-        >
-          {{ member.name }}
-        </p>
+        <UTooltip :text="member.name" :delay-duration="0">
+          <p
+            :id="`member-name-${member.name}`"
+            class="member-name w-full px-1 text-center text-sm font-medium sm:text-base"
+          >
+            {{ member.name }}
+          </p>
+        </UTooltip>
       </NuxtLink>
 
       <!-- 無連結時使用普通 div -->
       <div v-else :class="contentWrapperClass" role="article">
-        <img
+        <NuxtImg
           :src="avatarUrl"
           :alt="avatarAlt"
           class="mb-2 aspect-square h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           loading="lazy"
-          @error="handleImageError"
+          placeholder="/images/avatar/TNGT.png"
         />
-        <p
-          :id="`member-name-${member.name}`"
-          class="w-max text-center text-sm font-medium sm:text-base"
-        >
-          {{ member.name }}
-        </p>
+        <UTooltip :text="member.name" :delay-duration="0">
+          <p
+            :id="`member-name-${member.name}`"
+            class="member-name w-full px-1 text-center text-sm font-medium sm:text-base"
+          >
+            {{ member.name }}
+          </p>
+        </UTooltip>
       </div>
     </UCard>
   </div>
@@ -142,7 +125,6 @@
     z-index: 1;
     transform: translateZ(0); /* 促進硬體加速 */
     animation: rgbGlow 3s ease-in-out infinite;
-    will-change: box-shadow, border-color; /* 提示瀏覽器優化動畫性能 */
   }
 
   @keyframes rgbGlow {
@@ -177,5 +159,17 @@
   img {
     transition: opacity 0.3s ease-in-out;
     backface-visibility: hidden; /* 減少閃爍 */
+  }
+
+  /* 成員姓名樣式 */
+  .member-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* 移除 NuxtLink 的焦點邊框 */
+  a {
+    outline: none;
   }
 </style>

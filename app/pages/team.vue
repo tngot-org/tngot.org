@@ -4,37 +4,12 @@
   definePageMeta({ title });
   useHead({ title });
 
-  // 直接載入基本團隊資料
+  // 直接載入團隊資料
   const { data: teamData, status: teamDataStatus } =
-    await useFetch<TeamData>('/api/team-basic');
-
-  // 獲取團隊總人數
-  const { status: countStatus, data: teamCountData } =
-    useLazyFetch<TeamCountResponse>(
-      'https://script.google.com/macros/s/AKfycbx1PCyuA_k2rBD4PxITVGe6atflFEAFRYNmxjgLXkpbQC7WS9aTXpRHPL18gmWZKBlOJQ/exec'
-    );
-
-  // 計算多重角色成員
-  const multiRoleMembers = computed(() => {
-    if (!teamData.value?.groups) return {};
-
-    const memberCounts = new Map<string, number>();
-
-    teamData.value.groups.forEach((group) => {
-      group.members.forEach((member) => {
-        memberCounts.set(member.name, (memberCounts.get(member.name) || 0) + 1);
-      });
-    });
-
-    return Object.fromEntries(
-      Array.from(memberCounts.entries())
-        .filter(([_, count]) => count > 1)
-        .map(([name]) => [name, true])
-    );
-  });
+    await useLazyFetch<TeamData>('/api/team');
 
   // 團隊成員總數
-  const totalMemberCount = computed(() => teamCountData.value?.members || 0);
+  const totalMemberCount = computed(() => teamData.value?.totalMembers || 0);
 
   // 加載狀態
   const isTeamDataLoaded = computed(() => teamDataStatus.value === 'success');
@@ -49,7 +24,6 @@
         v-for="group in teamData?.groups"
         :key="group.id"
         :group="group"
-        :multi-role-members="multiRoleMembers"
       />
 
       <!-- 總人數統計 -->
@@ -64,8 +38,8 @@
 
         <p>
           <span>目前我們的團隊共有</span>
-          <span v-if="countStatus === 'pending'"> ... </span>
-          <span v-else-if="countStatus === 'success'">
+          <span v-if="teamDataStatus === 'pending'"> ... </span>
+          <span v-else-if="teamDataStatus === 'success'">
             {{ ` ${totalMemberCount} ` }}
           </span>
           <span v-else>超過 30 </span>

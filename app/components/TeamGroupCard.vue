@@ -1,7 +1,6 @@
 <script setup lang="ts">
   interface Props {
     group: TeamGroup;
-    multiRoleMembers: Record<string, boolean>;
   }
 
   defineProps<Props>();
@@ -17,14 +16,36 @@
       </h2>
     </template>
 
-    <div class="flex flex-wrap items-center justify-start gap-8">
+    <div
+      class="grid grid-cols-2 justify-items-center gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+    >
+      <!-- 主組長 -->
       <TeamMemberCard
-        v-for="member in group.members"
-        :key="`${group.id}-${member.name}`"
-        :member="member"
+        v-if="group.primaryLeader"
+        :key="`${group.id}-primary-${group.primaryLeader.name}`"
+        :member="group.primaryLeader"
         :group-id="group.id"
-        :is-multi-role="multiRoleMembers[member.name]"
+        :is-primary-leader="true"
       />
+
+      <!-- 副組長 -->
+      <TeamMemberCard
+        v-if="group.deputyLeader"
+        :key="`${group.id}-deputy-${group.deputyLeader.name}`"
+        :member="group.deputyLeader"
+        :group-id="group.id"
+        :is-deputy-leader="true"
+      />
+
+      <!-- 一般成員 -->
+      <template v-if="group.members">
+        <TeamMemberCard
+          v-for="member in group.members"
+          :key="`${group.id}-member-${member.name}`"
+          :member="member"
+          :group-id="group.id"
+        />
+      </template>
     </div>
   </UCard>
 </template>
