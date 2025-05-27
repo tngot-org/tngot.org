@@ -44,7 +44,7 @@
       icon: 'i-heroicons-envelope'
     },
     {
-      url: 'https://github.com/ivantw829/tngot.org',
+      url: 'https://github.com/tngot-org/tngot.org',
       name: 'GitHub',
       icon: 'i-skill-icons-github-dark'
     }
