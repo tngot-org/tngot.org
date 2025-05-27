@@ -1,30 +1,23 @@
 // 團隊成員介面
 export interface TeamMember {
+  discordId: string;
   name: string;
-  img: string;
-  alt: string;
   link: string;
-  classes: string[];
+  avatar: string;
 }
 
 // 團隊組別介面
 export interface TeamGroup {
   id: string;
   name: string;
-  members: TeamMember[];
+  primaryLeader: TeamMember | null; // 可能沒有組長
+  deputyLeader: TeamMember | null; // 可能沒有副組長
+  members: TeamMember[] | null; // 可能沒有剩餘成員
 }
 
 // 團隊數據介面
 export interface TeamData {
+  totalMembers: number;
+  lastUpdated: string;
   groups: TeamGroup[];
-}
-
-// Google Apps Script API 回應介面
-export interface TeamCountResponse {
-  members: number;
-}
-
-// 團隊總人數數據介面
-export interface TeamCountData {
-  totalMemberCount: number;
 }
