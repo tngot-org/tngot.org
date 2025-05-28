@@ -28,7 +28,7 @@
   /**
    * 計算成員頭像URL，提供預設值
    */
-  const avatarUrl = props.member.avatar;
+  const avatarUrl = computed(() => props.member.avatar || '/images/avatar/TNGT.png');
 
   /**
    * 計算成員替代文字
@@ -78,12 +78,13 @@
         :aria-label="`連結至 ${member.name} 的個人頁面`"
         role="article"
       >
-        <NuxtImg
+        <!-- 頭像圖片 - 統一使用 img 標籤 -->
+        <img
           :src="avatarUrl"
           :alt="avatarAlt"
           class="mb-2 aspect-square h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           loading="lazy"
-          placeholder="/images/avatar/TNGT.png"
+          :onerror="`this.src='/images/avatar/TNGT.png'`"
         />
         <UTooltip :text="member.name" :delay-duration="0">
           <p
@@ -97,12 +98,13 @@
 
       <!-- 無連結時使用普通 div -->
       <div v-else :class="contentWrapperClass" role="article">
-        <NuxtImg
+        <!-- 頭像圖片 - 統一使用 img 標籤 -->
+        <img
           :src="avatarUrl"
           :alt="avatarAlt"
           class="mb-2 aspect-square h-20 w-20 shrink-0 rounded-full object-cover sm:h-24 sm:w-24"
           loading="lazy"
-          placeholder="/images/avatar/TNGT.png"
+          :onerror="`this.src='/images/avatar/TNGT.png'`"
         />
         <UTooltip :text="member.name" :delay-duration="0">
           <p
