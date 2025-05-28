@@ -11,8 +11,7 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
-    'nuxt-mcp',
-    '@nuxt/image'
+    'nuxt-mcp'
   ],
 
   css: ['~/assets/css/main.css'],
