@@ -3,6 +3,7 @@
     htmlAttrs: {
       lang: 'zh-Hant-TW'
     },
+    title: '台灣未來的主人們 TNGT',
     titleTemplate: (titleChunk) => {
       return titleChunk
         ? `${titleChunk} | 台灣未來的主人們 TNGT`
