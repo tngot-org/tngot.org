@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/fonts',
+    'nuxt-simple-sitemap',
     'motion-v/nuxt',
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
@@ -37,11 +38,20 @@ export default defineNuxtConfig({
       discordInviteCode: 'vykUZ9wA3Y'
     }
   },
+  site: {
+    url: 'https://tngot.org'
+  },
   app: {
     head: {
       htmlAttrs: {
         lang: 'zh-Hant-TW'
       },
+      meta: [
+        {
+          name: 'theme-color',
+          content: 'rgb(var(--color-primary-500))'
+        }
+      ],
       link: [
         {
           rel: 'apple-touch-icon',
