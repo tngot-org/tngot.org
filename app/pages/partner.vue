@@ -34,17 +34,17 @@
 </script>
 
 <template>
-  <div class="m-8 max-w-6xl space-y-8 sm:mx-auto sm:px-8">
+  <div class="m-4 max-w-6xl space-y-6 sm:m-8 sm:mx-auto sm:space-y-8 sm:px-8">
     <!-- 合作夥伴列表 -->
     <div
       v-for="partner in partners"
       :key="partner.name"
-      class="flex flex-row items-center rounded-lg bg-white p-8 shadow-md transition-all hover:scale-[1.008] hover:transform hover:shadow-lg"
+      class="flex flex-col rounded-lg bg-white p-4 shadow-md transition-all hover:scale-[1.008] hover:transform hover:shadow-lg md:flex-row md:items-center md:p-8"
     >
       <img
         :src="partner.img"
         :alt="partner.name"
-        class="mr-8 h-[150px] w-[150px] object-contain"
+        class="mb-4 h-[120px] w-[120px] self-center object-contain md:mb-0 md:mr-8 md:h-[150px] md:w-[150px] md:self-auto"
       />
       <div class="flex-1">
         <p>
@@ -53,7 +53,7 @@
         <p
           v-for="(para, idx) in partner.paras"
           :key="idx"
-          class="text-base leading-relaxed text-gray-500"
+          class="text-sm leading-relaxed text-gray-500 sm:text-base"
         >
           {{ para }}
         </p>
@@ -63,7 +63,7 @@
             target="_blank"
             color="primary"
             variant="outline"
-            class="inline-flex items-center"
+            class="inline-flex w-full items-center justify-center text-sm sm:w-auto sm:text-base"
           >
             了解更多
             <span class="underline"> {{ partner.name }} </span>
