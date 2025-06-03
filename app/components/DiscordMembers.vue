@@ -3,14 +3,31 @@
 
   const count = useMotionValue(0);
   const rounded = useTransform(() => Math.round(count.get()));
+
+  const { memberCount, hasError, refresh } = useGetDiscordMembersCount();
+
   let controls: ReturnType<typeof animate> | undefined;
 
-  const { memberCount, isLoading, isError, isSuccess } =
-    await useGetDiscordMembersCount();
+  // 每次進入都重新取得數據
+  onMounted(async () => {
+    await refresh();
+  });
 
-  if (isSuccess.value) {
-    controls = animate(count, memberCount.value as number, { duration: 1.5 });
-  }
+  // 監聽 memberCount 變化，有數據時開始動畫
+  watch(
+    memberCount,
+    (newCount) => {
+      if (newCount && !hasError.value) {
+        // 停止之前的動畫
+        controls?.stop();
+        // 重置計數器
+        count.set(0);
+        // 開始新動畫
+        controls = animate(count, newCount, { duration: 1.8 });
+      }
+    },
+    { immediate: true }
+  );
 
   onUnmounted(() => {
     controls?.stop();
@@ -18,22 +35,15 @@
 </script>
 
 <template>
-  <div>
-    <template v-if="isLoading">
-      <span>載入中...</span>
-    </template>
-    <template v-else-if="isError">
-      <span>取得 Discord 成員數失敗</span>
-    </template>
-    <template v-else-if="isSuccess">
-      <p>
-        目前社群成員:
-        <ClientOnly>
-          <RowValue :value="rounded" />
-          <template #fallback> 0 </template>
-        </ClientOnly>
-        人
-      </p>
-    </template>
+  <!-- 有錯誤時隱藏整個元件 -->
+  <div v-if="!hasError">
+    <p>
+      目前社群成員:
+      <ClientOnly>
+        <RowValue :value="rounded" />
+        <template #fallback> 0 </template>
+      </ClientOnly>
+      人
+    </p>
   </div>
 </template>
