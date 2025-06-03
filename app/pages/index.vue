@@ -51,7 +51,7 @@
     </div>
 
     <!-- Discord 成員數量 -->
-    <DiscordMembers
+    <LazyDiscordMembers
       class="my-4 text-xl font-bold text-white text-shadow-gray-800 text-shadow-md md:text-2xl 2xl:text-3xl"
     />
 
