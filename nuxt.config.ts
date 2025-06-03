@@ -15,9 +15,22 @@ export default defineNuxtConfig({
     'nuxt-mcp'
   ],
 
+  // 性能優化配置
+  experimental: {
+    payloadExtraction: false,
+    renderJsonPayloads: true
+  },
+
   css: ['~/assets/css/main.css'],
   fonts: {
-    families: [{ name: 'Noto Sans TC', provider: 'google' }]
+    families: [{ name: 'Noto Sans TC', provider: 'google' }],
+    defaults: {
+      weights: [400, 700],
+      styles: ['normal'],
+      fallbacks: {
+        'sans-serif': ['Arial', 'sans-serif']
+      }
+    }
   },
   colorMode: {
     preference: 'light'
