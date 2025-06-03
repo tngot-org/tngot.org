@@ -4,9 +4,10 @@
   definePageMeta({ title });
   useHead({ title });
 
-  // 直接載入團隊資料
   const { data: teamData, status: teamDataStatus } =
-    await useLazyFetch<TeamData>('/api/team');
+    await useLazyFetch<TeamData>('/api/team', {
+      cache: 'force-cache'
+    });
 
   // 團隊成員總數
   const totalMemberCount = computed(() => teamData.value?.totalMembers || 0);
