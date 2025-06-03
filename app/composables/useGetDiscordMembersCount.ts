@@ -2,32 +2,23 @@ interface DiscordInviteResponse {
   approximate_member_count: number;
 }
 
-export default async function useGetDiscordMembersCount() {
-  const memberCount = useState<number | null>(
-    'discord-member-count',
-    () => null
-  );
-
+export default function useGetDiscordMembersCount() {
   const inviteCode = useRuntimeConfig().public.discordInviteCode;
   const url = `https://discord.com/api/v9/invites/${inviteCode}?with_counts=true&with_expiration=true&with_permissions=true`;
 
-  const { data, error, pending } = await useFetch<DiscordInviteResponse>(url, {
-    key: 'discord-member-count',
-    cache: 'reload'
+  const { data, error, refresh } = useFetch<DiscordInviteResponse>(url, {
+    server: false, // 只在客戶端執行，不阻塞 SSR
+    default: () => ({}) as DiscordInviteResponse
   });
 
-  memberCount.value = data.value?.approximate_member_count ?? null;
-
-  const isLoading = computed(() => pending.value);
-  const isError = computed(() => !!error.value);
-  const isSuccess = computed(
-    () => !pending.value && !error.value && memberCount.value !== null
+  const memberCount = computed(
+    () => data.value?.approximate_member_count ?? null
   );
+  const hasError = computed(() => !!error.value);
 
   return {
     memberCount,
-    isLoading,
-    isError,
-    isSuccess
+    hasError,
+    refresh
   };
 }
