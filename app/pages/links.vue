@@ -67,7 +67,7 @@
         :href="link.url"
         target="_blank"
         :class="[
-          'font-jf-open border-primary flex items-center justify-center rounded-lg border-2 p-6 text-xl font-bold no-underline transition-transform hover:-translate-y-1 hover:shadow-lg'
+          'font-huninn border-primary flex items-center justify-center rounded-lg border-2 p-6 text-xl font-bold no-underline transition-transform hover:-translate-y-1 hover:shadow-lg'
         ]"
       >
         <div class="align-center flex w-40">

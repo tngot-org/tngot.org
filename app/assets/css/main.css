@@ -1,20 +1,15 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
-/* 定義自定義斷點 xs(375px), 在 sm(640px) 之前 */
+/* 定義自定義斷點 xs(375px) , 在 sm(640px) 之前 */
 @theme {
   --breakpoint-xs: 23.4375rem;
 }
 
-@font-face {
-  font-family: 'JF Open';
-  src: url('/fonts/jf-open.woff2') format('woff2');
-  font-display: swap;
-}
-
 @theme static {
-  --font-sans: 'Noto Sans TC', sans-serif;
-  --font-jf-open: 'JF Open', 'Noto Sans TC', sans-serif;
+  --font-sans:
+    'Noto Sans TC', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-huninn: 'Huninn', 'Noto Sans TC', sans-serif;
 
   --color-purple-50: oklch(0.975 0.012 309.08);
   --color-purple-100: oklch(0.94 0.028 309.08);
@@ -27,6 +22,11 @@
   --color-purple-800: oklch(0.45 0.19 309.08);
   --color-purple-900: oklch(0.39 0.15 309.08);
   --color-purple-950: oklch(0.3 0.12 309.08);
+}
+
+/* 自定義字型類別 */
+.font-huninn {
+  font-family: var(--font-huninn);
 }
 
 :root {

@@ -6,7 +6,7 @@
 
 <template>
   <UCard
-    class="font-jf-open mb-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+    class="font-huninn mb-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
     :ui="{
       root: 'p-0',
       body: 'px-6 py-4 sm:py-4'

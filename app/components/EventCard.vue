@@ -8,7 +8,7 @@
 <template>
   <NuxtLink :to="event.link" class="text-inherit no-underline">
     <UCard
-      class="font-jf-open rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+      class="font-huninn rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
       :ui="{
         root: 'p-0',
         body: 'px-6 py-6 sm:py-6'
