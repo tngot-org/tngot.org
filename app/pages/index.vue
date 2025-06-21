@@ -24,7 +24,7 @@
       class="mt-6 rounded-[10px] bg-transparent px-4 py-2 text-white shadow-lg backdrop-blur-sm md:px-8 md:py-4"
     >
       <h1
-        class="text-[2rem] font-extrabold text-white text-shadow-gray-800 text-shadow-md sm:text-[2.5rem] md:text-[3.5rem]"
+        class="font-huninn text-[2rem] font-extrabold text-white text-shadow-gray-800 text-shadow-md sm:text-[2.5rem] md:text-[3.5rem]"
       >
         台灣未來的主人們
       </h1>

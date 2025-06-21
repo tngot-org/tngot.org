@@ -7,7 +7,7 @@ export default defineAppConfig({
 
     button: {
       slots: {
-        base: ['font-jf-open font-bold']
+        base: ['font-huninn font-bold']
       }
     },
     card: {

@@ -23,12 +23,30 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
   fonts: {
-    families: [{ name: 'Noto Sans TC', provider: 'google' }],
+    families: [
+      {
+        name: 'Noto Sans TC',
+        provider: 'google',
+        preload: true,
+        subsets: ['chinese-traditional']
+      },
+      {
+        name: 'Huninn',
+        provider: 'google',
+        preload: true
+      }
+    ],
     defaults: {
       weights: [400, 700],
       styles: ['normal'],
       fallbacks: {
-        'sans-serif': ['Arial', 'sans-serif']
+        'sans-serif': [
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Arial',
+          'sans-serif'
+        ]
       }
     }
   },
