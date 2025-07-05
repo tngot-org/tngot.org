@@ -10,16 +10,6 @@
   // 合作夥伴資料
   const partners = [
     {
-      img: 'https://i.imgur.com/BWi6MGx.jpeg',
-      name: 'OuO Community',
-      paras: [
-        '一個多元的學生程式社群，致力於促進學生之間的技術交流與合作，並提供資源與支持來幫助學生實現他們的創新想法。',
-        'OuO Community 是一個基於 Discord 的程式設計社群，提供程式討論、機器人客製化服務等，並歡迎所有程度的開發者加入。',
-        '社群提供創意交流和成長環境，並有專業團隊及合作廠商支援，透過 Discord 和 Email 皆可聯繫。'
-      ],
-      link: 'https://ouoc.dev/'
-    },
-    {
       img: 'https://i.imgur.com/ebWDTs6.png',
       name: '易碎品編年史',
       paras: [
@@ -44,7 +34,7 @@
       <img
         :src="partner.img"
         :alt="partner.name"
-        class="mb-4 h-[120px] w-[120px] self-center object-contain md:mb-0 md:mr-8 md:h-[150px] md:w-[150px] md:self-auto"
+        class="mb-4 h-[120px] w-[120px] self-center object-contain md:mr-8 md:mb-0 md:h-[150px] md:w-[150px] md:self-auto"
       />
       <div class="flex-1">
         <p>
