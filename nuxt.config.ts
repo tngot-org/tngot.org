@@ -2,17 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  future: {
-    compatibilityVersion: 4
-  },
+
   modules: [
     '@nuxt/ui',
     '@nuxt/fonts',
-    'nuxt-simple-sitemap',
     'motion-v/nuxt',
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
-    'nuxt-mcp'
+    'nuxt-mcp',
+    '@nuxtjs/sitemap'
   ],
 
   // 性能優化配置
