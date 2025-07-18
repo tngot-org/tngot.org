@@ -33,11 +33,12 @@
       name: 'Instagram',
       icon: 'i-skill-icons-instagram'
     },
-    {
-      url: 'https://www.facebook.com/share/1AmEgzAmgb/',
-      name: 'Facebook',
-      icon: 'i-logos-facebook'
-    },
+    // > Facebook 帳號失效，隱藏連結
+    // {
+    //   url: 'https://www.facebook.com/share/1AmEgzAmgb/',
+    //   name: 'Facebook',
+    //   icon: 'i-logos-facebook'
+    // },
     {
       url: 'mailto:tngotorg@gmail.com',
       name: 'Email 聯絡',
