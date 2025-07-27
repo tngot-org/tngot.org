@@ -10,43 +10,39 @@
     "rePreview": "vitest --watch false  && nuxi build && nuxi preview --port 4000 --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "typecheck": "nuxi typecheck",
     "test": "nuxt prepare && vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@nuxt/fonts": "^0.11.4",
-    "@nuxt/ui": "3.2.0",
+    "@nuxt/fonts": "0.11.4",
+    "@nuxt/ui": "3.3.0",
     "@nuxtjs/sitemap": "7.4.3",
-    "@vueuse/nuxt": "^13.2.0",
-    "dayjs": "^1.11.13",
-    "motion-v": "1.1.0-alpha.1",
-    "nuxt": "^4.0.0"
+    "@vueuse/nuxt": "13.5.0",
+    "dayjs": "1.11.13",
+    "motion-v": "1.6.1",
+    "nuxt": "4.0.1"
   },
   "devDependencies": {
-    "@iconify-json/bi": "^1.2.4",
-    "@iconify-json/fa6-solid": "^1.2.3",
-    "@iconify-json/heroicons": "^1.2.2",
-    "@iconify-json/ic": "^1.2.2",
-    "@iconify-json/skill-icons": "^1.2.0",
-    "@nuxt/eslint": "1.6.0",
-    "@nuxt/test-utils": "^3.19.0",
-    "@vitejs/plugin-vue": "^6.0.0",
-    "@vue/test-utils": "^2.4.6",
-    "eslint": "^9.26.0",
-    "happy-dom": "17.6.3",
-    "husky": "^9.1.7",
-    "nuxt-mcp": "^0.2.1",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "typescript": "^5.8.3",
-    "vitest": "^3.1.4",
-    "vue-tsc": "^3.0.2"
-  },
-  "pnpm": {
-    "overrides": {
-      "nitropack": "2.12.3"
-    }
+    "@iconify-json/bi": "1.2.4",
+    "@iconify-json/fa6-solid": "1.2.4",
+    "@iconify-json/heroicons": "1.2.2",
+    "@iconify-json/ic": "1.2.2",
+    "@iconify-json/skill-icons": "1.2.0",
+    "@nuxt/eslint": "1.7.1",
+    "@nuxt/test-utils": "3.19.2",
+    "@vitejs/plugin-vue": "6.0.0",
+    "@vue/test-utils": "2.4.6",
+    "eslint": "9.32.0",
+    "happy-dom": "18.0.1",
+    "husky": "9.1.7",
+    "nuxt-mcp": "0.2.3",
+    "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "0.6.14",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4",
+    "vue-tsc": "^3.0.4"
   },
   "engines": {
     "node": ">=22.0.0",
