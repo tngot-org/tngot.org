@@ -55,23 +55,44 @@
       class="my-4 text-xl font-bold text-white text-shadow-gray-800 text-shadow-md md:text-2xl 2xl:text-3xl"
     />
 
-    <!-- Discord 按鈕 -->
-    <UButton
-      icon="ic:baseline-discord"
-      size="lg"
-      :to="`https://discord.com/invite/${useRuntimeConfig().public.discordInviteCode}`"
-      target="_blank"
-      class="relative overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-4 text-lg font-bold transition-transform duration-300 hover:scale-105"
-      :ui="{
-        base: 'lg:px-7 lg:py-5 lg:text-xl',
-        leadingIcon: 'lg:p-3'
-      }"
-    >
-      加入 Discord
-      <div
-        class="shiny-effect absolute top-0 -left-full h-full w-[200%] -skew-x-[45deg] transform bg-gradient-to-r from-white/20 to-transparent transition-all duration-500 group-hover:left-full"
-      />
-    </UButton>
+    <!-- 按鈕群組 (回饋表單與 Discord) -->
+    <div class="flex flex-col gap-4 sm:flex-row sm:gap-6">
+      <!-- 回饋表單按鈕 -->
+      <UButton
+        icon="simple-icons:googleforms"
+        size="lg"
+        to="https://forms.gle/N3W1y1dts7vpzH6v9"
+        target="_blank"
+        class="relative overflow-hidden rounded-md bg-[#7246BE] px-6 py-4 text-lg font-bold text-white transition-transform duration-300 hover:scale-105"
+        :ui="{
+          base: 'lg:px-7 lg:py-5 lg:text-xl',
+          leadingIcon: 'lg:p-3'
+        }"
+      >
+        回饋表單
+        <div
+          class="shiny-effect absolute top-0 -left-full h-full w-[200%] -skew-x-[45deg] transform bg-gradient-to-r from-white/20 to-transparent transition-all duration-500 group-hover:left-full"
+        />
+      </UButton>
+
+      <!-- Discord 按鈕 -->
+      <UButton
+        icon="ic:baseline-discord"
+        size="lg"
+        :to="`https://discord.com/invite/${useRuntimeConfig().public.discordInviteCode}`"
+        target="_blank"
+        class="relative overflow-hidden rounded-md bg-gradient-to-r from-[#7289da] to-[#99aab5] px-6 py-4 text-lg font-bold transition-transform duration-300 hover:scale-105"
+        :ui="{
+          base: 'lg:px-7 lg:py-5 lg:text-xl',
+          leadingIcon: 'lg:p-3'
+        }"
+      >
+        加入 Discord
+        <div
+          class="shiny-effect absolute top-0 -left-full h-full w-[200%] -skew-x-[45deg] transform bg-gradient-to-r from-white/20 to-transparent transition-all duration-500 group-hover:left-full"
+        />
+      </UButton>
+    </div>
 
     <!-- 按鈕群組 -->
     <div
