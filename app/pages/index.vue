@@ -63,9 +63,9 @@
         size="lg"
         to="https://forms.gle/N3W1y1dts7vpzH6v9"
         target="_blank"
-        class="relative overflow-hidden rounded-md bg-[#7246BE] px-6 py-4 text-lg font-bold text-white transition-transform duration-300 hover:scale-105"
+        class="relative items-center justify-center overflow-hidden rounded-md bg-[#7246BE] px-6 py-4 text-lg font-bold text-white transition-transform duration-300 hover:scale-105"
         :ui="{
-          base: 'lg:px-7 lg:py-5 lg:text-xl',
+          base: 'lg:px-7 lg:py-5 lg:text-xl ',
           leadingIcon: 'lg:p-3'
         }"
       >
