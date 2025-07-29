@@ -63,7 +63,7 @@
         size="lg"
         to="https://forms.gle/N3W1y1dts7vpzH6v9"
         target="_blank"
-        class="relative items-center justify-center overflow-hidden rounded-md bg-[#7246BE] px-6 py-4 text-lg font-bold text-white transition-transform duration-300 hover:scale-105"
+        class="feedback-button relative overflow-hidden rounded-md bg-[#7246BE] px-6 py-4 text-lg font-bold transition-transform duration-300 hover:scale-105"
         :ui="{
           base: 'lg:px-7 lg:py-5 lg:text-xl ',
           leadingIcon: 'lg:p-3'
@@ -123,5 +123,25 @@
 
   .relative:hover .shiny-effect {
     left: 100%;
+  }
+
+  /* 強制覆蓋 UButton 的 hover 樣式，確保背景色不變 */
+  .feedback-button {
+    background-color: #7246be !important;
+  }
+
+  .feedback-button:hover {
+    background-color: #7246be !important;
+    opacity: 1 !important;
+  }
+
+  /* 覆蓋可能的 Nuxt UI 樣式 */
+  :deep(.feedback-button) {
+    background-color: #7246be !important;
+  }
+
+  :deep(.feedback-button:hover) {
+    background-color: #7246be !important;
+    opacity: 1 !important;
   }
 </style>
