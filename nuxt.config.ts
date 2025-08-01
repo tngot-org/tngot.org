@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
     'nuxt-mcp',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxthub/core'
   ],
 
   // 性能優化配置
@@ -121,5 +122,9 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/logo/site.webmanifest' }
       ]
     }
+  },
+  hub: {
+    blob: true,
+    cache: true
   }
 });
