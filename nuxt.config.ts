@@ -124,6 +124,11 @@ export default defineNuxtConfig({
       ]
     }
   },
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
+  },
   hub: {
     blob: true,
     cache: true
