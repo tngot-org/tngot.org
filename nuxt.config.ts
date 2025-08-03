@@ -130,7 +130,6 @@ export default defineNuxtConfig({
     }
   },
   hub: {
-    blob: true,
     cache: true
   }
 });
