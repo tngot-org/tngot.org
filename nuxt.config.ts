@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
   modules: [
@@ -11,8 +11,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     'nuxt-mcp',
     '@nuxtjs/sitemap',
-    '@nuxthub/core',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxthub/core'
   ],
 
   // 性能優化配置
@@ -130,6 +130,7 @@ export default defineNuxtConfig({
     }
   },
   hub: {
-    cache: true
+    cache: true,
+    database: true
   }
 });
