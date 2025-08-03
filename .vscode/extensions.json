@@ -18,7 +18,8 @@
     "nuxtr.nuxtr-vscode",
     "albert.tabout",
     "stivo.tailwind-fold",
-    "vscode-icons-team.vscode-icons"
+    "vscode-icons-team.vscode-icons",
+    "maattdd.gitless"
   ],
   "unwantedRecommendations": [
     "octref.vetur"

@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     'nuxt-mcp',
     '@nuxtjs/sitemap',
-    '@nuxthub/core'
+    '@nuxthub/core',
+    '@nuxt/content'
   ],
 
   // 性能優化配置
