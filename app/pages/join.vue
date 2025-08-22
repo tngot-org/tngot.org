@@ -47,7 +47,7 @@
         <!-- 更醒目的組織規章連結 -->
         <div class="my-6 flex items-center justify-center">
           <NuxtLink
-            href="https://s.ouoc.dev/law"
+            href="https://hackmd.io/@TNGT/by-law"
             target="_blank"
             rel="noopener noreferrer"
             class="group flex items-center gap-2 rounded-lg border-2 border-purple-500 bg-purple-100 px-4 py-2 font-bold text-purple-600 transition-all hover:bg-purple-200 hover:shadow-md"
@@ -55,7 +55,7 @@
           >
             <Icon
               name="heroicons:document-text"
-              class="text-xl transition-all group-hover:scale-110"
+              class="text-xl transition-all"
             />
             點我查看組織規章
             <Icon
@@ -89,7 +89,7 @@
           v-else
           size="lg"
           class="flex w-full items-center justify-center gap-2 border-2 border-purple-500 bg-purple-500 px-6 py-3 font-bold text-white hover:bg-purple-600 hover:shadow-md"
-          to="https://forms.gle/QUzZqjyuJ6eb8e6L6"
+          to="https://discord.gg/bzHqVSzBxA"
           target="_blank"
         >
           <Icon name="heroicons:user-plus" class="text-xl" />
