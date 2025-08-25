@@ -1,8 +1,13 @@
 <script setup lang="ts">
-  const title = '工作團隊';
+  const { t } = useI18n();
 
-  definePageMeta({ title });
-  useHead({ title });
+  definePageMeta({
+    title: 'team.title'
+  });
+
+  useHead({
+    title: () => t('team.title')
+  });
 
   const { data: teamData, status: teamDataStatus } =
     await useLazyFetch<TeamData>('/api/team', {
@@ -33,18 +38,18 @@
           <h2
             class="border-primary text-primary border-l-4 pl-3 text-2xl font-bold"
           >
-            總人數
+            {{ t('team.totalMembers') }}
           </h2>
         </template>
 
         <p>
-          <span>目前我們的團隊共有</span>
+          <span>{{ t('team.memberCount.current') }}</span>
           <span v-if="teamDataStatus === 'pending'"> ... </span>
           <span v-else-if="teamDataStatus === 'success'">
             {{ ` ${totalMemberCount} ` }}
           </span>
-          <span v-else>超過 30 </span>
-          <span>名工作人員，其中部分成員選擇不公開展示。</span>
+          <span v-else>{{ t('team.memberCount.fallback') }} </span>
+          <span>{{ t('team.memberCount.total') }}</span>
         </p>
       </UCard>
     </template>

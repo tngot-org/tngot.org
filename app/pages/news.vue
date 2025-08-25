@@ -1,10 +1,12 @@
 <script setup lang="ts">
-  const pageTitle = '最新消息';
+  const { t } = useI18n();
+
   definePageMeta({
-    title: pageTitle
+    title: 'news.title'
   });
+
   useHead({
-    title: pageTitle
+    title: () => t('news.title')
   });
 
   const { fetchNewsData } = useNewsData();

@@ -32,13 +32,15 @@
   onUnmounted(() => {
     controls?.stop();
   });
+
+  const { t } = useI18n();
 </script>
 
 <template>
   <!-- 有錯誤時隱藏整個元件 -->
   <div v-if="!hasError">
     <p>
-      目前社群成員:
+      {{ t('home.discordMembers') }}
       <ClientOnly>
         <RowValue :value="rounded" />
         <template #fallback> 0 </template>

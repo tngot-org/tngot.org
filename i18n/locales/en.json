@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "TNGT - The Next Generation of Taiwanese"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "team": "Team",
+    "news": "News",
+    "events": "Events",
+    "partners": "Partners",
+    "links": "Links",
+    "join": "Join Us"
+  },
+  "common": {
+    "language": "Language",
+    "changeLanguage": "Change Language"
+  },
+  "home": {
+    "title": "The Next Generation of Taiwanese - TNGT",
+    "subtitle": "",
+    "description1": "We aspire to develop into a genuine civic organization;",
+    "description2": "to represent young people in participating in public affairs of all scales.",
+    "description3": "We pursue democracy and freedom, firmly believing that the power of youth can drive social progress;",
+    "description4": "We focus on democracy, education, and gender equality, uniting student voices to build a platform of our own.",
+    "joinDiscord": "Join Discord",
+    "discordMembers": "Current community members: "
+  },
+  "about": {
+    "title": "About Us",
+    "introduction": {
+      "title": "Organization Introduction",
+      "motivation": "The motivation for establishing the community:",
+      "content": "After sharing our experiences participating in civic movements on social media, we faced mockery like 'You're only eighteen, what do you know?' and 'Read more books.' We refuse to let age constrain our freedom of thought, nor are we satisfied with having our opinions dismissed by 'adults' using their experience advantage. Seeing many young people similarly attacked maliciously, we determined to unite these students who care about the nation's future and build a platform for our voices."
+    },
+    "philosophy": {
+      "title": "Our Philosophy",
+      "content": "We pursue democracy and freedom, firmly believing that youth power can drive social progress."
+    },
+    "issues": {
+      "title": "Focus Issues",
+      "items": [
+        "Opposing authoritarian dictatorship",
+        "Defending democratic values",
+        "Educational diversity and reform",
+        "Promoting gender equality",
+        "Traffic equity and pedestrian safety"
+      ]
+    },
+    "goals": {
+      "title": "Demands and Goals",
+      "items": [
+        {
+          "title": "Opposing authoritarian dictatorship",
+          "content": "Defending democracy, letting the people truly govern, rejecting any form of dictatorial rule."
+        },
+        {
+          "title": "Anti-aggression",
+          "content": "Opposing any country's irrational infringement on Taiwan's sovereignty, advocating for strengthening national security laws and anti-infiltration laws, as well as national defense awareness."
+        },
+        {
+          "title": "Promoting democratic freedom and enhancing self-identity",
+          "content": "Improving media literacy, supporting local cultural creators, and promoting the construction of autonomous and highly secure social platforms."
+        },
+        {
+          "title": "Strengthening campus gender equality education",
+          "content": "Deepening teachers' and students' understanding and respect for diverse genders and sexual orientations, building a friendly campus environment."
+        },
+        {
+          "title": "Reforming the education system",
+          "content": "Opposing academic credentialism, encouraging diverse development; strengthening private school supervision and teacher evaluation, and optimizing curriculum budget allocation."
+        },
+        {
+          "title": "Defending traffic equity and ensuring pedestrian safety",
+          "content": "Widely establishing sidewalks near schools, improving traffic signal design, and strengthening law enforcement to ensure pedestrian priority."
+        }
+      ]
+    },
+    "contactUs": "Contact Us"
+  },
+  "team": {
+    "title": "Team",
+    "totalMembers": "Total Members",
+    "memberCount": {
+      "current": "Currently our team has",
+      "total": "staff members, some of whom choose not to be publicly displayed.",
+      "fallback": "over 30"
+    }
+  },
+  "news": {
+    "title": "News"
+  },
+  "footer": {
+    "copyright": "Copyright",
+    "organization": "The Next Generation of Taiwanese",
+    "license": "MIT License"
+  }
+}

@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     'nuxt-mcp',
     '@nuxtjs/sitemap',
     '@nuxt/content',
-    '@nuxthub/core'
+    '@nuxthub/core',
+    '@nuxtjs/i18n'
   ],
 
   // 性能優化配置
@@ -63,6 +64,32 @@ export default defineNuxtConfig({
   },
   typescript: {
     typeCheck: true
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'zh-TW',
+        iso: 'zh-Hant-TW',
+        name: '中文',
+        file: 'zh-TW.json'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English',
+        file: 'en.json'
+      }
+    ],
+    langDir: './locales/',
+    defaultLocale: 'zh-TW',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      fallbackLocale: 'zh-TW'
+    }
   },
   runtimeConfig: {
     public: {
