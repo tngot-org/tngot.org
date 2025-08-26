@@ -1,14 +1,15 @@
 <script setup>
   const route = useRoute();
-  
+
   // 獲取共享的頁面標題狀態
-  const sharedPageTitle = useState('page-title');
-  
-  // 如果有共享標題就使用，否則使用 meta.title
-  const title = computed(() => {
-    return sharedPageTitle.value || route.meta.title || '';
+  const sharedPageTitle = useState('page-title', () => route.meta.title || '');
+
+  useSeoMeta({
+    title: sharedPageTitle.value
   });
-  
+
+  const title = computed(() => sharedPageTitle.value);
+
   const subtitle = computed(() => {
     return route.meta.subtitle || 'The Next Generation Taiwanese - TNGT';
   });

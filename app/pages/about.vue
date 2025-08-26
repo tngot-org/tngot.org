@@ -1,46 +1,59 @@
-<script setup>
-  import { onMounted } from 'vue';
-  const { t } = useI18n();
+<script setup lang="ts">
+  import { useIntersectionObserver } from '@vueuse/core';
+
+  const { t, tm } = useI18n();
   const localePath = useLocalePath();
 
-  definePageMeta({
-    title: 'about.title'
-  });
-
-  useHead({
-    title: () => t('about.title')
-  });
-
   // 為 v-for 創建 computed 屬性
-  const issueItems = computed(() => t('about.issues.items'));
-  const goalItems = computed(() => t('about.goals.items'));
-
-  onMounted(() => {
-    observeSections();
+  const issueItems = computed<I18nItem[]>(() => {
+    return (tm('about.issues.items') as I18nItem[]) ?? [];
   });
 
-  function observeSections() {
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    );
-    const observerOptions = { threshold: 0.2 };
-    const sections = document.querySelectorAll('.intro-section');
+  const issueTexts = computed(() =>
+    issueItems.value.map(
+      (item) => item.loc?.source ?? { title: '', content: '' }
+    )
+  );
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, idx) => {
-        if (entry.isIntersecting) {
-          if (prefersReducedMotion.matches) {
-            entry.target.classList.add('show');
-          } else {
-            setTimeout(() => entry.target.classList.add('show'), idx * 150);
+  const goalItems = computed<I18nItem[]>(() => {
+    return (tm('about.goals.items') as I18nItem[]) ?? [];
+  });
+
+  const goalTexts = computed(() =>
+    goalItems.value.map((item) => ({
+      title: item.title?.loc?.source ?? '',
+      content: item.content?.loc?.source ?? ''
+    }))
+  );
+
+  const sharedPageTitle = useState('page-title');
+  onMounted(() => {
+    console.log(goalItems.value);
+    console.log(goalTexts.value);
+
+    sharedPageTitle.value = t('about.title');
+
+    const sections = ref<NodeListOf<HTMLElement>>();
+    sections.value = document.querySelectorAll('.intro-section');
+    sections.value.forEach((el, idx) => {
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      );
+      useIntersectionObserver(
+        el,
+        ([entry]) => {
+          if (entry?.isIntersecting) {
+            if (prefersReducedMotion.matches) {
+              el.classList.add('show');
+            } else {
+              setTimeout(() => el.classList.add('show'), idx * 150);
+            }
           }
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach((el) => observer.observe(el));
-  }
+        },
+        { threshold: 0.2 }
+      );
+    });
+  });
 </script>
 
 <template>
@@ -84,8 +97,8 @@
         </div>
       </template>
       <ul class="space-y-2 pl-5 text-gray-600">
-        <li v-for="(item, index) in issueItems" :key="index" class="issue-item">
-          {{ item }}
+        <li v-for="(text, index) in issueTexts" :key="index" class="issue-item">
+          {{ text }}
         </li>
       </ul>
     </UCard>
@@ -100,10 +113,10 @@
         </div>
       </template>
       <ul class="space-y-4 text-gray-600">
-        <li v-for="(goal, index) in goalItems" :key="index">
-          <strong>{{ goal.title }}</strong
-          ><br />
-          {{ goal.content }}
+        <li v-for="(text, index) in goalTexts" :key="index" class="issue-item">
+          <strong>{{ text.title }}</strong>
+          <br />
+          {{ text.content }}
         </li>
       </ul>
     </UCard>
