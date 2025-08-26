@@ -69,18 +69,15 @@ export default defineNuxtConfig({
     locales: [
       {
         code: 'zh-TW',
-        iso: 'zh-Hant-TW',
-        name: '中文',
+        name: '繁體中文',
         file: 'zh-TW.json'
       },
       {
         code: 'en',
-        iso: 'en-US',
         name: 'English',
         file: 'en.json'
       }
     ],
-    langDir: './locales/',
     defaultLocale: 'zh-TW',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: {
@@ -154,6 +151,9 @@ export default defineNuxtConfig({
   content: {
     preview: {
       api: 'https://api.nuxt.studio'
+    },
+    watch: {
+      enabled: false
     }
   },
   hub: {

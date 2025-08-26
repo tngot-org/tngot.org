@@ -15,7 +15,7 @@
     <BackgroundCarousel :images :interval="5000" />
 
     <!-- 語言切換器 -->
-    <div class="fixed top-5 right-5 z-30">
+    <div class="relative z-20 flex justify-end px-4 pt-4">
       <LanguageSwitcher />
     </div>
 

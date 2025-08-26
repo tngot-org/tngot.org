@@ -19,7 +19,8 @@
     "albert.tabout",
     "stivo.tailwind-fold",
     "vscode-icons-team.vscode-icons",
-    "maattdd.gitless"
+    "maattdd.gitless",
+    "lokalise.i18n-ally"
   ],
   "unwantedRecommendations": [
     "octref.vetur"

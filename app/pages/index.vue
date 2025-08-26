@@ -44,10 +44,10 @@
   <div class="flex flex-col items-center text-center">
     <!-- 主標題區塊 -->
     <div
-      class="mt-6 rounded-[10px] bg-transparent px-4 py-2 text-white shadow-lg backdrop-blur-sm md:px-8 md:py-4"
+      class="mt-6 rounded-[10px] bg-transparent px-8 py-2 text-white shadow-lg backdrop-blur-sm md:py-4"
     >
       <h1
-        class="font-huninn text-[2rem] font-extrabold text-white text-shadow-gray-800 text-shadow-md sm:text-[2.5rem] md:text-[3.5rem]"
+        class="font-huninn text-2xl font-extrabold text-white text-shadow-gray-800 text-shadow-md sm:text-3xl md:text-4xl"
       >
         {{ t('home.title') }}
       </h1>
