@@ -66,7 +66,6 @@ export default defineNuxtConfig({
     typeCheck: true
   },
   i18n: {
-    vueI18n: './nuxt-i18n.js',
     locales: [
       {
         code: 'zh-TW',
