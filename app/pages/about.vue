@@ -28,9 +28,6 @@
 
   const sharedPageTitle = useState('page-title');
   onMounted(() => {
-    console.log(goalItems.value);
-    console.log(goalTexts.value);
-
     sharedPageTitle.value = t('about.title');
 
     const sections = ref<NodeListOf<HTMLElement>>();
