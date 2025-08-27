@@ -1,10 +1,17 @@
 <script setup lang="ts">
+  const { t, locale } = useI18n();
+  const localeEvents = locale.value === 'zh-TW' ? '' : `/${locale.value}`;
+
   // 取得路由參數
   const route = useRoute();
   const eventId = route.params.title as string;
 
   // 從 API 端點取得所有事件資料
-  const { data: eventsData } = await useFetch<EventItem[]>('/api/event');
+  const { data: eventsData } = await useFetch<EventItem[]>('/api/events', {
+    params: {
+      locale: locale.value
+    }
+  });
 
   // 根據路由參數找到對應的事件資料
   const eventDetail = computed(() => {
@@ -15,16 +22,18 @@
 
   // 當找不到事件資料時重定向到事件列表頁
   if (import.meta.client && !eventDetail.value) {
-    navigateTo('/event');
+    navigateTo(`${localeEvents}/events`);
   }
 
   // 設定頁面標題
   const pageTitle = computed(() =>
-    eventDetail.value ? `${eventDetail.value.title}｜活動紀錄` : '活動紀錄'
+    eventDetail.value
+      ? `${eventDetail.value.title}｜${t('events.title')}`
+      : t('events.title')
   );
 
   // 創建一個共享的頁面標題狀態
-  const sharedPageTitle = useState('page-title', () => '活動紀錄詳情');
+  const sharedPageTitle = useState('page-title', () => '活動紀錄');
 
   // 監聽 pageTitle 變化並更新共享狀態
   watch(
@@ -36,7 +45,7 @@
   );
 
   definePageMeta({
-    title: '活動紀錄詳情'
+    title: '活動紀錄'
   });
 
   useHead({
@@ -73,7 +82,7 @@
     <h2
       class="border-primary text-primary mb-4 border-l-4 pl-3 text-3xl font-bold"
     >
-      活動照片
+      {{ t('events.event_photos') }}
     </h2>
     <!-- 輪播照片區塊 -->
     <section class="mb-20 sm:px-4 md:px-12">
@@ -90,8 +99,13 @@
 
     <ActionButtonsGroup>
       <template #right>
-        <UButton to="/event" icon="heroicons:arrow-left" size="xl" color="info">
-          回到目錄
+        <UButton
+          :to="`${localeEvents}/events`"
+          icon="heroicons:arrow-left"
+          size="xl"
+          color="info"
+        >
+          {{ t('nav.events') }}
         </UButton>
       </template>
     </ActionButtonsGroup>

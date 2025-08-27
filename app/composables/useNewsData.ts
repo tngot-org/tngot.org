@@ -1,5 +1,7 @@
 // 新聞資料 Composable
 export function useNewsData() {
+  const { locale } = useI18n(); // 獲取當前語言
+
   // 建立 useAsyncData 實例但不立即執行
   const {
     data: rawNewsData,
@@ -9,8 +11,11 @@ export function useNewsData() {
     refresh,
     execute
   } = useFetch<RawNewsItem[]>('/api/news', {
-    key: 'news-data',
+    key: () => `news-data-${locale.value}`, // 根據語言生成唯一 key
     immediate: false,
+    params: {
+      locale: locale.value // 傳遞語言參數
+    },
     default: () => []
   });
 

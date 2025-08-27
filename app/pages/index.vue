@@ -27,7 +27,7 @@
       text: t('nav.news')
     },
     {
-      to: localePath('/event/'),
+      to: localePath('/events/'),
       icon: 'heroicons:calendar',
       text: t('nav.events')
     },
@@ -47,7 +47,7 @@
       class="mt-6 rounded-[10px] bg-transparent px-8 py-2 text-white shadow-lg backdrop-blur-sm md:py-4"
     >
       <h1
-        class="font-huninn text-2xl font-extrabold text-white text-shadow-gray-800 text-shadow-md sm:text-3xl md:text-4xl"
+        class="text-2xl font-extrabold text-white text-shadow-gray-800 text-shadow-md sm:text-3xl md:text-5xl"
       >
         {{ t('home.title') }}
       </h1>

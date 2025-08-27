@@ -1,3 +1,5 @@
+import { useI18n } from 'vue-i18n';
+
 // 分類顏色類型
 export type CategoryColor =
   | 'primary'
@@ -8,24 +10,21 @@ export type CategoryColor =
 
 // 文章分類枚舉
 export enum CategoryType {
-  WEBSITE_UPDATE = 'website-update',
-  EVENT_PROMOTION = 'event-promotion'
+  WEBSITE_UPDATE = 'website_update',
+  EVENT_PROMOTION = 'event_promotion'
 }
 
 // 定義分類資訊介面
 export interface CategoryInfo {
-  label: string;
   color: CategoryColor;
 }
 
-// 分類資訊對照表（包含中文名稱和顏色）
+// 分類顏色對照表
 export const categoryInfo: Record<CategoryType, CategoryInfo> = {
   [CategoryType.WEBSITE_UPDATE]: {
-    label: '網站更新',
     color: 'info'
   },
   [CategoryType.EVENT_PROMOTION]: {
-    label: '活動宣傳',
     color: 'primary'
   }
 };
@@ -37,5 +36,6 @@ export const getCategoryColor = (category: CategoryType): CategoryColor => {
 
 // 取得分類對應的標籤
 export const getCategoryLabel = (category: CategoryType): string => {
-  return categoryInfo[category].label || '';
+  const { t } = useI18n();
+  return t(`news.categories.${category}`) || '';
 };

@@ -11,7 +11,7 @@
     'Noto Sans TC', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-huninn: 'Huninn', 'Noto Sans TC', sans-serif;
 
-  --color-purple-50: oklch(0.975 0.012 309.08);
+  --color-purple-50: oklch(97.55% 0.01145 307.998);
   --color-purple-100: oklch(0.94 0.028 309.08);
   --color-purple-200: oklch(0.89 0.056 309.08);
   --color-purple-300: oklch(0.81 0.105 309.08);

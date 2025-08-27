@@ -12,6 +12,22 @@ export interface I18nItem {
       source?: string;
     };
   };
+  name?: {
+    loc?: {
+      source?: string;
+    };
+  };
+  img?: {
+    loc?: {
+      source?: string;
+    };
+  };
+  link?: {
+    loc?: {
+      source?: string;
+    };
+  };
+  paras?: I18nItem[];
   type?: number;
   start?: number;
   end?: number;

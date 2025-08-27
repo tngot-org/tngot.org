@@ -40,7 +40,7 @@
   <!-- 有錯誤時隱藏整個元件 -->
   <div v-if="!hasError">
     <p>
-      {{ t('home.discordMembers') }}
+      {{ t('home.discord_members') }}
       <ClientOnly>
         <RowValue :value="rounded" />
         <template #fallback> 0 </template>

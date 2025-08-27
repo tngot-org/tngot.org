@@ -24,14 +24,14 @@
     "description3": "We pursue democracy and freedom, firmly believing that the power of youth can drive social progress;",
     "description4": "We focus on democracy, education, and gender equality, uniting student voices to build a platform of our own.",
     "joinDiscord": "Join Discord",
-    "discordMembers": "Current community members: "
+    "discord_members": "Current community members: "
   },
   "about": {
     "title": "About Us",
     "introduction": {
       "title": "Organization Introduction",
       "motivation": "The motivation for establishing the community:",
-      "content": "After sharing our experiences participating in civic movements on social media, we faced mockery like 'You're only eighteen, what do you know?' and 'Read more books.' We refuse to let age constrain our freedom of thought, nor are we satisfied with having our opinions dismissed by 'adults' using their experience advantage. Seeing many young people similarly attacked maliciously, we determined to unite these students who care about the nation's future and build a platform for our voices."
+      "content": "After sharing our experiences participating in civic movements on social media, we faced mockery like \"You're only eighteen, what do you know?\" and \"Read more books.\" We refuse to let age constrain our freedom of thought, nor are we satisfied with having our opinions dismissed by \"adults\" using their experience advantage. Seeing many young people similarly attacked maliciously, we determined to unite these students who care about the nation's future and build a platform for our voices."
     },
     "philosophy": {
       "title": "Our Philosophy",
@@ -76,19 +76,84 @@
         }
       ]
     },
-    "contactUs": "Contact Us"
+    "contact_us": "Contact Us"
   },
   "team": {
     "title": "Team",
-    "totalMembers": "Total Members",
-    "memberCount": {
+    "total_members": "Total Members",
+    "teams": {
+      "executive_committee": "Executive Committee",
+      "administrative_team": "Administrative Team",
+      "financial_team": "Financial Team",
+      "public_relations_team": "Public Relations Team",
+      "creative_team": "Creative Team",
+      "it_team": "IT Team",
+      "advisory_team": "Advisory Team"
+    },
+    "member_count": {
       "current": "Currently our team has",
-      "total": "staff members, some of whom choose not to be publicly displayed.",
-      "fallback": "over 30"
+      "fallback": "over 30 ",
+      "total": "staff members, some of whom choose not to be publicly displayed."
     }
   },
   "news": {
-    "title": "News"
+    "title": "News",
+    "no_news": "No news",
+    "categories": {
+      "event_promotion": "Event Promotion",
+      "website_update": "Website Update"
+    }
+  },
+  "events": {
+    "title": "Events",
+    "event_photos": "Event Photos"
+  },
+  "partners": {
+    "title": "Partners",
+    "list": [
+      {
+        "img": "https://i.imgur.com/ebWDTs6.png",
+        "name": "Fragile Items Chronicle",
+        "paras": [
+          "Raise international awareness of human rights conditions in China through multimedia content and advocacy, promoting a fairer and more just world.",
+          "Fragile Items Chronicle, real name Leung Kai-chun, created satirical works about the Chinese government online; at 15 he was investigated by Hong Kong police and later fled Hong Kong to seek political asylum in the United States.",
+          "While exiled in the United States, he continued anti-Communist activism and assisted other young people from Hong Kong in escaping and seeking political asylum, for example helping \"A-Long\" go to Canada.",
+          "He is now enrolled in university and plans to continue raising international awareness of China's human rights situation through initiatives such as the Great Translation Movement."
+        ],
+        "link": "https://www.youtube.com/%40FragileItemsChronicle"
+      }
+    ],
+    "link": {
+      "1": "Learn more",
+      "2": "'s information"
+    }
+  },
+  "links": {
+    "title": "Links",
+    "description": "Welcome to the links overview page of \"The Next Generation of Taiwanese\" (TNGT). Through the following links, you can quickly learn about our latest developments, join community discussions, and follow our updates on various platforms.",
+    "links_name": {
+      "website": "Website",
+      "discord": "Discord",
+      "youtube": "Youtube",
+      "threads": "Threads",
+      "instagram": "Instagram",
+      "email": "Email",
+      "github": "GitHub"
+    }
+  },
+  "join": {
+    "title": "Join Us",
+    "long_term_volunteers": "Recruiting long-term volunteers for all teams",
+    "condition_title": "We are recruiting long-term volunteers for all teams and sincerely invite you to join us. Please review the following participation conditions:",
+    "conditions": {
+      "age": "You are a student below the university level and not older than 25 (those over 25 can only serve as advisors)",
+      "commitment": "You can serve in a long-term position and guarantee ample time to participate in online or offline meetings",
+      "agreement": "You agree with the philosophy of this organization and are willing to promote the voices of youth with us"
+    },
+    "bylaws": "Click me to view the bylaws",
+    "agree_bylaws": "I meet the above conditions and agree to abide by the bylaws",
+    "please_read_bylaws": "Please read and agree to all the above terms before proceeding with the application",
+    "join_btn": "Apply to join"
   },
   "footer": {
     "copyright": "Copyright",

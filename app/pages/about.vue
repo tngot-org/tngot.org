@@ -128,7 +128,7 @@
           icon="ri-link-m"
           class="animate-pop-in p-4"
         >
-          {{ t('about.contactUs') }}
+          {{ t('about.contact_us') }}
         </UButton>
       </template>
     </ActionButtonsGroup>

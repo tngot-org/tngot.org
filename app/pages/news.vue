@@ -9,6 +9,11 @@
     title: () => t('news.title')
   });
 
+  const sharedPageTitle = useState('page-title');
+  onMounted(() => {
+    sharedPageTitle.value = t('news.title');
+  });
+
   const { fetchNewsData } = useNewsData();
   await fetchNewsData();
 
@@ -53,7 +58,7 @@
         v-else-if="paginatedNews.length === 0"
         class="mb-8 py-8 text-center"
       >
-        <p class="text-xl font-medium text-gray-500">沒有最近新聞</p>
+        <p class="text-xl font-medium text-gray-500">{{ t('news.no_news') }}</p>
       </UCard>
 
       <!-- 有新聞時顯示列表 -->
