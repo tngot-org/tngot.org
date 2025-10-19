@@ -6,7 +6,7 @@
 
 <template>
   <UCard
-    class="font-huninn mb-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+    class="font-huninn mb-6 rounded-xl px-4 shadow-lg transition-all duration-300 hover:scale-101 hover:shadow-xl"
     :ui="{
       root: 'p-0',
       body: 'px-6 py-4 sm:py-4'
@@ -21,14 +21,14 @@
         <UBadge
           :color="getCategoryColor(newsItem.category)"
           size="lg"
-          class="rounded-lg text-lg"
+          class="rounded-lg px-3 py-1.5 text-center text-lg font-bold"
         >
           {{ getCategoryLabel(newsItem.category) || '未分類' }}
         </UBadge>
       </div>
 
       <!-- 垂直分隔線 -->
-      <div class="mx-2 my-4 hidden h-auto self-stretch sm:block">
+      <div class="mx-2.5 my-4 hidden h-auto self-stretch sm:block">
         <div class="h-full w-px rounded-full bg-gray-200"></div>
       </div>
 

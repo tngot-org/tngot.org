@@ -7,31 +7,54 @@
     title: ''
   });
 
-  const buttons = [
-    { to: '/about', icon: 'heroicons:information-circle', text: '關於我們' },
-    { to: '/team', icon: 'heroicons:user-group', text: '工作團隊' },
-    { to: '/news', icon: 'heroicons:newspaper', text: '最新消息' },
-    { to: '/event/', icon: 'heroicons:calendar', text: '活動目錄' },
-    { to: '/partner', icon: 'heroicons:building-storefront', text: '合作夥伴' },
-    { to: '/links', icon: 'heroicons:link', text: '相關連結' }
-  ];
+  const { t } = useI18n();
+  const localePath = useLocalePath();
+
+  const buttons = computed(() => [
+    {
+      to: localePath('/about'),
+      icon: 'heroicons:information-circle',
+      text: t('nav.about')
+    },
+    {
+      to: localePath('/team'),
+      icon: 'heroicons:user-group',
+      text: t('nav.team')
+    },
+    {
+      to: localePath('/news'),
+      icon: 'heroicons:newspaper',
+      text: t('nav.news')
+    },
+    {
+      to: localePath('/events/'),
+      icon: 'heroicons:calendar',
+      text: t('nav.events')
+    },
+    {
+      to: localePath('/partner'),
+      icon: 'heroicons:globe-asia-australia',
+      text: t('nav.partners')
+    },
+    { to: localePath('/links'), icon: 'heroicons:link', text: t('nav.links') }
+  ]);
 </script>
 
 <template>
   <div class="flex flex-col items-center text-center">
     <!-- 主標題區塊 -->
     <div
-      class="mt-6 rounded-[10px] bg-transparent px-4 py-2 text-white shadow-lg backdrop-blur-sm md:px-8 md:py-4"
+      class="mt-6 rounded-[10px] bg-transparent px-8 py-2 text-white shadow-lg backdrop-blur-sm md:py-4"
     >
       <h1
-        class="font-huninn text-[2rem] font-extrabold text-white text-shadow-gray-800 text-shadow-md sm:text-[2.5rem] md:text-[3.5rem]"
+        class="text-2xl font-extrabold text-white text-shadow-gray-800 text-shadow-md sm:text-3xl md:text-5xl"
       >
-        台灣未來的主人們
+        {{ t('home.title') }}
       </h1>
       <p
         class="mt-1 text-[1rem] text-white text-shadow-gray-800 text-shadow-md sm:text-[1.75rem] md:mt-2 md:text-[2rem]"
       >
-        The Next Generation Taiwanese - TNGT
+        {{ t('home.subtitle') }}
       </p>
     </div>
 
@@ -40,25 +63,25 @@
       class="text-md mt-2 rounded-[10px] bg-transparent px-4 py-2 leading-relaxed break-keep text-white shadow-lg backdrop-blur-md text-shadow-gray-500 text-shadow-md sm:mx-4 sm:text-2xl"
     >
       <p class="mt-1 leading-relaxed md:mt-2">
-        我們期望發展成為一個真正的公民團體；
-        <br />
-        用於代表青少年們參與大大小小的公共事務。
+        {{ t('home.description1') }} <br />
+        {{ t('home.description2') }} <br />
+        {{ t('home.description3') }} <br />
+        {{ t('home.description4') }}
       </p>
-      <p class="mt-1 leading-relaxed md:mt-2">
-        我們追求民主與自由，堅信青年力量能驅動社會進步；<br />
-        關注民主、教育與性平等議題，凝聚學生聲音，打造屬於我們的聲音平台。
-      </p>
+      <!-- <p class="mt-1 leading-relaxed md:mt-2">
+        {{ t('home.description2') }}
+      </p> -->
     </div>
 
     <!-- Discord 成員數量 -->
     <DiscordMembers
-      class="my-4 text-xl font-bold text-white text-shadow-gray-800 text-shadow-md md:text-2xl 2xl:text-3xl"
+      class="my-4 mb-12 text-xl font-bold text-white text-shadow-gray-800 text-shadow-md md:text-2xl 2xl:text-3xl"
     />
 
     <!-- 按鈕群組 (回饋表單與 Discord) -->
     <div class="flex flex-col gap-4 sm:flex-row sm:gap-6">
       <!-- 回饋表單按鈕 -->
-      <UButton
+      <!-- <UButton
         icon="simple-icons:googleforms"
         size="lg"
         to="https://forms.gle/N3W1y1dts7vpzH6v9"
@@ -69,11 +92,11 @@
           leadingIcon: 'lg:p-3'
         }"
       >
-        回饋表單
+        {{ t('home.feedbackForm') }}
         <div
           class="shiny-effect absolute top-0 -left-full h-full w-[200%] -skew-x-[45deg] transform bg-gradient-to-r from-white/20 to-transparent transition-all duration-500 group-hover:left-full"
         />
-      </UButton>
+      </UButton> -->
 
       <!-- Discord 按鈕 -->
       <UButton
@@ -87,7 +110,7 @@
           leadingIcon: 'lg:p-3'
         }"
       >
-        加入 Discord
+        {{ t('home.joinDiscord') }}
         <div
           class="shiny-effect absolute top-0 -left-full h-full w-[200%] -skew-x-[45deg] transform bg-gradient-to-r from-white/20 to-transparent transition-all duration-500 group-hover:left-full"
         />

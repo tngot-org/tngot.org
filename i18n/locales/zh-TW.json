@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "title": "台灣未來的主人們 TNGT"
+  },
+  "nav": {
+    "home": "返回首頁",
+    "about": "關於我們",
+    "team": "工作團隊",
+    "news": "最新消息",
+    "events": "活動目錄",
+    "partners": "合作夥伴",
+    "links": "相關連結",
+    "join": "加入我們"
+  },
+  "common": {
+    "language": "語言",
+    "changeLanguage": "切換語言"
+  },
+  "home": {
+    "title": "台灣未來的主人們",
+    "subtitle": "The Next Generation of Taiwanese - TNGT",
+    "description1": "我們期望發展成為一個真正的公民團體；",
+    "description2": "用於代表青少年們參與大大小小的公共事務。",
+    "description3": "我們追求民主與自由，堅信青年力量能驅動社會進步；",
+    "description4": "關注民主、教育與性平等議題，凝聚學生聲音，打造屬於我們的聲音平台。",
+    "joinDiscord": "加入 Discord",
+    "discord_members": "目前社群成員："
+  },
+  "about": {
+    "title": "關於我們",
+    "introduction": {
+      "title": "團體介紹",
+      "motivation": "成立社群的初衷：",
+      "content": "在社群媒體上發表參與公民運動的心得後，卻遭遇「你才十八歲懂什麼」、「多讀點書吧」等冷嘲熱諷。我們不願被年齡束縛思考自由，也不滿意見表達被「大人」以經驗優勢打壓。看到許多年輕人同樣被惡意攻擊，我們決心凝聚這群關心國家未來的學生，打造屬於我們的聲音平台。"
+    },
+    "philosophy": {
+      "title": "我們的理念",
+      "content": "我們追求民主與自由，堅信青年力量能驅動社會進步。"
+    },
+    "issues": {
+      "title": "關注議題",
+      "items": [
+        "反對極權專制",
+        "維護民主價值",
+        "教育多元與改革",
+        "推動性別平等",
+        "交通平權與行人安全"
+      ]
+    },
+    "goals": {
+      "title": "訴求與目標",
+      "items": [
+        {
+          "title": "反對極權專制",
+          "content": "捍衛民主，讓人民真正作主，拒絕任何形式的獨裁統治。"
+        },
+        {
+          "title": "反侵略",
+          "content": "反對任何國家以非理性手段侵犯台灣主權，倡議加強國安法與反滲透法，以及全民防衛意識。"
+        },
+        {
+          "title": "宣傳民主自由、增進自我認同",
+          "content": "提升媒體素養，支持本土文化創作者，並推動自主且資安高的社群平台建設。"
+        },
+        {
+          "title": "強化校園性平教育",
+          "content": "加深師生對多元性別與性向的理解與尊重，建構友善校園環境。"
+        },
+        {
+          "title": "改革教育制度",
+          "content": "反對唯學歷論，鼓勵多元發展；加強私校監管與師資考核，並優化課程預算分配。"
+        },
+        {
+          "title": "捍衛交通平權，保障行人安全",
+          "content": "學校附近廣設人行道，改善交通號誌設計，並加強執法以保障行人優先權。"
+        }
+      ]
+    },
+    "contact_us": "聯絡我們"
+  },
+  "team": {
+    "title": "工作團隊",
+    "teams": {
+      "executive_committee": "會長組",
+      "administrative_team": "行政組",
+      "financial_team": "財務組",
+      "public_relations_team": "公關組",
+      "creative_team": "美宣組",
+      "it_team": "資訊組",
+      "advisory_team": "顧問組"
+    },
+    "total_members": "總人數",
+    "member_count": {
+      "current": "目前我們的團隊共有",
+      "fallback": "超過 30 ",
+      "total": "名工作人員，其中部分成員選擇不公開展示。"
+    }
+  },
+  "news": {
+    "title": "最新消息",
+    "no_news": "沒有最新消息",
+    "categories": {
+      "event_promotion": "活動宣傳",
+      "website_update": "網站更新"
+    }
+  },
+  "events": {
+    "title": "活動記錄",
+    "event_photos": "活動照片"
+  },
+  "partners": {
+    "title": "合作夥伴",
+    "list": [
+      {
+        "img": "https://i.imgur.com/ebWDTs6.png",
+        "name": "易碎品編年史",
+        "paras": [
+          "提升國際社會對中國人權狀況的關注，透過多媒體內容與行動倡議，推動更公平與正義的世界。",
+          "易碎君，本名梁啟駿，因在網路上創作諷刺中國政府的作品，15歲時遭香港警方調查，其後被迫離開香港前往美國尋求政治庇護。",
+          "流亡美國期間，他持續參與反共活動，並協助其他香港年輕人逃離香港，尋求政治庇護，例如協助阿龍前往加拿大。",
+          "目前易碎君已開始就讀大學，並計劃繼續透過大翻譯運動等方式，提升國際社會對中國人權狀況的關注。"
+        ],
+        "link": "https://www.youtube.com/%40FragileItemsChronicle"
+      }
+    ],
+    "link": {
+      "1": "了解更多",
+      "2": "的資訊"
+    }
+  },
+  "links": {
+    "title": "相關連結",
+    "description": "歡迎來到「台灣未來的主人們」（TNGT）的連結一覽頁。透過以下連結，您可以快速了解我們的最新動態、加入社群討論，以及關注我們在各大平台的更新。",
+    "links_name": {
+      "website": "官方網站",
+      "discord": "Discord",
+      "youtube": "Youtube",
+      "threads": "Threads",
+      "instagram": "Instagram",
+      "email": "Email",
+      "github": "GitHub"
+    }
+  },
+  "join": {
+    "title": "加入我們",
+    "long_term_volunteers": "招募各組長期志工",
+    "condition_title": "我們正在徵求各組長期志工，誠摯邀請您加入我們的行列。請詳閱以下參與條件：",
+    "conditions": {
+      "age": "您為大專院校（含）以下學生，年齡不超過25歲（25歲以上僅可擔任顧問職務）",
+      "commitment": "您能長期擔任職務，並保證有充裕時間參與線上或線下會議",
+      "agreement": "您認同本團體理念，願與我們一起推動青年聲音"
+    },
+    "bylaws": "點我查看組織章程",
+    "agree_bylaws": "我滿足以上條件，並同意遵守組織規章",
+    "please_read_bylaws": "請閱讀並上述所有條款，才能進行申請",
+    "join_btn": "申請加入"
+  },
+  "footer": {
+    "copyright": "版權所有",
+    "organization": "台灣未來的主人們",
+    "license": "MIT 授權條款"
+  }
+}

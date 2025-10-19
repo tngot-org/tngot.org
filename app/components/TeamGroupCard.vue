@@ -3,6 +3,18 @@
     group: TeamGroup;
   }
 
+  const { t } = useI18n();
+
+  const groupName: Record<string, string> = {
+    會長組: 'executive_committee',
+    行政組: 'administrative_team',
+    財務組: 'financial_team',
+    公關組: 'public_relations_team',
+    美宣組: 'creative_team',
+    資訊組: 'it_team',
+    顧問組: 'advisory_team'
+  };
+
   defineProps<Props>();
 </script>
 
@@ -12,7 +24,7 @@
       <h2
         class="border-primary text-primary mb-4 border-l-4 pl-3 text-2xl font-bold"
       >
-        {{ group.name }}
+        {{ t(`team.teams.${groupName[group.name]}`) }}
       </h2>
     </template>
 

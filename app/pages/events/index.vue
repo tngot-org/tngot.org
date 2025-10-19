@@ -1,18 +1,26 @@
 <script setup lang="ts">
-  const pageTitle = '活動目錄';
+  const { t, locale } = useI18n();
+
   definePageMeta({
-    title: pageTitle
+    title: 'nav.events'
   });
+
   useHead({
-    title: pageTitle
+    title: () => t('nav.events')
   });
 
   // 讓重新回到目錄時重置 title
   const sharedPageTitle = useState('page-title');
-  sharedPageTitle.value = pageTitle;
+  onMounted(() => {
+    sharedPageTitle.value = t('nav.events');
+  });
 
   // 從 API 端點取得所有事件資料
-  const { data: eventsData } = await useFetch<EventItem[]>('/api/event');
+  const { data: eventsData } = await useFetch<EventItem[]>('/api/events', {
+    params: {
+      locale: locale.value
+    }
+  });
 
   // 取得事件資料列表
   const eventItems = computed(() => {

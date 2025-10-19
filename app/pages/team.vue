@@ -1,8 +1,20 @@
 <script setup lang="ts">
-  const title = '工作團隊';
+  const { t, locale } = useI18n();
 
-  definePageMeta({ title });
-  useHead({ title });
+  const localeJoin = locale.value === 'zh-TW' ? '' : `/${locale.value}`;
+
+  definePageMeta({
+    title: 'team.title'
+  });
+
+  useHead({
+    title: () => t('team.title')
+  });
+
+  const sharedPageTitle = useState('page-title');
+  onMounted(() => {
+    sharedPageTitle.value = t('team.title');
+  });
 
   const { data: teamData, status: teamDataStatus } =
     await useLazyFetch<TeamData>('/api/team', {
@@ -33,18 +45,18 @@
           <h2
             class="border-primary text-primary border-l-4 pl-3 text-2xl font-bold"
           >
-            總人數
+            {{ t('team.total_members') }}
           </h2>
         </template>
 
         <p>
-          <span>目前我們的團隊共有</span>
+          <span>{{ t('team.member_count.current') }}</span>
           <span v-if="teamDataStatus === 'pending'"> ... </span>
           <span v-else-if="teamDataStatus === 'success'">
             {{ ` ${totalMemberCount} ` }}
           </span>
-          <span v-else>超過 30 </span>
-          <span>名工作人員，其中部分成員選擇不公開展示。</span>
+          <span v-else>{{ t('team.member_count.fallback') }} </span>
+          <span>{{ t('team.member_count.total') }}</span>
         </p>
       </UCard>
     </template>
@@ -56,14 +68,14 @@
     <ActionButtonsGroup>
       <template #right>
         <UButton
-          to="/join"
+          :to="`${localeJoin}/join`"
           color="info"
           variant="solid"
           size="xl"
           icon="ri-link-m"
           class="animate-pop-in p-4"
         >
-          申請加入長期志工
+          {{ t('nav.join') }}
         </UButton>
       </template>
     </ActionButtonsGroup>

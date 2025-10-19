@@ -14,6 +14,11 @@
   <div class="relative flex min-h-screen w-full flex-col overflow-hidden">
     <BackgroundCarousel :images :interval="5000" />
 
+    <!-- 語言切換器 -->
+    <div class="relative z-20 flex justify-end px-4 pt-4">
+      <LanguageSwitcher />
+    </div>
+
     <!-- 內容區塊，相對於背景層 -->
     <main class="relative z-10 flex-grow">
       <slot />

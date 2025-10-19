@@ -1,40 +1,56 @@
-<script setup>
-  import { onMounted } from 'vue';
+<script setup lang="ts">
+  import { useIntersectionObserver } from '@vueuse/core';
 
-  const title = '關於我們';
-  definePageMeta({
-    title
-  });
-  useHead({
-    title
+  const { t, tm } = useI18n();
+  const localePath = useLocalePath();
+
+  // 為 v-for 創建 computed 屬性
+  const issueItems = computed<I18nItem[]>(() => {
+    return (tm('about.issues.items') as I18nItem[]) ?? [];
   });
 
+  const issueTexts = computed(() =>
+    issueItems.value.map(
+      (item) => item.loc?.source ?? { title: '', content: '' }
+    )
+  );
+
+  const goalItems = computed<I18nItem[]>(() => {
+    return (tm('about.goals.items') as I18nItem[]) ?? [];
+  });
+
+  const goalTexts = computed(() =>
+    goalItems.value.map((item) => ({
+      title: item.title?.loc?.source ?? '',
+      content: item.content?.loc?.source ?? ''
+    }))
+  );
+
+  const sharedPageTitle = useState('page-title');
   onMounted(() => {
-    observeSections();
-  });
+    sharedPageTitle.value = t('about.title');
 
-  function observeSections() {
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    );
-    const observerOptions = { threshold: 0.2 };
-    const sections = document.querySelectorAll('.intro-section');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, idx) => {
-        if (entry.isIntersecting) {
-          if (prefersReducedMotion.matches) {
-            entry.target.classList.add('show');
-          } else {
-            setTimeout(() => entry.target.classList.add('show'), idx * 150);
+    const sections = ref<NodeListOf<HTMLElement>>();
+    sections.value = document.querySelectorAll('.intro-section');
+    sections.value.forEach((el, idx) => {
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      );
+      useIntersectionObserver(
+        el,
+        ([entry]) => {
+          if (entry?.isIntersecting) {
+            if (prefersReducedMotion.matches) {
+              el.classList.add('show');
+            } else {
+              setTimeout(() => el.classList.add('show'), idx * 150);
+            }
           }
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach((el) => observer.observe(el));
-  }
+        },
+        { threshold: 0.2 }
+      );
+    });
+  });
 </script>
 
 <template>
@@ -44,13 +60,13 @@
       <template #header>
         <div class="mb-2">
           <h2 class="after-line relative font-bold text-purple-600">
-            團體介紹
+            {{ t('about.introduction.title') }}
           </h2>
         </div>
       </template>
-      <p class="font-bold">成立社群的初衷：</p>
+      <p class="font-bold">{{ t('about.introduction.motivation') }}</p>
       <p class="my-4 leading-relaxed text-gray-600">
-        在社群媒體上發表參與公民運動的心得後，卻遭遇「你才十八歲懂什麼」、「多讀點書吧」等冷嘲熱諷。我們不願被年齡束縛思考自由，也不滿意見表達被「大人」以經驗優勢打壓。看到許多年輕人同樣被惡意攻擊，我們決心凝聚這群關心國家未來的學生，打造屬於我們的聲音平台。
+        {{ t('about.introduction.content') }}
       </p>
     </UCard>
 
@@ -59,12 +75,12 @@
       <template #header>
         <div class="mb-2">
           <h2 class="after-line relative text-3xl font-bold text-purple-600">
-            我們的理念
+            {{ t('about.philosophy.title') }}
           </h2>
         </div>
       </template>
       <p class="leading-relaxed text-gray-600">
-        我們追求民主與自由，堅信青年力量能驅動社會進步。
+        {{ t('about.philosophy.content') }}
       </p>
     </UCard>
 
@@ -73,16 +89,14 @@
       <template #header>
         <div class="mb-2">
           <h2 class="after-line relative text-3xl font-bold text-purple-600">
-            關注議題
+            {{ t('about.issues.title') }}
           </h2>
         </div>
       </template>
       <ul class="space-y-2 pl-5 text-gray-600">
-        <li class="issue-item">反對極權專制</li>
-        <li class="issue-item">維護民主價值</li>
-        <li class="issue-item">教育多元與改革</li>
-        <li class="issue-item">推動性別平等</li>
-        <li class="issue-item">交通平權與行人安全</li>
+        <li v-for="(text, index) in issueTexts" :key="index" class="issue-item">
+          {{ text }}
+        </li>
       </ul>
     </UCard>
 
@@ -91,34 +105,15 @@
       <template #header>
         <div class="mb-2">
           <h2 class="after-line relative text-3xl font-bold text-purple-600">
-            訴求與目標
+            {{ t('about.goals.title') }}
           </h2>
         </div>
       </template>
       <ul class="space-y-4 text-gray-600">
-        <li>
-          <strong>反對極權專制</strong><br />
-          捍衛民主，讓人民真正作主，拒絕任何形式的獨裁統治。
-        </li>
-        <li>
-          <strong>反侵略</strong><br />
-          反對任何國家以非理性手段侵犯台灣主權，倡議加強國安法與反滲透法，以及全民防衛意識。
-        </li>
-        <li>
-          <strong>宣傳民主自由、增進自我認同</strong><br />
-          提升媒體素養，支持本土文化創作者，並推動自主且資安高的社群平台建設。
-        </li>
-        <li>
-          <strong>強化校園性平教育</strong><br />
-          加深師生對多元性別與性向的理解與尊重，建構友善校園環境。
-        </li>
-        <li>
-          <strong>改革教育制度</strong><br />
-          反對唯學歷論，鼓勵多元發展；加強私校監管與師資考核，並優化課程預算分配。
-        </li>
-        <li>
-          <strong>捍衛交通平權，保障行人安全</strong><br />
-          學校附近廣設人行道，改善交通號誌設計，並加強執法以保障行人優先權。
+        <li v-for="(text, index) in goalTexts" :key="index" class="issue-item">
+          <strong>{{ text.title }}</strong>
+          <br />
+          {{ text.content }}
         </li>
       </ul>
     </UCard>
@@ -126,14 +121,14 @@
     <ActionButtonsGroup>
       <template #right>
         <UButton
-          to="/links"
+          :to="localePath('/links')"
           color="info"
           variant="solid"
           size="xl"
           icon="ri-link-m"
           class="animate-pop-in p-4"
         >
-          聯絡我們
+          {{ t('about.contact_us') }}
         </UButton>
       </template>
     </ActionButtonsGroup>

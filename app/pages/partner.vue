@@ -1,26 +1,34 @@
-<script setup>
-  const title = '合作夥伴';
+<script setup lang="ts">
+  import type { I18nItem } from '../../shared/types/i18n';
+
+  const { t, tm } = useI18n();
+
   definePageMeta({
-    title
-  });
-  useHead({
-    title
+    title: 'partners.title'
   });
 
-  // 合作夥伴資料
-  const partners = [
-    {
-      img: 'https://i.imgur.com/ebWDTs6.png',
-      name: '易碎品編年史',
-      paras: [
-        '提升國際社會對中國人權狀況的關注，透過多媒體內容與行動倡議，推動更公平與正義的世界。',
-        '易碎君，本名梁啟駿，因在網路上創作諷刺中國政府的作品，15歲時遭香港警方調查，其後被迫離開香港前往美國尋求政治庇護。',
-        '流亡美國期間，他持續參與反共活動，並協助其他香港年輕人逃離香港，尋求政治庇護，例如協助阿龍前往加拿大。',
-        '目前易碎君已開始就讀大學，並計劃繼續透過大翻譯運動等方式，提升國際社會對中國人權狀況的關注。'
-      ],
-      link: 'https://www.youtube.com/@FragileItemsChronicle'
-    }
-  ];
+  useHead({
+    title: () => t('partners.title')
+  });
+
+  const sharedPageTitle = useState('page-title');
+  onMounted(() => {
+    sharedPageTitle.value = t('partners.title');
+  });
+
+  // 為 v-for 創建 computed 屬性
+  const partnerItems = computed<I18nItem[]>(() => {
+    return (tm('partners.list') as I18nItem[]) ?? [];
+  });
+
+  const partners = computed(() =>
+    partnerItems.value.map((item) => ({
+      img: item.img?.loc?.source ?? '',
+      name: item.name?.loc?.source ?? '',
+      paras: item.paras?.map((para: I18nItem) => para.loc?.source ?? '') ?? [],
+      link: item.link?.loc?.source ?? '#'
+    }))
+  );
 </script>
 
 <template>
@@ -29,16 +37,18 @@
     <div
       v-for="partner in partners"
       :key="partner.name"
-      class="flex flex-col rounded-lg bg-white p-4 shadow-md transition-all hover:scale-[1.008] hover:transform hover:shadow-lg md:flex-row md:items-center md:p-8"
+      class="flex flex-col rounded-lg bg-white p-4 shadow-md transition-all duration-300 hover:scale-[1.005] hover:shadow-lg md:flex-row md:items-center md:p-8"
     >
       <img
         :src="partner.img"
         :alt="partner.name"
-        class="mb-4 h-[120px] w-[120px] self-center object-contain md:mr-8 md:mb-0 md:h-[150px] md:w-[150px] md:self-auto"
+        class="mb-4 h-[120px] w-[120px] self-center rounded-xl object-contain md:mr-8 md:mb-0 md:h-[150px] md:w-[150px] md:self-auto"
       />
       <div class="flex-1">
         <p>
-          <strong class="text-primary font-bold">{{ partner.name }}</strong>
+          <strong class="text-primary text-lg font-bold">{{
+            partner.name
+          }}</strong>
         </p>
         <p
           v-for="(para, idx) in partner.paras"
@@ -55,9 +65,9 @@
             variant="outline"
             class="inline-flex w-full items-center justify-center text-sm sm:w-auto sm:text-base"
           >
-            了解更多
+            {{ t('partners.link.1') }}
             <span class="underline"> {{ partner.name }} </span>
-            資訊
+            {{ t('partners.link.2') }}
             <span class="ml-1">→</span>
           </UButton>
         </div>
@@ -67,7 +77,3 @@
     <ActionButtonsGroup />
   </div>
 </template>
-
-<style scoped>
-  /* 任何可能需要的特定樣式 */
-</style>

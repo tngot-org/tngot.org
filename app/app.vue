@@ -1,13 +1,14 @@
 <script setup lang="ts">
+  const { t } = useI18n();
   useHead({
     htmlAttrs: {
       lang: 'zh-Hant-TW'
     },
-    title: '台灣未來的主人們 TNGT',
+    title: t('meta.title'),
     titleTemplate: (titleChunk) => {
       return titleChunk
-        ? `${titleChunk} | 台灣未來的主人們 TNGT`
-        : '台灣未來的主人們 TNGT';
+        ? `${titleChunk} | ${t('meta.title')}`
+        : t('meta.title');
     },
     meta: [
       {
