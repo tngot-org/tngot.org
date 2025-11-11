@@ -5,7 +5,7 @@ The Next Generation Taiwanese - TNGT
 
 ## Tech Stack
 
-- **Web Framework**: Nuxt 3
+- **Web Framework**: Nuxt 4
 - **UI Framework**: Nuxt UI
 - **CSS Framework**: Tailwind CSS
 - **Testing**: Vitest
