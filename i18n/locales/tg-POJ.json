@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "title": "Tâi-oân Bī-lâi ê Chhōa-lō͘-lâng TNGT"
+  },
+  "nav": {
+    "home": "Tńg-khì thâu-ia̍h",
+    "about": "Goán ê chu-sìn",
+    "team": "Goán ê thoân-tūi",
+    "news": "Siau-sit",
+    "events": "Hoa̍t-tōng lí-su-to͘h",
+    "partners": "Ha̍p-chok ê thoân-thé",
+    "links": "Bāng-liân-á",
+    "join": "Ka-ji̍p"
+  },
+  "common": {
+    "language": "Gí-giân",
+    "changeLanguage": "Kái Gí-giân"
+  },
+  "home": {
+    "title": "Tâi-oân Bī-lâi ê Chhōa-lō͘-lâng",
+    "subtitle": "The Next Generation of Taiwanese - TNGT",
+    "description1": "Goán ǹg-bāng thang hoat-tián chò chi̍t ê chiâⁿ-si̍t ê kong-bîn thoân-thé.",
+    "description2": "Lâi tāi-piáu siàu-liân-ke chham-ú chèng-lâng ê tōa-sè-hāng tāi.",
+    "description3": "Goán tui-kiû Bîn-chú kap Chū-iû, siong-sìn chheng-liân ê le̍k-liōng thang hō͘ siā-hōe koh khah chìn-pō͘.",
+    "description4": "Koan-sim Bîn-chú, Kàu-io̍k ham sèng-pia̍t pêng-téng ê gī-tê, chū-chi̍p ha̍k-seng-á ê siaⁿ-im, khí-chō chih-chài goán ê siaⁿ-im ê pêⁿ-tâi.",
+    "joinDiscord": "Ka-ji̍p Discord",
+    "discord_members": "Hiān-chhú-sî ū lōa chē lâng"
+  },
+  "about": {
+    "title": "Goán ê chu-sìn",
+    "introduction": {
+      "title": "Thoân-thé Siàu-kài",
+      "motivation": "Sêng-li̍p ê In-toaⁿ",
+      "content": "Tī siā-kûn mûi-thé téng-bīn pho͘ chham-ú kong-bîn ūn-tong ê kám-sióng liáu-āu, soah hông khau-sè kóng \"Lí chiah 18 hòe sī bat saⁿh\", \"Khì tha̍k chheh lah\". Goán bô siūⁿ-beh hō͘ nî-hóe kā lán ê su-khó sok-pa̍k, mā bô ài hō͘ \"tōa-lâng\" ēng keng-giām lâi ah. Khòaⁿ-tio̍h chiah-nī chē siàu-liân-lâng lóng hông án-ne chiau-that, goán koat-tēng beh kā chia koan-sim kok-ka bī-lâi ê ha̍k-seng chū-chi̍p khí-lâi, khí-chō goán ê só͘-chāi."
+    },
+    "philosophy": {
+      "title": "Goán ê Le̍k-liōng",
+      "content": "Goán tui-kiû Bîn-chú kap Chū-iû, siong-sìn chheng-liân ê le̍k-liōng thang hō͘ siā-hōe koh khah chìn-pō͘."
+    },
+    "issues": {
+      "title": "Koan-sim ê Gī-tê",
+      "items": [
+        "Hoán-tùi Ke̍k-koân Choan-chè",
+        "Î-hō͘ Bîn-chú Kè-ta̍t",
+        "Kàu-io̍k To-goân ham Kái-kek",
+        "Thui-tōng Sèng-pia̍t Pêng-téng",
+        "Kāu-tōng Pêng-khoân kap Hêng-jîn An-choân"
+      ]
+    },
+    "goals": {
+      "title": "Sò͘-kiû kap Bo̍k-phiau",
+      "items": [
+        {
+          "title": "Hoán-tùi Ke̍k-koân Choan-chè",
+          "content": "Pó-ūi bîn-chú, hō͘ jîn-bîn chin-chiàⁿ chò-chú, kī-choa̍t to̍k-chhâi thóng-tī."
+        },
+        {
+          "title": "Hoán Chhim-lio̍k",
+          "content": "Hoán-tùi jīm-hô kok-ka í hui-lí-sèng ê chhiú-lō͘ chhim-hoān Tâi-oân ê chú-koân, ho͘-ú ka-kiông Kok-an-hoat kap Hoán-sìm-thàu-hoat, koh ū choân-bîn hông-ūi ì-sek."
+        },
+        {
+          "title": "Soan-thoân bîn-chú chū-iû, chhiok-chìn chū-ngó͘ jīn-tông",
+          "content": "Thê-koân mûi-thé ê sò͘-chit, chi-chhî pun-thó͘ bûn-hòa chhòng-chok-chiá, jî-chhiáⁿ chhui-sak khí-chō chū-chú kiam kò͘ chu-sìn an-choân ê siā-kûn pêⁿ-tâi."
+        },
+        {
+          "title": "Ka-kiông ha̍k-hāu lāi ê sèng-pia̍t pêng-téng kàu-io̍k",
+          "content": "Hō͘ siăn-séⁿ kiau ha̍k-seng koh khah lí-kái ham chun-tiōng to-goân sèng-pia̍t ham bô-kâng sèng-siōng, khí-chō iú-siān ê hāu-hn̂g."
+        },
+        {
+          "title": "Kàu-io̍k chè-tō͘ ê kái-kek",
+          "content": "Hoán-tùi kan-ta chù-tiōng ha̍k-le̍k, kó͘-lē to-goân ê hoat-tián. Ka-kiông su-li̍p ha̍k-hāu ê koán-lí ham su-chu ê sím-cha, kái-siān khò-têng ī-sǹg ê hun-phòe."
+        },
+        {
+          "title": "Thīn kau-thong pêng-koân, kò͘ hêng-jîn an-choân",
+          "content": "學校附近廣設人行道，改善交通號誌設計，並加強執法以保障行人優先權。Hāu-hn̂g ê sì-kho͘-ûi-á sia̍t chng-á-lō͘, kái-liông chheⁿ-âng-teng ham hō-chì ê siat-kè, jî-chhiáⁿ chi-chhî lia̍h khah hiông ê lâi pó-chiong pō͘-lián ·ê ê an-choân."
+        }
+      ]
+    },
+    "contact_us": "Kā goán chih-chiap"
+  },
+  "team": {
+    "title": "Thoân-tūi",
+    "teams": {
+      "executive_committee": "Hōe-tiúⁿ-cho͘",
+      "administrative_team": "Hêng-chèng-cho͘",
+      "financial_team": "Châi-bū-cho͘",
+      "public_relations_team": "Kong-koan-cho͘",
+      "creative_team": "Bí-soan-cho͘",
+      "it_team": "Chu-sìn-cho͘",
+      "advisory_team": "Kò͘-būn-cho͘"
+    },
+    "total_members": "Jîn-sò͘",
+    "member_count": {
+      "current": "Hiān-chú-sî goán ū",
+      "fallback": " 30 khah ke ",
+      "total": "ê lâng, ū ·ê bô ài kong-khai."
+    }
+  },
+  "news": {
+    "title": "Sin siau-sit",
+    "no_news": "Bô sin ê siau-sit",
+    "categories": {
+      "event_promotion": "Hoa̍t-tōng Soan-thoân",
+      "website_update": "Bāng-chām Ap-tia̍t"
+    }
+  },
+  "events": {
+    "title": "Hoa̍t-tōng Kì-lo̍k",
+    "event_photos": "Hoa̍t-tōng Siòng-phìⁿ"
+  },
+  "partners": {
+    "title": "Ha̍p-chok ·ê",
+    "list": [
+      {
+        "img": "https://i.imgur.com/ebWDTs6.png",
+        "name": "易碎品編年史",
+        "paras": [
+          "Thê-seng kok-chè siā-hōe tùi-tio̍h Tiong-kok jîn-koân chōng-hóng ê koan-chù, thàu-kòe iáⁿ-im ê mûi-thé ham hêng-tōng ê ho͘-ú, ǹg-bāng hō͘ sè-kài koh khah ū kong-pêⁿ kap chèng-gī.",
+          "易碎君, pún-miâ 梁啟駿, in ūi tī bāng-lō͘ bīn-téng chò thuh-chhàu Tiong-kok chèng-hú ê mih-á, 15 hòe ê sî hō͘ Hiong-káng Kèng-chhat tiau-cha, āu ·lâi pī-pek lī-khui Hiong-káng khì kàu Bí-kok chhōe chèng-tī pì-hō͘.",
+          "Tī Bí-kok liû-bông ê kî-kan, i kè-sio̍k chham-ú hoán-kiōng ê hoa̍t-tōng, koh hia̍p-chō͘ pa̍t-ê Hiong-káng-lâng lī-khui Hiong-káng, chhōe chèng-tī pì-hō͘, lē. Kā 阿龍 tàu-saⁿ-kang ho͘ khì Ka-ná-tah.",
+          "Bo̍k-chêng 易碎君 í-keng khai-sí tha̍k tāi-ha̍k, àn-sǹg kè-sio̍k ēng Tōa Hoan-e̍k Ūn-tōng téng-téng ê hong-sek, thê-seng kok-chè siā-hōe tùi Tiong-kok jîn-koân chōng-hóng ê chù-sim.",
+        ],
+        "link": "https://www.youtube.com/%40FragileItemsChronicle"
+      }
+    ],
+    "link": {
+      "1": "Liáu-kái khah chē",
+      "2": "ê chu-sìn"
+    }
+  },
+  "links": {
+    "title": "Siong-koan ê bāng-liān-á",
+    "description": "Hoan-gêng lâi \"Tâi-oân Bī-lâi ê Chhōa-lō͘-lâng\" ê bāng-liān-á chóng-ia̍h. Chhi̍h ē-khá ê bāng-liān thang chai goán ê sin siau-sit, chham-ú siā-kûn ê thó-lūn kap koan-chù goán tī ta̍k pêⁿ-tâi ê sin siau-sit",
+    "links_name": {
+      "website": "Koan-hong Bāng-chām",
+      "discord": "Discord",
+      "youtube": "Youtube",
+      "threads": "Threads",
+      "instagram": "Instagram",
+      "email": "Email",
+      "github": "GitHub"
+    }
+  },
+  "join": {
+    "title": "Ji̍p-siā",
+    "long_term_volunteers": "Tng teh chhōe gī-kang",
+    "condition_title": "Goán tng teh chhōe ta̍k cho͘ ê gī-kang, ǹg-bāng lín thang lâi tàu-chi̍t-kha! Chhiáⁿ khòaⁿ ē-bīn ê tiâu-kiāⁿ:",
+    "conditions": {
+      "age": "Lí sī tāi-choan í-hā ê ha̍k-sêng, nî-hòe khah kiám 25 hòe (25 í-siōng kan-ta thang chò kò͘-būn)",
+      "commitment": "Thang tn̂g-kî chham-ú, jī-chhiáⁿ thang pó-chèng ū chin-chē sî-kan chham-ka sòaⁿ-téng a̍h sī si̍t-thé ê hōe-gī",
+      "agreement": "Jīn-tông pún-thoân ê lí-liām, goān-ì hō͘ lán chò-tīn chhui-sak lán siàu-liân-pòe ê siaⁿ-im"
+    },
+    "bylaws": "Chhi̍h chia khòaⁿ goán ê kui-kí",
+    "agree_bylaws": "Goán ū hû-ha̍p téng-bīn ê tiâu-kiāⁿ, jî-chhiáⁿ tông-ì chun-siú chia ê kui-kí",
+    "please_read_bylaws": "Chhiáⁿ kā téng-bīn ê kui-kí tha̍k soah chiah sin-chhéng",
+    "join_btn": "Sin-chhéng Ji̍p-hōe"
+  },
+  "footer": {
+    "copyright": "Pán-koân só͘-iú",
+    "organization": "Tâi-oân Bī-lâi ê Chhōa-lō͘-lâng",
+    "license": "MIT Siū-koân Tiâu-khoán"
+  }
+}
